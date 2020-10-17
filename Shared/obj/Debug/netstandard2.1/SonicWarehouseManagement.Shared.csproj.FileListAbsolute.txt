@@ -1,0 +1,9 @@
+D:\SonicWarehouseManagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.deps.json
+D:\SonicWarehouseManagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.dll
+D:\SonicWarehouseManagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.pdb
+D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfoInputs.cache
+D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfo.cs
+D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csproj.CoreCompileInputs.cache
+D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.dll
+D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.pdb
+D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csprojAssemblyReference.cache

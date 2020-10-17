@@ -1,0 +1,81 @@
+﻿@page "/articlelist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Article Master</h2>
+<hr />
+<a href="/addarticle" class="btn btn-primary">Add new article</a>
+<hr />
+@if (amlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">ID</th>
+                <th style="font-size: small;">Article Code</th>
+                <th style="font-size: small;">Article Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var art in amlist)
+            {
+                <tr>
+                    <td style="font-size: small;">@art.id</td>
+                    <td style="font-size: small;">@art.Article_Code</td>
+                    <td style="font-size: small;">@art.Article_Description</td>
+                    <td>
+                        <a style="font-size: small;" href="/editarticle/@art.id" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletearticle/@art.id" class="btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    ArticleMaster[] amlist;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/ArticleHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        amlist = await Http.GetJsonAsync<ArticleMaster[]>("api/ArticleMasters");
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

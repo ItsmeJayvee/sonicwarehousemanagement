@@ -1,0 +1,264 @@
+﻿@page "/editbusinesspartner/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Edit business partner</h2>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="cardcode" class="control-label">Card code</label>
+                <input form="cardcode" class="form-control" @bind="@bp.Card_Code" />
+            </div>
+            <div class="form-group">
+                <label for="cardname" class="control-label">Card name</label>
+                <input form="cardname" class="form-control" @bind="@bp.Card_Name" />
+            </div>
+            <div class="form-group">
+                <label for="cardtype" class="control-label">Card type</label>
+                <input form="cardtype" class="form-control" @bind="@bp.Card_Type" />
+            </div>
+            <div class="form-group">
+                <label for="status" class="control-label">Status</label>
+                <input form="status" class="form-control" @bind="@bp.Status" />
+            </div>
+            <div class="form-group">
+                <label for="pjp" class="control-label">PJP</label>
+                <input form="pjp" class="form-control" @bind="@bp.PJP" />
+            </div>
+            <div class="form-group">
+                <label for="salesman" class="control-label">Salesman</label>
+                <input form="salesman" class="form-control" @bind="@bp.Salesman" />
+            </div>
+            <div class="form-group">
+                <label for="salesmanname" class="control-label">Salesman name</label>
+                <input form="salesmanname" class="form-control" @bind="@bp.Salesman_Name" />
+            </div>
+            <div class="form-group">
+                <label for="street" class="control-label">Street</label>
+                <input form="street" class="form-control" @bind="@bp.Street" />
+            </div>
+            <div class="form-group">
+                <label for="street2" class="control-label">Street 2</label>
+                <input form="street2" class="form-control" @bind="@bp.Street_2" />
+            </div>
+            <div class="form-group">
+                <label for="street3" class="control-label">Street 3</label>
+                <input form="street3" class="form-control" @bind="@bp.Street_3" />
+            </div>
+            <div class="form-group">
+                <label for="outlettype" class="control-label">Outlet type</label>
+                <input form="outlettype" class="form-control" @bind="@bp.Outlet_Type" />
+            </div>
+            <div class="form-group">
+                <label for="outlettypedesc" class="control-label">Outlet type description</label>
+                <input form="outlettypedesc" class="form-control" @bind="@bp.Outlet_Type_Description" />
+            </div>
+            <div class="form-group">
+                <label for="outletsubtype" class="control-label">Outlet sub type</label>
+                <input form="outletsubtype" class="form-control" @bind="@bp.Outlet_Sub_Type" />
+            </div>
+            <div class="form-group">
+                <label for="outletsubtypedesc" class="control-label">Outlet sub type description</label>
+                <input form="outletsubtypedesc" class="form-control" @bind="@bp.Outlet_Sub_Type_Description" />
+            </div>
+            <div class="form-group">
+                <label for="phone" class="control-label">Phone</label>
+                <input form="phone" class="form-control" @bind="@bp.Phone" />
+            </div>
+            <div class="form-group">
+                <label for="mobile" class="control-label">Mobile</label>
+                <input form="mobile" class="form-control" @bind="@bp.Mobile" />
+            </div>
+            <div class="form-group">
+                <label for="paymenttypedesc" class="control-label">Payment type description</label>
+                <input form="paymenttypedesc" class="form-control" @bind="@bp.Payment_Type_Description" />
+            </div>
+            <div class="form-group">
+                <label for="termsofpayment" class="control-label">Terms of payment</label>
+                <input form="termsofpayment" class="form-control" @bind="@bp.Terms_of_Payment" />
+            </div>
+            <div class="form-group">
+                <label for="termsofpaymentdesc" class="control-label">Terms of payment description</label>
+                <input form="termsofpaymentdesc" class="form-control" @bind="@bp.Terms_of_Payment_Description" />
+            </div>
+            <div class="form-group">
+                <label for="postalcode" class="control-label">Postal code</label>
+                <input form="postalcode" class="form-control" @bind="@bp.Postal_Code" />
+            </div>
+            <div class="form-group">
+                <label for="vatnum" class="control-label">VAT number</label>
+                <input form="vatnum" class="form-control" @bind="@bp.VAT_Number" />
+            </div>
+            <div class="form-group">
+                <label for="contactperson" class="control-label">Contact person</label>
+                <input form="contactperson" class="form-control" @bind="@bp.Contact_Person" />
+            </div>
+            <div class="form-group">
+                <label for="classification" class="control-label">Classification</label>
+                <input form="classification" class="form-control" @bind="@bp.Classification" />
+            </div>
+            <div class="form-group">
+                <label for="classificationdesc" class="control-label">Classification description</label>
+                <input form="classificationdesc" class="form-control" @bind="@bp.Classification_Description" />
+            </div>
+            <div class="form-group">
+                <label for="deliveringsite" class="control-label">Delivering site</label>
+                <input form="deliveringsite" class="form-control" @bind="@bp.Delivering_Site" />
+            </div>
+            <div class="form-group">
+                <label for="deliveringsitedesc" class="control-label">Delivering site description</label>
+                <input form="deliveringsitedesc" class="form-control" @bind="@bp.Delivering_Site_Description" />
+            </div>
+            <div class="form-group">
+                <label for="leadtime" class="control-label">Lead time</label>
+                <input form="leadtime" class="form-control" @bind="@bp.Lead_Time" />
+            </div>
+            <div class="form-group">
+                <label for="magdesc" class="control-label">MAG description</label>
+                <input form="magdesc" class="form-control" @bind="@bp.MAG_Description" />
+            </div>
+            <div class="form-group">
+                <label for="lsrlvldesc" class="control-label">LSR level description</label>
+                <input form="lsrlvldesc" class="form-control" @bind="@bp.LSR_Level_Description" />
+            </div>
+            <div class="form-group">
+                <label for="lsrprovdesc" class="control-label">LSR province description</label>
+                <input form="lsrprovdesc" class="form-control" @bind="@bp.LSR_Province_Description" />
+            </div>
+            <div class="form-group">
+                <label for="lsrcitydesc" class="control-label">LSR city description</label>
+                <input form="lsrcitydesc" class="form-control" @bind="@bp.LSR_City_Description" />
+            </div>
+            <div class="form-group">
+                <label for="lsrbrgydesc" class="control-label">LSR barangay description</label>
+                <input form="lsrbrgydesc" class="form-control" @bind="@bp.LSR_Barangay_Description" />
+            </div>
+            <div class="form-group">
+                <label for="deactdate" class="control-label">Deactivation date</label>
+                <input form="deactdate" class="form-control" @bind="@bp.Deactivation_date" />
+            </div>
+            <div class="form-group">
+                <label for="changeddate" class="control-label">Changed date</label>
+                <input form="changeddate" class="form-control" @bind="@bp.Changed_date" />
+            </div>
+            <div class="form-group">
+                <label for="paymenttype" class="control-label">Payment type</label>
+                <input form="paymenttype" class="form-control" @bind="@bp.Payment_Type" />
+            </div>
+            <div class="form-group">
+                <label for="latitude" class="control-label">Latitude</label>
+                <input form="latitude" class="form-control" @bind="@bp.Latitude" />
+            </div>
+            <div class="form-group">
+                <label for="longitude" class="control-label">Longitude</label>
+                <input form="longitude" class="form-control" @bind="@bp.Longitude" />
+            </div>
+            <div class="form-group">
+                <label for="banneriddesc" class="control-label">Banner id description</label>
+                <input form="banneriddesc" class="form-control" @bind="@bp.Banner_ID_Description" />
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label">Email</label>
+                <input form="email" class="form-control" @bind="@bp.Email" />
+            </div>
+            <div class="form-group">
+                <label for="fax" class="control-label">Fax</label>
+                <input form="fax" class="form-control" @bind="@bp.Fax" />
+            </div>
+            <div class="form-group">
+                <label for="housenumber" class="control-label">House number</label>
+                <input form="housenumber" class="form-control" @bind="@bp.House_Number" />
+            </div>
+            <div class="form-group">
+                <label for="name2" class="control-label">Name 2</label>
+                <input form="name2" class="form-control" @bind="@bp.Name2" />
+            </div>
+            <div class="form-group">
+                <label for="name3" class="control-label">Name 3</label>
+                <input form="name3" class="form-control" @bind="@bp.Name3" />
+            </div>
+            <div class="form-group">
+                <label for="outletlocation" class="control-label">Outlet location</label>
+                <input form="outletlocation" class="form-control" @bind="@bp.Outlet_Location" />
+            </div>
+            <div class="form-group">
+                <label for="searchterm1" class="control-label">Search term 1</label>
+                <input form="searchterm1" class="form-control" @bind="@bp.Search_Term1" />
+            </div>
+            <div class="form-group">
+                <label for="searchterm2" class="control-label">Search term 2</label>
+                <input form="searchterm2" class="form-control" @bind="@bp.Search_Term2" />
+            </div>
+            <div class="form-group">
+                <label for="tax1" class="control-label">Tax 1</label>
+                <input form="tax1" class="form-control" @bind="@bp.Tax1" />
+            </div>
+            <div class="form-group">
+                <label for="createdon" class="control-label">Created on</label>
+                <input form="createdon" class="form-control" @bind="@bp.Created_On" />
+            </div>
+            <div class="form-group">
+                <label for="perfstoreaudttype" class="control-label">Perfect store audit type</label>
+                <input form="perfstoreaudttype" class="form-control" @bind="@bp.Perfect_Store_Audit_Type" />
+            </div>
+            <div class="form-group">
+                <label for="ertm" class="control-label">eRTM</label>
+                <input form="ertm" class="form-control" @bind="@bp.eRTM" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="@updatebusinesspartner" value="Update" />
+                <input type="button" class="btn btn-danger" @onclick="@cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    BusinessPartner bp = new BusinessPartner();
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        bp = await Http.GetJsonAsync<BusinessPartner>("api/BusinessPartners/" + id);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/BusinessPartnerHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected =>
+        hubCon.State == HubConnectionState.Connected;
+
+    public async Task updatebusinesspartner()
+    {
+        await Http.PutJsonAsync("api/BusinessPartners/" + id, bp);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("businesspartnerlist");
+    }
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("businesspartnerlist");
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

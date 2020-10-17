@@ -1,0 +1,68 @@
+﻿@page "/deletearticle/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Delete article</h3>
+<hr />
+<p>Are you sure you want to delete this article?</p>
+<br />
+
+<div class="col-md-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">Article code</th>
+                <th style="font-size: small;">Article description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-size: small;">@art.Article_Code</td>
+                <td style="font-size: small;">@art.Article_Description</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <input type="button" class="btn btn-danger" @onclick="@deletearticle" value="Delete" />
+        <input type="button" class="btn btn-primary" @onclick="@cancel" value="Cancel" />
+    </div>
+</div>
+
+@code {
+    ArticleMaster art = new ArticleMaster();
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        art = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + id);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/ArticleHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected =>
+        hubCon.State == HubConnectionState.Connected;
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    public async Task deletearticle()
+    {
+        await Http.DeleteAsync("api/ArticleMasters/" + id);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("articlelist");
+    }
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("articlelist");
+    }
+}

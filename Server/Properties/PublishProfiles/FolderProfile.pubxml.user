@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\jv.limbaroc\Desktop\publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="default">
+      <Value>Data Source=192.168.1.12%3bInitial Catalog=IntegratedSAP%3bUser ID=sa%3bPassword=p%40ssw0rd</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

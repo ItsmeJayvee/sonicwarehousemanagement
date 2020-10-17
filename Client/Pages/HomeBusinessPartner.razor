@@ -1,0 +1,81 @@
+﻿@page "/businesspartnerlist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Business Partners</h2>
+<hr />
+<a href="/addbusinesspartner" class="btn btn-primary">Add new business partner  </a>
+<hr />
+@if (bplist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">ID</th>
+                <th style="font-size: small;">Card code</th>
+                <th style="font-size: small;">Card name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var biz in bplist)
+            {
+                <tr>
+                    <td style="font-size: small;">@biz.Id</td>
+                    <td style="font-size: small;">@biz.Card_Code</td>
+                    <td style="font-size: small;">@biz.Card_Name</td>
+                    <td>
+                        <a style="font-size: small;" href="/editbusinesspartner/@biz.Id" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletebusinesspartner/@biz.Id" class="btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    BusinessPartner[] bplist;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/BusinessPartnerHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        bplist = await Http.GetJsonAsync<BusinessPartner[]>("api/BusinessPartners");
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

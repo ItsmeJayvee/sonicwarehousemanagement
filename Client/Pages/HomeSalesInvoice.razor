@@ -1,0 +1,81 @@
+﻿@page "/salesinvoicelist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Sales invoice</h2>
+<hr />
+<a href="/addsalesinvoice" class="btn btn-primary">Add new sales invoice  </a>
+<hr />
+@if (isrlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">ID</th>
+                <th style="font-size: small;">Invoice number</th>
+                <th style="font-size: small;">Calendar day</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var isr in isrlist)
+            {
+                <tr>
+                    <td style="font-size: small;">@isr.ID</td>
+                    <td style="font-size: small;">@isr.Invoice_No</td>
+                    <td style="font-size: small;">@isr.Calendar_Day</td>
+                    <td>
+                        <a style="font-size: small;" href="/editsalesinvoice/@isr.ID" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletesalesinvoice/@isr.ID" class="btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    ISR_DailySalesInvoice[] isrlist;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/DailySalesInvoiceManualHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        isrlist = await Http.GetJsonAsync<ISR_DailySalesInvoice[]>("api/ISR_DailySalesInvoiceManual");
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

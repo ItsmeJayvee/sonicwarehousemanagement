@@ -1,0 +1,204 @@
+﻿@page "/editarticle/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Edit article</h2>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="articlecode" class="control-label">Article code</label>
+                <input form="articlecode" class="form-control" @bind="@art.Article_Code" />
+            </div>
+            <div class="form-group">
+                <label for="articledesc" class="control-label">Article description</label>
+                <input form="articledesc" class="form-control" @bind="@art.Article_Description" />
+            </div>
+            <div class="form-group">
+                <label for="primprice" class="control-label">Primary price</label>
+                <input form="primprice" class="form-control" @bind="@art.Primary_Price_CS" />
+            </div>
+            <div class="form-group">
+                <label for="secprice" class="control-label">Secondary price</label>
+                <input form="secprice" class="form-control" @bind="@art.Secondary_Price_CS" />
+            </div>
+            <div class="form-group">
+                <label for="artshortdesc" class="control-label">Article short description</label>
+                <input form="artshortdesc" class="form-control" @bind="@art.Article_Short_Description" />
+            </div>
+            <div class="form-group">
+                <label for="unitcon2" class="control-label">Unit conversion 2</label>
+                <input form="unitcon2" class="form-control" @bind="@art.Unit_Conversion2" />
+            </div>
+            <div class="form-group">
+                <label for="status" class="control-label">Status</label>
+                <input form="status" class="form-control" @bind="@art.Status" />
+            </div>
+            <div class="form-group">
+                <label for="site" class="control-label">Site</label>
+                <input form="site" class="form-control" @bind="@art.Site" />
+            </div>
+            <div class="form-group">
+                <label for="uom2" class="control-label">Uom 2</label>
+                <input form="uom2" class="form-control" @bind="@art.Uom2" />
+            </div>
+            <div class="form-group">
+                <label for="uom3" class="control-label">Uom 3</label>
+                <input form="uom3" class="form-control" @bind="@art.Uom3" />
+            </div>
+            <div class="form-group">
+                <label for="volumecs" class="control-label">Volume cs</label>
+                <input form="volumecs" class="form-control" @bind="@art.Volume_CS" />
+            </div>
+            <div class="form-group">
+                <label for="volumecsl" class="control-label">Volume cs l</label>
+                <input form="volumecsl" class="form-control" @bind="@art.Volume_CS_L" />
+            </div>
+            <div class="form-group">
+                <label for="volumepc" class="control-label">Volume pc</label>
+                <input form="volumepc" class="form-control" @bind="@art.Volume_CS_L" />
+            </div>
+            <div class="form-group">
+                <label for="volumepcl" class="control-label">Volume pc l</label>
+                <input form="volumepcl" class="form-control" @bind="@art.Volume_PC_L" />
+            </div>
+            <div class="form-group">
+                <label for="widthcs" class="control-label">Width cs</label>
+                <input form="widthcs" class="form-control" @bind="@art.Width_CS" />
+            </div>
+            <div class="form-group">
+                <label for="widthpc" class="control-label">Width pc</label>
+                <input form="widthpc" class="form-control" @bind="@art.Width_PC" />
+            </div>
+            <div class="form-group">
+                <label for="baseunitmeasure" class="control-label">Base unit of measure</label>
+                <input form="baseunitmeasure" class="form-control" @bind="@art.Base_Unit_of_Measure" />
+            </div>
+            <div class="form-group">
+                <label for="uom1" class="control-label">Uom 1</label>
+                <input form="uom1" class="form-control" @bind="@art.Uom1" />
+            </div>
+            <div class="form-group">
+                <label for="unitcon1" class="control-label">Unit conversion 1</label>
+                <input form="unitcon1" class="form-control" @bind="@art.Unit_Conversion1" />
+            </div>
+            <div class="form-group">
+                <label for="unitcon3" class="control-label">Unit conversion 1</label>
+                <input form="unitcon3" class="form-control" @bind="@art.Unit_Conversion3" />
+            </div>
+            <div class="form-group">
+                <label for="merchcat" class="control-label">Merchandise category</label>
+                <input form="merchcat" class="form-control" @bind="@art.Merchandise_Category" />
+            </div>
+            <div class="form-group">
+                <label for="brand" class="control-label">Brand</label>
+                <input form="brand" class="form-control" @bind="@art.Brand" />
+            </div>
+            <div class="form-group">
+                <label for="category" class="control-label">Category</label>
+                <input form="category" class="form-control" @bind="@art.Category" />
+            </div>
+            <div class="form-group">
+                <label for="division" class="control-label">Division</label>
+                <input form="division" class="form-control" @bind="@art.Division" />
+            </div>
+            <div class="form-group">
+                <label for="assortno" class="control-label">Assortment no</label>
+                <input form="assortno" class="form-control" @bind="@art.Assortment_No" />
+            </div>
+            <div class="form-group">
+                <label for="listmod" class="control-label">Listing module</label>
+                <input form="listmod" class="form-control" @bind="@art.Listing_Module" />
+            </div>
+            <div class="form-group">
+                <label for="assortstat" class="control-label">Assortment status</label>
+                <input form="assortstat" class="form-control" @bind="@art.Assortment_status" />
+            </div>
+            <div class="form-group">
+                <label for="grossweightpc" class="control-label">Gross weight pc</label>
+                <input form="grossweightpc" class="form-control" @bind="@art.Gross_Weight_PC" />
+            </div>
+            <div class="form-group">
+                <label for="netweightpc" class="control-label">Net weight pc</label>
+                <input form="netweightpc" class="form-control" @bind="@art.Net_Weight_PC" />
+            </div>
+            <div class="form-group">
+                <label for="grossweightcs" class="control-label">Gross weight cs</label>
+                <input form="grossweightcs" class="form-control" @bind="@art.Gross_Weight_CS" />
+            </div>
+            <div class="form-group">
+                <label for="netweightcs" class="control-label">Net weight cs</label>
+                <input form="netweightcs" class="form-control" @bind="@art.Net_Weight_CS" />
+            </div>
+            <div class="form-group">
+                <label for="lengthpc" class="control-label">Length pc</label>
+                <input form="lengthpc" class="form-control" @bind="@art.Length_PC" />
+            </div>
+            <div class="form-group">
+                <label for="heightpc" class="control-label">Height pc</label>
+                <input form="heightpc" class="form-control" @bind="@art.Height_PC" />
+            </div>
+            <div class="form-group">
+                <label for="lengthcs" class="control-label">Length cs</label>
+                <input form="lengthcs" class="form-control" @bind="@art.Length_CS" />
+            </div>
+            <div class="form-group">
+                <label for="heightcs" class="control-label">Height cs</label>
+                <input form="heightcs" class="form-control" @bind="@art.Height_CS" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="@updatearticle" value="Update" />
+                <input type="button" class="btn btn-danger" @onclick="@cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    ArticleMaster art = new ArticleMaster();
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        art = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + id);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/ArticleHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected =>
+        hubCon.State == HubConnectionState.Connected;
+
+    public async Task updatearticle()
+    {
+        await Http.PutJsonAsync("api/ArticleMasters/" + id, art);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("articlelist");
+    }
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("articlelist");
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

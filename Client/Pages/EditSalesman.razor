@@ -1,0 +1,171 @@
+﻿@page "/editsalesman/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Edit business partner</h2>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="salesmancode" class="control-label">Salesman code</label>
+                <input form="salesmancode" class="form-control" @bind="@sm.Salesman_Code" />
+            </div>
+            <div class="form-group">
+                <label for="salesmanname" class="control-label">Salesman name</label>
+                <input form="salesmanname" class="form-control" @bind="@sm.Salesman_Name" />
+            </div>
+            <div class="form-group">
+                <label for="fsscode" class="control-label">FSS code</label>
+                <input form="fsscode" class="form-control" @bind="@sm.FSS_Code" />
+            </div>
+            <div class="form-group">
+                <label for="fssname" class="control-label">FSS name</label>
+                <input form="fssname" class="form-control" @bind="@sm.FSS_Name" />
+            </div>
+            <div class="form-group">
+                <label for="prodgroupdesc" class="control-label">Product group description</label>
+                <input form="prodgroupdesc" class="form-control" @bind="@sm.Product_Grp_desc" />
+            </div>
+            <div class="form-group">
+                <label for="salesroute" class="control-label">Sales route</label>
+                <input form="salesroute" class="form-control" @bind="@sm.Sales_Route" />
+            </div>
+            <div class="form-group">
+                <label for="salesroutedesc" class="control-label">Sales route description</label>
+                <input form="salesroutedesc" class="form-control" @bind="@sm.Sales_Route_Description" />
+            </div>
+            <div class="form-group">
+                <label for="salesmanteamtype" class="control-label">Salesman team type</label>
+                <input form="salesmanteamtype" class="form-control" @bind="@sm.Salesman_Team_Type" />
+            </div>
+            <div class="form-group">
+                <label for="status" class="control-label">Status</label>
+                <input form="status" class="form-control" @bind="@sm.Status" />
+            </div>
+            <div class="form-group">
+                <label for="prodgroup" class="control-label">Product group</label>
+                <input form="prodgroup" class="form-control" @bind="@sm.Product_Group" />
+            </div>
+            <div class="form-group">
+                <label for="warehousedistributor" class="control-label">Warehouse distributor</label>
+                <input form="warehousedistributor" class="form-control" @bind="@sm.Warehouse_Distributor" />
+            </div>
+            <div class="form-group">
+                <label for="statusdesc" class="control-label">Status description</label>
+                <input form="statusdesc" class="form-control" @bind="@sm.Status_Description" />
+            </div>
+            <div class="form-group">
+                <label for="salesmanteamdesc" class="control-label">Salesman team description</label>
+                <input form="salesmanteamdesc" class="form-control" @bind="@sm.Salesman_Team_Description" />
+            </div>
+            <div class="form-group">
+                <label for="salesmantype" class="control-label">Salesman type</label>
+                <input form="salesmantype" class="form-control" @bind="@sm.Salesman_Type" />
+            </div>
+            <div class="form-group">
+                <label for="site" class="control-label">Site</label>
+                <input form="site" class="form-control" @bind="@sm.Site" />
+            </div>
+            <div class="form-group">
+                <label for="salesmantypedesc" class="control-label">Salesman type description</label>
+                <input form="salesmantypedesc" class="form-control" @bind="@sm.Salesman_Type_desc" />
+            </div>
+            <div class="form-group">
+                <label for="dateofbirth" class="control-label">Date of birth</label>
+                <input form="dateofbirth" class="form-control" @bind="@sm.Date_of_Birth" />
+            </div>
+            <div class="form-group">
+                <label for="education" class="control-label">Education</label>
+                <input form="education" class="form-control" @bind="@sm.Education" />
+            </div>
+            <div class="form-group">
+                <label for="city" class="control-label">City</label>
+                <input form="city" class="form-control" @bind="@sm.City" />
+            </div>
+            <div class="form-group">
+                <label for="address2" class="control-label">Address 2</label>
+                <input form="address2" class="form-control" @bind="@sm.Address_2" />
+            </div>
+            <div class="form-group">
+                <label for="address1" class="control-label">Address 1</label>
+                <input form="address1" class="form-control" @bind="@sm.Address_1" />
+            </div>
+            <div class="form-group">
+                <label for="pdaflagdesc" class="control-label">PDA flag description</label>
+                <input form="pdaflagdesc" class="form-control" @bind="@sm.PDA_Flag_Description" />
+            </div>
+            <div class="form-group">
+                <label for="pdaflag" class="control-label">PDA flag</label>
+                <input form="pdaflag" class="form-control" @bind="@sm.PDA_Flag" />
+            </div>
+            <div class="form-group">
+                <label for="startdate" class="control-label">Start date</label>
+                <input form="startdate" class="form-control" @bind="@sm.Start_Date" />
+            </div>
+            <div class="form-group">
+                <label for="enddate" class="control-label">End date</label>
+                <input form="enddate" class="form-control" @bind="@sm.End_Date" />
+            </div>
+            <div class="form-group">
+                <label for="sitedesc" class="control-label">Site description</label>
+                <input form="sitedesc" class="form-control" @bind="@sm.Site_desc" />
+            </div>
+            <div class="form-group">
+                <label for="legacysalesmancode" class="control-label">Legacy salesman code</label>
+                <input form="legacysalesmancode" class="form-control" @bind="@sm.Legacy_Salesman_Code" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="@updatesalesman" value="Update" />
+                <input type="button" class="btn btn-danger" @onclick="@cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    SalesmanMaster sm = new SalesmanMaster();
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        sm = await Http.GetJsonAsync<SalesmanMaster>("api/SalesmanMasters/" + id);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesmanHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected => hubCon.State == HubConnectionState.Connected;
+
+    public async Task updatesalesman()
+    {
+        await Http.PutJsonAsync("api/SalesmanMasters/" + id, sm);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("salesmanlist");
+    }
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("salesmanlist");
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}
