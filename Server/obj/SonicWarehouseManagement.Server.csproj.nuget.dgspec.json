@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SonicWarehouseManagement\\Server\\SonicWarehouseManagement.Server.csproj": {}
+    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Server\\SonicWarehouseManagement.Server.csproj": {}
   },
   "projects": {
-    "D:\\SonicWarehouseManagement\\Client\\SonicWarehouseManagement.Client.csproj": {
+    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SonicWarehouseManagement\\Client\\SonicWarehouseManagement.Client.csproj",
+        "projectUniqueName": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj",
         "projectName": "SonicWarehouseManagement.Client",
-        "projectPath": "D:\\SonicWarehouseManagement\\Client\\SonicWarehouseManagement.Client.csproj",
-        "packagesPath": "C:\\Users\\jv.limbaroc\\.nuget\\packages\\",
-        "outputPath": "D:\\SonicWarehouseManagement\\Client\\obj\\",
+        "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj",
+        "packagesPath": "C:\\Users\\ej.monta\\.nuget\\packages\\",
+        "outputPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jv.limbaroc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ej.monta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
-                "projectPath": "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj"
+              "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
+                "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj"
               }
             }
           }
@@ -87,24 +87,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\SonicWarehouseManagement\\Server\\SonicWarehouseManagement.Server.csproj": {
+    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Server\\SonicWarehouseManagement.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SonicWarehouseManagement\\Server\\SonicWarehouseManagement.Server.csproj",
+        "projectUniqueName": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Server\\SonicWarehouseManagement.Server.csproj",
         "projectName": "SonicWarehouseManagement.Server",
-        "projectPath": "D:\\SonicWarehouseManagement\\Server\\SonicWarehouseManagement.Server.csproj",
-        "packagesPath": "C:\\Users\\jv.limbaroc\\.nuget\\packages\\",
-        "outputPath": "D:\\SonicWarehouseManagement\\Server\\obj\\",
+        "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Server\\SonicWarehouseManagement.Server.csproj",
+        "packagesPath": "C:\\Users\\ej.monta\\.nuget\\packages\\",
+        "outputPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jv.limbaroc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ej.monta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,11 +117,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\SonicWarehouseManagement\\Client\\SonicWarehouseManagement.Client.csproj": {
-                "projectPath": "D:\\SonicWarehouseManagement\\Client\\SonicWarehouseManagement.Client.csproj"
+              "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj": {
+                "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj"
               },
-              "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
-                "projectPath": "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj"
+              "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
+                "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj"
               }
             }
           }
@@ -180,24 +180,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
+    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
+        "projectUniqueName": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
         "projectName": "SonicWarehouseManagement.Shared",
-        "projectPath": "D:\\SonicWarehouseManagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
-        "packagesPath": "C:\\Users\\jv.limbaroc\\.nuget\\packages\\",
-        "outputPath": "D:\\SonicWarehouseManagement\\Shared\\obj\\",
+        "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
+        "packagesPath": "C:\\Users\\ej.monta\\.nuget\\packages\\",
+        "outputPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jv.limbaroc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ej.monta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -241,7 +241,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

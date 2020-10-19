@@ -7,3 +7,12 @@ D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManage
 D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.dll
 D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.pdb
 D:\SonicWarehouseManagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csprojAssemblyReference.cache
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.deps.json
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.dll
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.pdb
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csprojAssemblyReference.cache
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfoInputs.cache
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfo.cs
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csproj.CoreCompileInputs.cache
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.dll
+D:\IntegratedWebAPI\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.pdb
