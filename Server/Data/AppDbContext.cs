@@ -22,5 +22,7 @@ namespace SonicWarehouseManagement.Server.Data
         public DbSet<ISR_DailySalesInvoice> ISR_Daily_Sales_Invoices { get; set; }
         public DbSet<SalesmanMaster> Salesman_Masters { get; set; }
         public DbSet<PurchaseOrder> Purchase_Orders { get; set; }
+        public DbSet<PurchaseDetails> Purchase_Details { get; set; }
+        public DbSet<PurchaseHeaders> Purchase_Headers { get; set; }
     }
 }

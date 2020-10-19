@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicWarehouseManagement.Server", "Server\SonicWarehouseManagement.Server.csproj", "{F47EF83C-3833-46A1-9776-74138D6A44DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicWarehouseManagement.Server", "Server\SonicWarehouseManagement.Server.csproj", "{F47EF83C-3833-46A1-9776-74138D6A44DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicWarehouseManagement.Client", "Client\SonicWarehouseManagement.Client.csproj", "{B9D68C24-7FF7-496E-946A-B0C0AC13FD79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicWarehouseManagement.Client", "Client\SonicWarehouseManagement.Client.csproj", "{B9D68C24-7FF7-496E-946A-B0C0AC13FD79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicWarehouseManagement.Shared", "Shared\SonicWarehouseManagement.Shared.csproj", "{377383F1-D3A9-4F75-9EED-D58FD9155FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonicWarehouseManagement.Shared", "Shared\SonicWarehouseManagement.Shared.csproj", "{377383F1-D3A9-4F75-9EED-D58FD9155FDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

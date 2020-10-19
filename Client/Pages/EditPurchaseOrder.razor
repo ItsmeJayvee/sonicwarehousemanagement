@@ -1,0 +1,96 @@
+﻿@page "/addarticle"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Update purchase order</h2>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="site" class="control-label">Site</label>
+                <input form="site" class="form-control" @bind="@po.Site" />
+            </div>
+            <div class="form-group">
+                <label for="postingdate" class="control-label">Posting date</label>
+                <input form="postingdate" class="form-control" @bind="@po.Posting_Date" />
+            </div>
+            <div class="form-group">
+                <label for="docdate" class="control-label">Document date</label>
+                <input form="docdate" class="form-control" @bind="@po.Document_Date" />
+            </div>
+            <div class="form-group">
+                <label for="artdoc" class="control-label">Article document</label>
+                <input form="artdoc" class="form-control" @bind="@po.Article_Doc" />
+            </div>
+            <div class="form-group">
+                <label for="billdoc" class="control-label">Bill Document</label>
+                <input form="billdoc" class="form-control" @bind="@po.Bill_Doc" />
+            </div>
+            <div class="form-group">
+                <label for="itemcode" class="control-label">Item code</label>
+                <input form="itemcode" class="form-control" @bind="@po.Item_Code" />
+            </div>
+            <div class="form-group">
+                <label for="itemdesc" class="control-label">Item description</label>
+                <input form="itemdesc" class="form-control" @bind="@po.Item_Desc" />
+            </div>
+            <div class="form-group">
+                <label for="qty" class="control-label">Quantity</label>
+                <input form="qty" class="form-control" @bind="@po.Quantity" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="@updatepurchaseorder" value="Update" />
+                <input type="button" class="btn btn-danger" @onclick="@cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    PurchaseOrder po = new PurchaseOrder();
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        po = await Http.GetJsonAsync<PurchaseOrder>("api/PurchaseOrdersManual/" + id);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseOrderManualHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected =>
+        hubCon.State == HubConnectionState.Connected;
+
+    public async Task updatepurchaseorder()
+    {
+        await Http.PutJsonAsync("api/PurchaseOrdersManual/" + id, po);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("purchaseorderlist");
+    }
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("purchaseorderlist");
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

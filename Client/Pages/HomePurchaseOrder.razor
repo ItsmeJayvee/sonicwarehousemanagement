@@ -1,0 +1,81 @@
+﻿@page "/purchaseorderlist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Purchase order</h2>
+<hr />
+<a href="/addpurchaseorder" class="btn btn-primary">Add new purchase order</a>
+<hr />
+@if (polist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">ID</th>
+                <th style="font-size: small;">Invoice number</th>
+                <th style="font-size: small;">Posting date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var po in polist)
+            {
+                <tr>
+                    <td style="font-size: small;">@po.ID</td>
+                    <td style="font-size: small;">@po.Article_Doc</td>
+                    <td style="font-size: small;">@po.Posting_Date</td>
+                    <td>
+                        <a style="font-size: small;" href="/editpurchaseorder/@po.ID" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletepurchaseorder/@po.ID" class="btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    PurchaseOrder[] polist;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseOrderManualHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        polist = await Http.GetJsonAsync<PurchaseOrder[]>("api/PurchaseOrdersManual");
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

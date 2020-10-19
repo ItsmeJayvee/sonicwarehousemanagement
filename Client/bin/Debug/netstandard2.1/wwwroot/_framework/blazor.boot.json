@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "SonicWarehouseManagement.Client.dll": "sha256-Y\/8+vQyM\/1hacHpZy25FwNMEyZy3pcBKwJT1H0BFQkU=",
+      "SonicWarehouseManagement.Client.dll": "sha256-01AsoJO3u28TM8rmNL8tNf4iQA\/WvdncpJjkNrf3LYY=",
       "Microsoft.AspNetCore.Blazor.HttpClient.dll": "sha256-1xfOnnlZZg19s2R3vH\/UX9m3dprauIFLdeaYzgmiwc0=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
@@ -71,7 +71,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "SonicWarehouseManagement.Client.pdb": "sha256-1DM3EmHKuxh\/xHh9e5pyAPJVeJHLmGGPOccYkbvd\/uA=",
+      "SonicWarehouseManagement.Client.pdb": "sha256-6afZNqP5G1YrLLEE2efpUmxHtAWPYAOvlUrId4RFtWw=",
       "SonicWarehouseManagement.Shared.pdb": "sha256-uRF7rHgoeaCp3ONxLO\/fAdOvDgXkZZ3QEK5RGFFQUrE="
     },
     "runtime": {
