@@ -802,6 +802,237 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.ToTable("Purchase_Orders");
                 });
 
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.SalesOrder", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Article_Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cases")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cases_Pieces")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Free_Qty_CS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Free_Qty_PC")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_N")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Qty_CS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Qty_PC")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Document_Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Free_CS_PS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Free_Cases")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Free_Piece")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Item_Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Material_N")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Net_Sales")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.Property<string>("Order_Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Order_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Order_Type_Desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Outlet_Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Outlet_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pack_Size")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pieces")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Route_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Route_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SO_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Sales_Value")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.Property<string>("Salesman")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salesman_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Terms_of_payment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Turnover_Value")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.Property<decimal>("VAT_Value")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Sales_Orders");
+                });
+
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.SalesOrderDetails", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Article_Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cases")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cases_Pieces")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Qty_CS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Qty_PC")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Free_CS_PS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Free_Cases")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Free_Piece")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Header_ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Item_Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Material_N")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Net_Sales")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.Property<string>("Pack_Size")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pieces")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Sales_Value")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.Property<decimal>("VAT_Value")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("SalesOrder_Details");
+                });
+
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.SalesOrderHeaders", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Delivery_Free_Qty_CS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_Free_Qty_PC")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Delivery_N")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Document_Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Order_Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Order_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Order_Type_Desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Outlet_Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Outlet_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Route_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Route_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SO_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Salesman")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salesman_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Terms_of_payment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Turnover_Value")
+                        .HasColumnType("decimal(18, 4)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("SalesOrder_Headers");
+                });
+
             modelBuilder.Entity("SonicWarehouseManagement.Shared.SalesmanMaster", b =>
                 {
                     b.Property<int>("Id")

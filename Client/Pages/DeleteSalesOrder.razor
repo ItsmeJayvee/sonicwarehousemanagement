@@ -1,0 +1,68 @@
+﻿@page "/deletesalesorder/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Delete sales order</h3>
+<hr />
+<p>Are you sure you want to delete this sales order?</p>
+<br />
+
+<div class="col-md-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">Order number</th>
+                <th style="font-size: small;">Sales order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-size: small;">@solist.Order_Number</td>
+                <td style="font-size: small;">@solist.SO_Date</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <input type="button" class="btn btn-danger" @onclick="@deletesalesorder" value="Delete" />
+        <input type="button" class="btn btn-primary" @onclick="@cancel" value="Cancel" />
+    </div>
+</div>
+
+@code {
+    SalesOrder solist = new SalesOrder();
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        solist = await Http.GetJsonAsync<SalesOrder>("api/SalesOrders/" + id);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected =>
+        hubCon.State == HubConnectionState.Connected;
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    public async Task deletesalesorder()
+    {
+        await Http.DeleteAsync("api/SalesOrders/" + id);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("salesorderlist");
+    }
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("salesorderlist");
+    }
+}

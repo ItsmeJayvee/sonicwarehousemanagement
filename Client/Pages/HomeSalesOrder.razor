@@ -1,0 +1,81 @@
+﻿@page "/salesorderlist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Sales order</h2>
+<hr />
+<a href="/addsalesorder" class="btn btn-primary">Add new sales order</a>
+<hr />
+@if (solist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">ID</th>
+                <th style="font-size: small;">Order number</th>
+                <th style="font-size: small;">Sales order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var so in solist)
+            {
+                <tr>
+                    <td style="font-size: small;">@so.ID</td>
+                    <td style="font-size: small;">@so.Order_Number</td>
+                    <td style="font-size: small;">@so.SO_Date</td>
+                    <td>
+                        <a style="font-size: small;" href="/editsalesorder/@so.ID" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletesalesorder/@so.ID" class="btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    SalesOrder[] solist;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        solist = await Http.GetJsonAsync<SalesOrder[]>("api/SalesOrders");
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

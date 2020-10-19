@@ -65,7 +65,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-JL5nlX2itKs\/ATY8bW\/Xq5+NU\/NTF8kQHwm9ENBNuSA=",
+      "hash": "sha256-Fh9mssJfjmsXqRmv0tZIdI8D6cNpNIx9qDIMRP+Z74I=",
       "url": "_framework\/_bin\/SonicWarehouseManagement.Client.dll"
     },
     {
@@ -273,7 +273,7 @@
       "url": "_framework\/_bin\/Microsoft.AspNetCore.Components.dll"
     },
     {
-      "hash": "sha256-57Nt58ijG+94nsc+fD3peSOuSYAKn\/ET6EG6+\/HA6Ss=",
+      "hash": "sha256-HSrN1XZNudSYMIqgiPojEeRO0\/946XN4mF+69RLOlrc=",
       "url": "_framework\/_bin\/SonicWarehouseManagement.Shared.dll"
     },
     {
@@ -317,11 +317,11 @@
       "url": "_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-lEKlT+o6kJWwm\/C9\/W+OV91snsxzKeQc\/pi9vZWgV6o=",
+      "hash": "sha256-PqZ6sPY9pLi97xZWXwSmM5XR8A6J\/9JtRErIC+QwAiQ=",
       "url": "_framework\/_bin\/SonicWarehouseManagement.Client.pdb"
     },
     {
-      "hash": "sha256-uRF7rHgoeaCp3ONxLO\/fAdOvDgXkZZ3QEK5RGFFQUrE=",
+      "hash": "sha256-pTxXngMoJzX9vBvTgaruIQJMF7aipc0jPksMsVAbOas=",
       "url": "_framework\/_bin\/SonicWarehouseManagement.Shared.pdb"
     },
     {
@@ -341,9 +341,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-WPgYN27CmxNupV\/ojSdn+IN8jqz35ukHwGaxxXQAoEk=",
+      "hash": "sha256-CW0pVb4Ug\/Ii9EJfpAPhpvzIngU+b+Di7\/KEYchbvMc=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "USKSD5KR"
+  "version": "vRziNZ+9"
 };
