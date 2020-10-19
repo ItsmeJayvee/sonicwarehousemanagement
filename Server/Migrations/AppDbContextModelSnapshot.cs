@@ -705,6 +705,47 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.ToTable("Invoice_Headers");
                 });
 
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.PurchaseOrder", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Article_Doc")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Bill_Doc")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<DateTime>("Document_Date")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Item_Code")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Item_Desc")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<DateTime>("Posting_Date")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Site")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Purchase_Orders");
+                });
+
             modelBuilder.Entity("SonicWarehouseManagement.Shared.SalesmanMaster", b =>
                 {
                     b.Property<int>("Id")
