@@ -23,15 +23,15 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/SalesInvoiceUploader
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ISR_DailySalesInvoice>>> GetISR_Daily_Sales_Invoices()
+        public async Task<ActionResult<IEnumerable<SalesInvoice>>> GetISR_Daily_Sales_Invoices()
         {
-            return await _context.ISR_Daily_Sales_Invoices.ToListAsync();
+            return await _context.Sales_Invoice.ToListAsync();
         }
         [HttpGet("GetPreventDuplicate/{site}/{cal_day}/{gsv}")]
-        public async Task<ActionResult<IEnumerable<ISR_DailySalesInvoice>>> GetPreventDuplicate(string site, DateTime cal_day, decimal gsv)
+        public async Task<ActionResult<IEnumerable<SalesInvoice>>> GetPreventDuplicate(string site, DateTime cal_day, decimal gsv)
         {
 
-            decimal isr_Daily_Sales_Invoice = _context.ISR_Daily_Sales_Invoices
+            decimal isr_Daily_Sales_Invoice = _context.Sales_Invoice
                                                     .Where(curSite => curSite.Site == site)
                                                     .Where(calendayDay => calendayDay.Calendar_Day == cal_day).Sum(b => b.GSV);
             if (isr_Daily_Sales_Invoice == 0)
@@ -46,18 +46,18 @@ namespace SonicWarehouseManagement.Server.Controllers
                 }
                 else
                 {
-                    var deleteDaily = _context.ISR_Daily_Sales_Invoices
+                    var deleteDaily = _context.Sales_Invoice
                                                     .Where(curSite => curSite.Site == site)
                                                     .Where(calendayDay => calendayDay.Calendar_Day == cal_day).ToList();
-                    _context.ISR_Daily_Sales_Invoices.RemoveRange(deleteDaily);
+                    _context.Sales_Invoice.RemoveRange(deleteDaily);
                     _context.SaveChanges();
 
                     var detailsMSG = await DeleteDetails(site, cal_day);
 
                     if (detailsMSG == "Finished")
                     {
-                        var deleteHeaders = _context.Invoice_Headers.Where(g => g.Calendar_Day == cal_day).Where(b => b.Site == site).ToList();
-                        _context.Invoice_Headers.RemoveRange(deleteHeaders);
+                        var deleteHeaders = _context.SalesInvoice_Headers.Where(g => g.Calendar_Day == cal_day).Where(b => b.Site == site).ToList();
+                        _context.SalesInvoice_Headers.RemoveRange(deleteHeaders);
                         _context.SaveChanges();
                     }
 
@@ -69,7 +69,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         public async Task<string> DeleteDetails(string site, DateTime cal_day)
         {
             List<int> listOfHeader = new List<int>();
-            var getHeaderIDs = await _context.Invoice_Headers.Where(g => g.Calendar_Day == cal_day).Where(b => b.Site == site).Select(g => g.ID).ToListAsync();
+            var getHeaderIDs = await _context.SalesInvoice_Headers.Where(g => g.Calendar_Day == cal_day).Where(b => b.Site == site).Select(g => g.ID).ToListAsync();
             foreach (var getHead in getHeaderIDs)
             {
                 listOfHeader.Add(getHead);
@@ -77,17 +77,17 @@ namespace SonicWarehouseManagement.Server.Controllers
 
             for (int x = 0; x < listOfHeader.Count(); x++)
             {
-                var deleteDetails = _context.Invoice_Details.Where(g => g.Header_ID == listOfHeader[x]).ToList();
-                _context.Invoice_Details.RemoveRange(deleteDetails);
+                var deleteDetails = _context.SalesInvoice_Details.Where(g => g.Header_ID == listOfHeader[x]).ToList();
+                _context.SalesInvoice_Details.RemoveRange(deleteDetails);
                 _context.SaveChanges();
             }
             return "Finished";
         }
         // GET: api/SalesInvoiceUploader/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ISR_DailySalesInvoice>> GetISR_DailySalesInvoice(int id)
+        public async Task<ActionResult<SalesInvoice>> GetISR_DailySalesInvoice(int id)
         {
-            var iSR_DailySalesInvoice = await _context.ISR_Daily_Sales_Invoices.FindAsync(id);
+            var iSR_DailySalesInvoice = await _context.Sales_Invoice.FindAsync(id);
 
             if (iSR_DailySalesInvoice == null)
             {
@@ -101,7 +101,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutISR_DailySalesInvoice(int id, ISR_DailySalesInvoice iSR_DailySalesInvoice)
+        public async Task<IActionResult> PutISR_DailySalesInvoice(int id, SalesInvoice iSR_DailySalesInvoice)
         {
             if (id != iSR_DailySalesInvoice.ID)
             {
@@ -133,9 +133,9 @@ namespace SonicWarehouseManagement.Server.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<ISR_DailySalesInvoice>> PostISR_DailySalesInvoice(ISR_DailySalesInvoice iSR_DailySalesInvoice)
+        public async Task<ActionResult<SalesInvoice>> PostISR_DailySalesInvoice(SalesInvoice iSR_DailySalesInvoice)
         {
-            _context.ISR_Daily_Sales_Invoices.Add(iSR_DailySalesInvoice);
+            _context.Sales_Invoice.Add(iSR_DailySalesInvoice);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetISR_DailySalesInvoice", new { id = iSR_DailySalesInvoice.ID }, iSR_DailySalesInvoice);
@@ -143,15 +143,15 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // DELETE: api/SalesInvoiceUploader/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ISR_DailySalesInvoice>> DeleteISR_DailySalesInvoice(int id)
+        public async Task<ActionResult<SalesInvoice>> DeleteISR_DailySalesInvoice(int id)
         {
-            var iSR_DailySalesInvoice = await _context.ISR_Daily_Sales_Invoices.FindAsync(id);
+            var iSR_DailySalesInvoice = await _context.Sales_Invoice.FindAsync(id);
             if (iSR_DailySalesInvoice == null)
             {
                 return NotFound();
             }
 
-            _context.ISR_Daily_Sales_Invoices.Remove(iSR_DailySalesInvoice);
+            _context.Sales_Invoice.Remove(iSR_DailySalesInvoice);
             await _context.SaveChangesAsync();
 
             return iSR_DailySalesInvoice;
@@ -159,7 +159,7 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         private bool ISR_DailySalesInvoiceExists(int id)
         {
-            return _context.ISR_Daily_Sales_Invoices.Any(e => e.ID == id);
+            return _context.Sales_Invoice.Any(e => e.ID == id);
         }
     }
 }

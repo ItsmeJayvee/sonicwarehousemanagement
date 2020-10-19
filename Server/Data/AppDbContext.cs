@@ -17,9 +17,9 @@ namespace SonicWarehouseManagement.Server.Data
 
         public DbSet<ArticleMaster> Article_Masters { get; set; }
         public DbSet<BusinessPartner> Business_Partners { get; set; }
-        public DbSet<InvoiceDetails> Invoice_Details { get; set; }
-        public DbSet<InvoiceHeaders> Invoice_Headers { get; set; }
-        public DbSet<ISR_DailySalesInvoice> ISR_Daily_Sales_Invoices { get; set; }
+        public DbSet<SalesInvoice_Details> SalesInvoice_Details { get; set; }
+        public DbSet<SalesInvoice_Headers> SalesInvoice_Headers { get; set; }
+        public DbSet<SalesInvoice> Sales_Invoice { get; set; }
         public DbSet<SalesmanMaster> Salesman_Masters { get; set; }
         public DbSet<PurchaseOrder> Purchase_Orders { get; set; }
         public DbSet<PurchaseDetails> Purchase_Details { get; set; }

@@ -8,6 +8,10 @@
   <ItemGroup>
     <Compile Remove="Migrations\20201019073733_fifthcreate.cs" />
     <Compile Remove="Migrations\20201019073733_fifthcreate.Designer.cs" />
+    <Compile Remove="Migrations\20201019085429_sixthcreate.cs" />
+    <Compile Remove="Migrations\20201019085429_sixthcreate.Designer.cs" />
+    <Compile Remove="Migrations\20201019085536_sixthcreate.cs" />
+    <Compile Remove="Migrations\20201019085536_sixthcreate.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

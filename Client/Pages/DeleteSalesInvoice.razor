@@ -19,8 +19,8 @@
         </thead>
         <tbody>
             <tr>
-                <td style="font-size: small;">@isr.Invoice_No</td>
-                <td style="font-size: small;">@isr.Calendar_Day</td>
+                <td style="font-size: small;">@si.Invoice_No</td>
+                <td style="font-size: small;">@si.Calendar_Day</td>
             </tr>
         </tbody>
     </table>
@@ -31,7 +31,7 @@
 </div>
 
 @code {
-    ISR_DailySalesInvoice isr = new ISR_DailySalesInvoice();
+    SalesInvoice si = new SalesInvoice();
 
     private HubConnection hubCon;
 
@@ -40,10 +40,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        isr = await Http.GetJsonAsync<ISR_DailySalesInvoice>("api/ISR_DailySalesInvoiceManual/" + id);
+        si = await Http.GetJsonAsync<SalesInvoice>("api/SalesInvoicesManual/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/DailySalesInvoiceManualHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHub"))
             .Build();
 
         await hubCon.StartAsync();
@@ -56,7 +56,7 @@
 
     public async Task deletesalesinvoice()
     {
-        await Http.DeleteAsync("api/ISR_DailySalesInvoiceManual/" + id);
+        await Http.DeleteAsync("api/SalesInvoicesManual/" + id);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("salesinvoicelist");
     }

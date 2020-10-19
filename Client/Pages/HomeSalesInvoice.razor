@@ -8,7 +8,7 @@
 <hr />
 <a href="/addsalesinvoice" class="btn btn-primary">Add new sales invoice  </a>
 <hr />
-@if (isrlist == null)
+@if (silist == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -23,15 +23,15 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var isr in isrlist)
+            @foreach (var si in silist)
             {
                 <tr>
-                    <td style="font-size: small;">@isr.ID</td>
-                    <td style="font-size: small;">@isr.Invoice_No</td>
-                    <td style="font-size: small;">@isr.Calendar_Day</td>
+                    <td style="font-size: small;">@si.ID</td>
+                    <td style="font-size: small;">@si.Invoice_No</td>
+                    <td style="font-size: small;">@si.Calendar_Day</td>
                     <td>
-                        <a style="font-size: small;" href="/editsalesinvoice/@isr.ID" class="btn-sm btn-primary">Edit</a>
-                        <a style="font-size: small;" href="/deletesalesinvoice/@isr.ID" class="btn-sm btn-danger">Delete</a>
+                        <a style="font-size: small;" href="/editsalesinvoice/@si.ID" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletesalesinvoice/@si.ID" class="btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
             }
@@ -40,14 +40,14 @@ else
 }
 
 @code {
-    ISR_DailySalesInvoice[] isrlist;
+    SalesInvoice[] silist;
 
     private HubConnection hubCon;
 
     protected override async Task OnInitializedAsync()
     {
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/DailySalesInvoiceManualHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHub"))
             .Build();
 
         hubCon.On("ReceiveMessage", () =>
@@ -70,7 +70,7 @@ else
 
     protected async Task LoadData()
     {
-        isrlist = await Http.GetJsonAsync<ISR_DailySalesInvoice[]>("api/ISR_DailySalesInvoiceManual");
+        silist = await Http.GetJsonAsync<SalesInvoice[]>("api/SalesInvoicesManual");
         StateHasChanged();
     }
 
