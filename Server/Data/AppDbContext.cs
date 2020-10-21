@@ -30,5 +30,6 @@ namespace SonicWarehouseManagement.Server.Data
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<DeliveryReceipt> Delivery_Receipts { get; set; }
+        public DbSet<BusinessUnit> Business_Units { get; set; }
     }
 }
