@@ -71,6 +71,9 @@ namespace SonicWarehouseManagement.Server
                 endpoints.MapHub<SalesmanHub>("/SalesmanHub");
                 endpoints.MapHub<PurchaseOrderManualHub>("/PurchaseOrderManualHub");
                 endpoints.MapHub<SalesOrderHub>("/SalesOrderHub");
+                endpoints.MapHub<WarehouseHub>("/WarehouseHub");
+                endpoints.MapHub<LocationHub>("/LocationHub");
+                endpoints.MapHub<DeliveryReceiptHub>("/DeliveryReceiptHub");
                 endpoints.MapFallbackToFile("index.html");
             });
         }

@@ -27,5 +27,8 @@ namespace SonicWarehouseManagement.Server.Data
         public DbSet<SalesOrder> Sales_Orders { get; set; }
         public DbSet<SalesOrderHeaders> SalesOrder_Headers { get; set; }
         public DbSet<SalesOrderDetails> SalesOrder_Details { get; set; }
+        public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<DeliveryReceipt> Delivery_Receipts { get; set; }
     }
 }

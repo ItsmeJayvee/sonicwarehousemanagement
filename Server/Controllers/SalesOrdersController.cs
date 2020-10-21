@@ -42,6 +42,19 @@ namespace SonicWarehouseManagement.Server.Controllers
             return salesOrder;
         }
 
+        [HttpGet("GetAllSO")]
+        public async Task<ActionResult<SalesOrder>> GetAllSalesOrder()
+        {
+            var salesOrder = await _context.Sales_Orders.Select(i => i.Order_Number).Distinct().ToListAsync();
+
+            if (salesOrder == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(salesOrder);
+        }
+
         // PUT: api/SalesOrders/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

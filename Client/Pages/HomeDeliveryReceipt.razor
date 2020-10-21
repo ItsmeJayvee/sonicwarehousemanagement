@@ -1,0 +1,82 @@
+﻿@page "/deliveryreceiptlist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Delivery Receipt</h2>
+<hr />
+<a href="/adddeliveryreceipt" class="btn btn-primary">Create new delivery receipt</a>
+<hr />
+@if (drlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: small;">ID</th>
+                <th style="font-size: small;">Article Code</th>
+                <th style="font-size: small;">Article Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dr in drlist)
+            {
+                <tr>
+                    <td style="font-size: small;">@dr.ID</td>
+                    <td style="font-size: small;">@dr.Delivery_Receipt_No</td>
+                    <td style="font-size: small;">@dr.Delivery_Due_Date</td>
+                    <td>
+                        <a style="font-size: small;" href="/editdeliveryreceipt/@dr.ID" class="btn-sm btn-primary">Edit</a>
+                        <a style="font-size: small;" href="/deletedeliveryreceipt/@dr.ID" class="btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    DeliveryReceipt[] drlist;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/DeliveryReceiptHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        drlist = await Http.GetJsonAsync<DeliveryReceipt[]>("api/DeliveryReceipts");
+
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}
