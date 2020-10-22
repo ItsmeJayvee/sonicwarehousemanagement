@@ -1027,8 +1027,6 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\bin\Debug\netco
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.csprojAssemblyReference.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.AssemblyInfoInputs.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.AssemblyInfo.cs
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.csproj.CoreCompileInputs.cache
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.RazorAssemblyInfo.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.RazorAssemblyInfo.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.TagHelpers.input.cache
@@ -1045,3 +1043,5 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netco
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.dll
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.pdb
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.genruntimeconfig.cache
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.csproj.CoreCompileInputs.cache
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.MvcApplicationPartsAssemblyInfo.cache

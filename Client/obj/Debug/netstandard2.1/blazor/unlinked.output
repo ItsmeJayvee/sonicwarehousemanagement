@@ -1,5 +1,4 @@
 obj\Debug\netstandard2.1\blazor\unlinked\SonicWarehouseManagement.Client.dll
-obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Blazor.HttpClient.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Text.Json.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Runtime.CompilerServices.Unsafe.dll
 obj\Debug\netstandard2.1\blazor\unlinked\mscorlib.dll
@@ -29,6 +28,7 @@ obj\Debug\netstandard2.1\blazor\unlinked\System.Data.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Threading.Tasks.Extensions.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Numerics.Vectors.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Text.Encodings.Web.dll
+obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Blazor.HttpClient.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.SignalR.Client.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.SignalR.Common.dll

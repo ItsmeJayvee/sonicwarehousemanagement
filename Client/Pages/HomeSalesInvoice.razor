@@ -1,6 +1,7 @@
 ﻿@page "/salesinvoicelist"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
@@ -8,7 +9,7 @@
 <hr />
 <a href="/addsalesinvoice" class="btn btn-primary">Create new sales invoice</a>
 <hr />
-@if (silist == null)
+@if (Items == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -23,7 +24,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var si in silist)
+            @foreach (var si in Items)
             {
                 <tr>
                     <td style="font-size: small;">@si.ID</td>
@@ -37,18 +38,22 @@ else
             }
         </tbody>
     </table>
+    <Pagination TotalPagesQuantity="totalPageQuantity" CurrentPage="currentPage" Radius="2" SelectedPage="SelectedPage"></Pagination>
 }
 
 @code {
-    SalesInvoice[] silist;
+    SalesInvoice_Headers[] Items;
+
+    private int totalPageQuantity;
+    private int currentPage = 1;
 
     private HubConnection hubCon;
 
     protected override async Task OnInitializedAsync()
     {
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHeadersHub"))
+        .Build();
 
         hubCon.On("ReceiveMessage", () =>
         {
@@ -68,14 +73,35 @@ else
         });
     }
 
-    protected async Task LoadData()
+    private async Task SelectedPage(int page)
     {
-        silist = await Http.GetJsonAsync<SalesInvoice[]>("api/SalesInvoicesManual");
-        StateHasChanged();
+        currentPage = page;
+        await LoadData(page);
+    }
+
+    protected async Task LoadData(int page = 1, int quantityPerPage = 10)
+    {
+        var httpResponse = await Http.GetAsync($"api/SalesInvoiceHeadersIndex?page={page}&quantityPerPage={quantityPerPage}");
+
+        if(httpResponse.IsSuccessStatusCode)
+        {
+            totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            Items = JsonSerializer.Deserialize<SalesInvoice_Headers[]>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            StateHasChanged();
+        }
+        else
+        {
+            //Error handler
+        }
+
     }
 
     public void Dispose()
     {
         _ = hubCon.DisposeAsync();
     }
+
+
 }

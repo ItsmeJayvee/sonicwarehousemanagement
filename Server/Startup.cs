@@ -67,8 +67,8 @@ namespace SonicWarehouseManagement.Server
                 endpoints.MapControllers();
                 endpoints.MapHub<ArticleHub>("/ArticleHub");
                 endpoints.MapHub<BusinessPartnerHub>("/BusinessPartnerHub");
-                endpoints.MapHub<SalesInvoiceHub>("/SalesInvoiceHub");
                 endpoints.MapHub<SalesmanHub>("/SalesmanHub");
+                endpoints.MapHub<SalesInvoiceHeadersHub>("/SalesInvoiceHeadersHub");
                 endpoints.MapHub<PurchaseOrderManualHub>("/PurchaseOrderManualHub");
                 endpoints.MapHub<SalesOrderHub>("/SalesOrderHub");
                 endpoints.MapHub<WarehouseHub>("/WarehouseHub");
