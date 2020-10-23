@@ -1,62 +1,62 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\AqtOFybl8RVdi8GHnd3PJDLa0b24Sc033MHYscrgvpY=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\edmKSYvyWXgClqtsgofFjTX2Dk32bc5pfyRPogB7B-k=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Blazor.HttpClient.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Blazor.HttpClient.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\vSMj__PsQUs34j0n4dcUeSt39RaMkJMaz5ZKRhQUWWI=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\CNw353n8cwIF2HkpCtgCMwniUCdqdbZforymDaeoGAQ=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kJoSAUozJmHETuRct4rtFnAEEKviBJixbHyMCU_r6wY=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\HgTGb8gW1G0aX00wcJBzhl_6fq92gBTRiiFok5HUKpM=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6At9w_ZzbtVLYkRvEhXvI1bbIetsBDXWZm1TfNpz_-k=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ur6pFKCNTPfJ4yQe0R9j2DDVvNvMmujou2Istppts8Y=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3e9YELJ7bxgUxWeIVSBGMQB_FVtAgonF7tBQYPN0VPE=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\M5IkNYZK6dj55kMkMY2Z43nKLIwab4K0NiqlE7Nn0Xg=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Connections.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Connections.Abstractions.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\FWltApqXR7szUOOaNc1kPPomfWzkASa3s5uB-MEviWE=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ahUxo86RD5JEtGroGvBDF5YUIwN2Z_kSk2gauOQQlL4=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Http.Connections.Client.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Http.Connections.Client.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\pp7_-BcJNjUbS4NSjYOWeUQ7jFk5OC2BmoU87eS9gPk=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\qojABdTjfZIbTrjbIM6jLBdfWwwON0xPwO_Cda0FvDs=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Http.Connections.Common.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Http.Connections.Common.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xqGSGf1BNDJ--bHPNdgAMWTkJMtdckVSpSnh-2b2tfA=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\nO728Q_m4ujhT_xbYhOvFrfTqJJgAXtc3oIX0JnP-l0=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Http.Features.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Http.Features.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\sAYHs88e_Oxn_04ydSTvL5hiag9DPM-NbjAxpgf-foU=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\niYSLBzX_QTkt6zmpHhqTWhM6w3P-ic-cYKTS5seg-w=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.SignalR.Client.Core.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.SignalR.Client.Core.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fbMxb-tWsw6KOMrSuIA6zgNj8Cql7x4nrXEmO6vTdtI=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\dnJWZ0p9--7NhYZ-MtzUsCi5qssT567iMgIZcfbt8e8=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.SignalR.Client.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.SignalR.Client.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\rQNHSx5Tfxhe8nw8xK07MdFDioAFVJzo9w3YxZadvSQ=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Z_TQ9vY_LCFVSACEl3zQvOr51UaODsdVL8nwOtNaUSQ=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.SignalR.Common.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.SignalR.Common.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\dgkS3pV5JiPP6K9TV97d-CI3wYWHG1YoTDuy5Fehros=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\uT9xmGALvWPwNsNoDO-Ljd_0Gmx--CpkNhV_ht1WlVc=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.SignalR.Protocols.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.SignalR.Protocols.Json.dll.br"
     },
@@ -66,47 +66,47 @@
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\anChKx4IMbK1U8Wsm8Uigt0oaZU3aRxLeAik0PEFRys=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\NbbkJuWzriGMSfT5E-STAHTaSIbyoSoyDtaRSYbsE2U=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\DPBaZ8Ghoz01-cRUtzLELqT9tDOPo9ZhtX1yDFHtIQE=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\9nZv_fy4DLrfHJerY1boTzrTEpr09gVHP9qEIEU9wDA=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6bm8fnMW53q7Wbn0W9Bh-K2uSd7bnn-Gs3Zc5TO2Of0=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\EhUZWAnDQsIr6XwJY8Qv1M4Jm_b1jEnSqqv68VHvhts=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\NeWYUgMnHjtBm59d8ycK_QufiGnp0lRHDkL9Qv1i0To=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kQQAdd1MFpi86x6yEZQ4R73L5ZepryKcRtKlVl6XtcE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xFrRHw3oy-sLg6DPd3EcfmTreM_Pbid-nhvoWEF66Kw=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\VICgBrm-qzWe2WgWuXAUzgsONmppdL7fCef32ErQuTI=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\dUmylFykQ6GaUMkMalcklHFsuusLiWfuoOHdm416hvA=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\IPy1c1xP3qBywYM1ivqBUXrXE2cWi2scvsTTpmDZTfk=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\27K4ls5fuavjjJunSoCKTVbq2QJIpgF6hMapze0tK5A=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\bNMyEHRa_wqSkDgpVLs4ypTffXkAu8y8VqfIjuKitmE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_H2fv1_fA3ksXDJSURTeZ1OWpOzOmzotEN8QHS6XQxA=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\2ZxV9wBZvE_JncwJz-HqwII8zdd5iy374oB7iTIGIYM=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Options.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\aT4sNzI_k_3S0DtCx4qiE8r3Wq_aNzOxtZOTptREJTQ=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\LJZvOu1txEh-prgMOVRG6D1MUDgNfKXzQg-wDTAmHuE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Primitives.dll.br"
     },
@@ -121,17 +121,17 @@
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\8gijQr1Gciy_Jq-w6vcuvonshq5KXGW-kdBdehkFMlo=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\o3Coiqm-vEHlb5xmHKUQd6PU1lEqYVLFDC-xXwwWA4s=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Mono.Security.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Mono.Security.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\E0iYFk9sCTpOKtIEYems1FPsQPjS32uDJOOD_vA3Ntc=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fPDSxCEWzWPrAs6PT65pIzIf2Gm4lKtbVy8h8ZBXuyw=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/mscorlib.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mnQtwuP22fKptmqOXTmESyAgpAbFjHgnAqp88qNuHQc=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\r5P15VqWS6DcLUi-WdWJ4ABU51F9iX3FJvIer4p1_14=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\SonicWarehouseManagement.Client.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Client.dll.br"
     },
@@ -141,62 +141,62 @@
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Shared.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\P6YCbgByQiTv2Dk4JTV0o24omD4wYK531CcXu23lVEA=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kwJ61IJ3kFIFW0O4Q4cosjsat1N_r00n_PEQLPA4_T8=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.ComponentModel.DataAnnotations.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.ComponentModel.DataAnnotations.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gjpq8gWQEgRjMKERjEhhWK1u1j4w8ewDlcGVveLAwlk=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UibwsPybOOO37mes9EKHM_d2a9RrSeq7wJEnp_SCgnE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Core.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\y_F6B28Aj9S4SidVZszUTfa7D-1R5y6xYbvRA434aE4=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\nZZcqL52UbmZL9zQgY_fIQFFLNTLJ35wsXJ0Yr0VGLM=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KRrCpqsqK5zW7OFsVQuLAi3xRRJweVEj889dfNIFOB4=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\-3tplBJx7tqnoSgOkzvUeWqKKY0hPwNQMc6re99f4as=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.IO.Pipelines.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.IO.Pipelines.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\vR8RbYzfjzwuqky14-sxM6CFw8Z-vCvxZgorkUNqw7E=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SEhnCYFSXzq5YqkVe-Q4OmlCrZ_RNRypIPoUvQjuPaw=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\YJB1FE_hAO802012Scx3f890umNOXRd2yQQ6-aXnjV8=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Ec7MhHaYNReXhMu8mnk27hWgdu0znBXii5kujVTNFvE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\4LIWn7nciLP5aRbo10ibPqrnbD630hSlLmDLSDFOj0g=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\IJLvO9DLvTdBsVtt9hIwC99r5u2RanCM6ASrU0dXKIM=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\EfrmYc5qLIma-577KfMM2UAJeDLmj2rlyzcLeIujkLk=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gxLjo0d-3xWClIjQ4fXQsnlB-vnGpeUnqVgBCiABeTI=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xVT4MNb8H2f2Ym-LS3HMSsETc-HImGl2yWdhFzq6Z2o=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\u-_uCiMCGtPRQcDvwBOexEB68ES6ZFCJRC6Lyc1f9TI=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\512GJPVIJqdQjG2sopeHw1oP3ZQ7ow1PfwfkzpVe-pE=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\tKUILcXXOdrVCkJN-JKrvQbQ-rPuVjI72JUZ1F3WPFE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Threading.Channels.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Threading.Channels.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\-Gl_utAG4oODdLp6o41UO1OigDnlyv91z7ejQafa4u0=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mi3l-ZJgS1LAcHdzgv_sOTayKybF3zDEne3h5xBAARw=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Bindings.dll.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gWNAxBx-OtwDIbpnLiLG_LPpvORwIP165a8ohVwvG74=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\BjajDcOkV8vWTDvfq47anuhfFrlJYM50WBBi5XC-SiI=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Net.WebSockets.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Net.WebSockets.dll.br"
     },
@@ -221,12 +221,12 @@
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kehPQM10Gl6VQDsjF_PR2zqEmw1tvY2uImjm4uFz4wY=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SFMEN2CWrARwaqs3mw2AP8PdoxYs-mdAlS6COBJKfLU=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\-QEgK9ghl2ueLmOkesLjqCxDqbpE5_OoZ23g6pHhpns=.hash",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\1iqQ_MYfnbVId7DgeFZSUQfc92R2BVoynupXMXg9Itk=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\git\\sonicwarehousemanagement\\Client\\obj\\Release\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\service-worker-assets.js.br"
     }

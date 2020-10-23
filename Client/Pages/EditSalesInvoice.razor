@@ -1,252 +1,99 @@
-﻿@*@page "/editsalesinvoice/{id}"
+﻿@page "/editsalesinvoice/{id}"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<h2>Edit sales invoice</h2>
-<hr />
-<form>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="form-group">
-                <label for="distributor" class="control-label">Distributor</label>
-                <input form="distributor" class="form-control" @bind="@si.Distributor" />
-            </div>
-            <div class="form-group">
-                <label for="distributordesc" class="control-label">Distributor description</label>
-                <input form="distributordesc" class="form-control" @bind="@si.Distributor_Desc" />
-            </div>
-            <div class="form-group">
-                <label for="site" class="control-label">Site</label>
-                <input form="site" class="form-control" @bind="@si.Site" />
-            </div>
-            <div class="form-group">
-                <label for="sitedesc" class="control-label">Site description</label>
-                <input form="sitedesc" class="form-control" @bind="@si.Site_Desc" />
-            </div>
-            <div class="form-group">
-                <label for="salesroute" class="control-label">Sales route</label>
-                <input form="salesroute" class="form-control" @bind="@si.Sales_Route" />
-            </div>
-            <div class="form-group">
-                <label for="routedescription" class="control-label">Route description</label>
-                <input form="routedescription" class="form-control" @bind="@si.Route_Desc" />
-            </div>
-            <div class="form-group">
-                <label for="outletcode" class="control-label">Outlet code</label>
-                <input form="outletcode" class="form-control" @bind="@si.Outlet_Code" />
-            </div>
-            <div class="form-group">
-                <label for="outletname" class="control-label">Outlet name</label>
-                <input form="outletname" class="form-control" @bind="@si.Outlet_Name" />
-            </div>
-            <div class="form-group">
-                <label for="masterfss" class="control-label">Master fss</label>
-                <input form="masterfss" class="form-control" @bind="@si.Master_FSS" />
-            </div>
-            <div class="form-group">
-                <label for="masterfssname" class="control-label">Master fss name</label>
-                <input form="masterfssname" class="form-control" @bind="@si.Master_FSS_Name" />
-            </div>
-            <div class="form-group">
-                <label for="salesmanteamtype" class="control-label">Salesman team type</label>
-                <input form="salesmanteamtype" class="form-control" @bind="@si.Salesman_Team_Type" />
-            </div>
-            <div class="form-group">
-                <label for="salesmanteamtypedesc" class="control-label">Salesman team type description</label>
-                <input form="salesmanteamtypedesc" class="form-control" @bind="@si.Salesman_Team_Type_Desc" />
-            </div>
-            <div class="form-group">
-                <label for="calendarday" class="control-label">Calendar day</label>
-                <input form="calendarday" class="form-control" @bind="@si.Calendar_Day" />
-            </div>
-            <div class="form-group">
-                <label for="invoiceduedate" class="control-label">Invoice due date</label>
-                <input form="invoiceduedate" class="form-control" @bind="@si.Invoice_Due_Date" />
-            </div>
-            <div class="form-group">
-                <label for="purchaseorderno" class="control-label">Purchase order no</label>
-                <input form="purchaseorderno" class="form-control" @bind="@si.Purchase_Order_No" />
-            </div>
-            <div class="form-group">
-                <label for="mobile" class="control-label">Mobile</label>
-                <input form="mobile" class="form-control" @bind="@si.Sales_Order_No" />
-            </div>
-            <div class="form-group">
-                <label for="invoicenum" class="control-label">Invoice no</label>
-                <input form="invoicenum" class="form-control" @bind="@si.Invoice_No" />
-            </div>
-            <div class="form-group">
-                <label for="billingtype" class="control-label">Billing type</label>
-                <input form="billingtype" class="form-control" @bind="@si.Billing_Type" />
-            </div>
-            <div class="form-group">
-                <label for="billingtype1" class="control-label">Billing type 1</label>
-                <input form="billingtype1" class="form-control" @bind="@si.Billing_Type_1" />
-            </div>
-            <div class="form-group">
-                <label for="termsofpayment" class="control-label">Terms of payment</label>
-                <input form="termsofpayment" class="form-control" @bind="@si.Terms_Of_Payment" />
-            </div>
-            <div class="form-group">
-                <label for="masteroutletsubtype" class="control-label">Master outlet subtype</label>
-                <input form="masteroutletsubtype" class="form-control" @bind="@si.Master_Outlet_Subtype" />
-            </div>
-            <div class="form-group">
-                <label for="masteroutletsubtypename" class="control-label">Master outlet subtype name</label>
-                <input form="masteroutletsubtypename" class="form-control" @bind="@si.Master_Outlet_Subtype_Name" />
-            </div>
-            <div class="form-group">
-                <label for="masteroutletcity" class="control-label">Master outlet city</label>
-                <input form="masteroutletcity" class="form-control" @bind="@si.Master_Outlet_City" />
-            </div>
-            <div class="form-group">
-                <label for="masteroutletcityname" class="control-label">Master outlet city name</label>
-                <input form="masteroutletcityname" class="form-control" @bind="@si.Master_Outlet_City_Name" />
-            </div>
-            <div class="form-group">
-                <label for="prodid" class="control-label">Product id</label>
-                <input form="prodid" class="form-control" @bind="@si.Product_Id" />
-            </div>
-            <div class="form-group">
-                <label for="prodname" class="control-label">Product name</label>
-                <input form="prodname" class="form-control" @bind="@si.Product_Name" />
-            </div>
-            <div class="form-group">
-                <label for="packsize" class="control-label">Pack size</label>
-                <input form="packsize" class="form-control" @bind="@si.Pack_Size" />
-            </div>
-            <div class="form-group">
-                <label for="masterbrand" class="control-label">Master brand</label>
-                <input form="masterbrand" class="form-control" @bind="@si.Master_Brand" />
-            </div>
-            <div class="form-group">
-                <label for="masterbrandname" class="control-label">Master brand name</label>
-                <input form="masterbrandname" class="form-control" @bind="@si.Master_Brand_Name" />
-            </div>
-            <div class="form-group">
-                <label for="masterbasepack" class="control-label">Master basepack</label>
-                <input form="masterbasepack" class="form-control" @bind="@si.Master_Basepack" />
-            </div>
-            <div class="form-group">
-                <label for="masterbasepackname" class="control-label">Master basepack name</label>
-                <input form="masterbasepackname" class="form-control" @bind="@si.Master_Basepack_Name" />
-            </div>
-            <div class="form-group">
-                <label for="leadbasepack" class="control-label">Lead basepack</label>
-                <input form="leadbasepack" class="form-control" @bind="@si.Lead_Basepack" />
-            </div>
-            <div class="form-group">
-                <label for="salesmanid" class="control-label">Salesman id</label>
-                <input form="salesmanid" class="form-control" @bind="@si.Salesman_Id" />
-            </div>
-            <div class="form-group">
-                <label for="salesmanname" class="control-label">Salesman name</label>
-                <input form="salesmanname" class="form-control" @bind="@si.Salesman_Name" />
-            </div>
-            <div class="form-group">
-                <label for="salesqtycs" class="control-label">Sales qty cs</label>
-                <input form="salesqtycs" class="form-control" @bind="@si.Sales_Qty_CS" />
-            </div>
-            <div class="form-group">
-                <label for="salesqtypc" class="control-label">Sales qty pc</label>
-                <input form="salesqtypc" class="form-control" @bind="@si.Sales_Qty_PC" />
-            </div>
-            <div class="form-group">
-                <label for="freeqtycs" class="control-label">Free qty cs</label>
-                <input form="freeqtycs" class="form-control" @bind="@si.Free_Qty_CS" />
-            </div>
-            <div class="form-group">
-                <label for="freeqtypc" class="control-label">Free qty pc</label>
-                <input form="freeqtypc" class="form-control" @bind="@si.Free_Qty_PC" />
-            </div>
-            <div class="form-group">
-                <label for="salesqtyliter" class="control-label">Sales qty liter</label>
-                <input form="salesqtyliter" class="form-control" @bind="@si.Sales_Qty_Liter" />
-            </div>
-            <div class="form-group">
-                <label for="freeqtyliter" class="control-label">Free qty liter</label>
-                <input form="freeqtyliter" class="form-control" @bind="@si.Free_Qty_Liter" />
-            </div>
-            <div class="form-group">
-                <label for="salesqtyaggrcs" class="control-label">Sales qty aggr cs</label>
-                <input form="salesqtyaggrcs" class="form-control" @bind="@si.Sales_Qty_Aggr_CS" />
-            </div>
-            <div class="form-group">
-                <label for="salesqtyaggrpc" class="control-label">Sales qty aggr pc</label>
-                <input form="salesqtyaggrpc" class="form-control" @bind="@si.Sales_Qty_Aggr_PC" />
-            </div>
-            <div class="form-group">
-                <label for="freeqtyaggrcs" class="control-label">Free qty aggr cs</label>
-                <input form="freeqtyaggrcs" class="form-control" @bind="@si.Free_Qty_Aggr_CS" />
-            </div>
-            <div class="form-group">
-                <label for="freeqtyaggrpc" class="control-label">Free qty aggr pc</label>
-                <input form="freeqtyaggrpc" class="form-control" @bind="@si.Free_Qty_Aggr_PC" />
-            </div>
-            <div class="form-group">
-                <label for="gsv" class="control-label">GSV</label>
-                <input form="gsv" class="form-control" @bind="@si.GSV" />
-            </div>
-            <div class="form-group">
-                <label for="tpr" class="control-label">TPR</label>
-                <input form="tpr" class="form-control" @bind="@si.TPR" />
-            </div>
-            <div class="form-group">
-                <label for="uw" class="control-label">UW</label>
-                <input form="uw" class="form-control" @bind="@si.UW" />
-            </div>
-            <div class="form-group">
-                <label for="dtdiscount" class="control-label">DT discount</label>
-                <input form="dtdiscount" class="form-control" @bind="@si.DT_Discount" />
-            </div>
-            <div class="form-group">
-                <label for="salesafter" class="control-label">Sales after</label>
-                <input form="salesafter" class="form-control" @bind="@si.Sales_After" />
-            </div>
-            <div class="form-group">
-                <label for="voldiscount" class="control-label">Volume discount</label>
-                <input form="voldiscount" class="form-control" @bind="@si.Volume_Discount" />
-            </div>
-            <div class="form-group">
-                <label for="coupdiscount" class="control-label">Coupon discount</label>
-                <input form="coupdiscount" class="form-control" @bind="@si.Coupon_Discount" />
-            </div>
-            <div class="form-group">
-                <label for="niv" class="control-label">NIV</label>
-                <input form="niv" class="form-control" @bind="@si.NIV" />
-            </div>
-            <div class="form-group">
-                <label for="vat" class="control-label">VAT</label>
-                <input form="vat" class="form-control" @bind="@si.VAT" />
-            </div>
-            <div class="form-group">
-                <label for="totalsalesamtinc" class="control-label">Total sales amount inc</label>
-                <input form="totalsalesamtinc" class="form-control" @bind="@si.Total_Sales_Amnt_Inc" />
-            </div>
-            <div class="form-group">
-                <label for="aggrpieces" class="control-label">Aggr pieces</label>
-                <input form="aggrpieces" class="form-control" @bind="@si.Aggr_Pieces" />
-            </div>
-            <div class="form-group">
-                <label for="cabinetcount" class="control-label">Cabinet count</label>
-                <input form="cabinetcount" class="form-control" @bind="@si.Cabinet_Count" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <input type="button" class="btn btn-success" @onclick="@updatesalesinvoice" value="Update" />
-                <input type="button" class="btn btn-danger" @onclick="@cancel" value="Cancel" />
-            </div>
-        </div>
-    </div>
-</form>
-
+    <h2>Edit sales invoice</h2>
+    <hr />
+    <p>Sales Invoice: <b>@si.Invoice_No</b></p>
+    <p>Site: @si.Site - @si.Distributor_Desc</p>
+    <p>Date: @si.Calendar_Day</p>
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th style="font-size: x-small;">Item Id</th>
+                <th style="font-size: x-small;">Item Name</th>
+                <th style="font-size: x-small;">Pack Size</th>
+                <th style="font-size: x-small;">Brand</th>
+                <th style="font-size: x-small;">Brand Name</th>
+                <th style="font-size: x-small;">Basepack</th>
+                <th style="font-size: x-small;">Basepack Name</th>
+                <th style="font-size: x-small;">Lead Basepack</th>
+                <th style="font-size: x-small;">Sales CS</th>
+                <th style="font-size: x-small;">Sales PC</th>
+                <th style="font-size: x-small;">Free CS</th>
+                <th style="font-size: x-small;">Free PC</th>
+                <th style="font-size: x-small;">Sales Liter</th>
+                <th style="font-size: x-small;">Free Liter</th>
+                <th style="font-size: x-small;">Sales Aggr CS</th>
+                <th style="font-size: x-small;">Sales Aggr PC</th>
+                <th style="font-size: x-small;">Free Aggr CS</th>
+                <th style="font-size: x-small;">Free Aggr PC</th>
+                <th style="font-size: x-small;">GSV</th>
+                <th style="font-size: x-small;">TPR</th>
+                <th style="font-size: x-small;">UW</th>
+                <th style="font-size: x-small;">DT Discount</th>
+                <th style="font-size: x-small;">Sales After</th>
+                <th style="font-size: x-small;">Volume Discount</th>
+                <th style="font-size: x-small;">Coupon Discount</th>
+                <th style="font-size: x-small;">NIV</th>
+                <th style="font-size: x-small;">VAT</th>
+                <th style="font-size: x-small;">Total Sales</th>
+                <th style="font-size: x-small;">Aggr Pieces</th>
+                <th style="font-size: x-small;">Cabinet Count</th>
+            </tr>
+        </thead>
+    <tbody>
+            @if (sid == null)
+            {
+                // do nothign
+            }
+            else
+            {
+                @foreach (var items in sid)
+                {
+                    <tr>
+                        <td style="font-size: x-small;">@items.Product_Id</td>
+                        <td style="font-size: x-small;">@items.Product_Name</td>
+                        <td style="font-size: x-small;">@items.Pack_Size</td>
+                        <td style="font-size: x-small;">@items.Master_Brand</td>
+                        <td style="font-size: x-small;">@items.Master_Brand_Name</td>
+                        <td style="font-size: x-small;">@items.Master_Basepack</td>
+                        <td style="font-size: x-small;">@items.Master_Basepack_Name</td>
+                        <td style="font-size: x-small;">@items.Lead_Basepack</td>
+                        <td style="font-size: x-small;">@items.Sales_Qty_CS</td>
+                        <td style="font-size: x-small;">@items.Sales_Qty_PC</td>
+                        <td style="font-size: x-small;">@items.Free_Qty_CS</td>
+                        <td style="font-size: x-small;">@items.Free_Qty_PC</td>
+                        <td style="font-size: x-small;">@items.Sales_Qty_Liter</td>
+                        <td style="font-size: x-small;">@items.Free_Qty_Liter</td>
+                        <td style="font-size: x-small;">@items.Sales_Qty_Aggr_CS</td>
+                        <td style="font-size: x-small;">@items.Sales_Qty_Aggr_PC</td>
+                        <td style="font-size: x-small;">@items.Free_Qty_Aggr_CS</td>
+                        <td style="font-size: x-small;">@items.Free_Qty_Aggr_PC</td>
+                        <td style="font-size: x-small;">@items.GSV</td>
+                        <td style="font-size: x-small;">@items.TPR</td>
+                        <td style="font-size: x-small;">@items.UW</td>
+                        <td style="font-size: x-small;">@items.DT_Discount</td>
+                        <td style="font-size: x-small;">@items.Sales_After</td>
+                        <td style="font-size: x-small;">@items.Volume_Discount</td>
+                        <td style="font-size: x-small;">@items.Coupon_Discount</td>
+                        <td style="font-size: x-small;">@items.NIV</td>
+                        <td style="font-size: x-small;">@items.VAT</td>
+                        <td style="font-size: x-small;">@items.Total_Sales_Amnt_Inc</td>
+                        <td style="font-size: x-small;">@items.Aggr_Pieces</td>
+                        <td style="font-size: x-small;">@items.Cabinet_Count</td>
+                    </tr>
+                }
+            }
+    </tbody>
+</table>
 @code {
-    SalesInvoice si = new SalesInvoice();
+
+    SalesInvoice_Headers si = new SalesInvoice_Headers();
+    SalesInvoice_Details[] sid;
 
     private HubConnection hubCon;
 
@@ -255,10 +102,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        si = await Http.GetJsonAsync<SalesInvoice>("api/SalesInvoicesManual/" + id);
+        si = await Http.GetJsonAsync<SalesInvoice_Headers>("api/SalesInvoiceHeaders/" + id);
+        sid = await Http.GetJsonAsync<SalesInvoice_Details[]>("api/SalesInvoiceDetailsIndex/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHeadersHub"))
             .Build();
 
         await hubCon.StartAsync();
@@ -269,7 +117,7 @@
 
     public async Task updatesalesinvoice()
     {
-        await Http.PutJsonAsync("api/SalesInvoicesManual/" + id, si);
+        await Http.PutJsonAsync("api/SalesInvoiceHeaders/" + id, si);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("salesinvoicelist");
     }
@@ -285,4 +133,4 @@
     {
         _ = hubCon.DisposeAsync();
     }
-}*@
+}
