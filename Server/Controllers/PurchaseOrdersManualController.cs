@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
+using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
 
 namespace SonicWarehouseManagement.Server.Controllers
@@ -23,9 +24,11 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/PurchaseOrdersManual
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PurchaseOrder>>> GetPurchase_Orders()
+        public async Task<ActionResult<IEnumerable<PurchaseOrder>>> GetPurchase_Orders([FromQuery] SalesInvoicePagination pagination)
         {
-            return await _context.Purchase_Orders.ToListAsync();
+            var queryable = _context.Purchase_Orders.AsQueryable();
+            await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
+            return await queryable.Paginate(pagination).ToListAsync();
         }
 
         // GET: api/PurchaseOrdersManual/5

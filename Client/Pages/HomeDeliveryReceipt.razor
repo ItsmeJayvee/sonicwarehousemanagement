@@ -1,6 +1,7 @@
 ﻿@page "/deliveryreceiptlist"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
@@ -37,10 +38,14 @@ else
             }
         </tbody>
     </table>
+    <Pagination TotalPagesQuantity="totalPageQuantity" CurrentPage="currentPage" Radius="2" SelectedPage="SelectedPage"></Pagination>
 }
 
 @code {
     DeliveryReceipt[] drlist;
+
+    private int totalPageQuantity;
+    private int currentPage = 1;
 
     private HubConnection hubCon;
 
@@ -68,11 +73,28 @@ else
         });
     }
 
-    protected async Task LoadData()
+    private async Task SelectedPage(int page)
     {
-        drlist = await Http.GetJsonAsync<DeliveryReceipt[]>("api/DeliveryReceipts");
+        currentPage = page;
+        await LoadData(page);
+    }
 
-        StateHasChanged();
+    protected async Task LoadData(int page = 1, int quantityPerPage = 10)
+    {
+        var httpResponse = await Http.GetAsync($"api/DeliveryReceipts?page={page}&quantityPerPage={quantityPerPage}");
+
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            drlist = JsonSerializer.Deserialize<DeliveryReceipt[]>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            StateHasChanged();
+        }
+        else
+        {
+            //Error handler
+        }
     }
 
     public void Dispose()

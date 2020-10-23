@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
+using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
 
 namespace SonicWarehouseManagement.Server.Controllers
@@ -23,9 +24,11 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/DeliveryReceipts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DeliveryReceipt>>> GetDelivery_Receipts()
+        public async Task<ActionResult<IEnumerable<DeliveryReceipt>>> GetDelivery_Receipts([FromQuery] SalesInvoicePagination pagination)
         {
-            return await _context.Delivery_Receipts.ToListAsync();
+            var queryable = _context.Delivery_Receipts.AsQueryable();
+            await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
+            return await queryable.Paginate(pagination).ToListAsync();
         }
 
         // GET: api/DeliveryReceipts/5

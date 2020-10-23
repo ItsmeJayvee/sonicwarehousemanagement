@@ -1,6 +1,7 @@
 ﻿@page "/salesorderlist"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
@@ -37,10 +38,14 @@ else
             }
         </tbody>
     </table>
+    <Pagination TotalPagesQuantity="totalPageQuantity" CurrentPage="currentPage" Radius="2" SelectedPage="SelectedPage"></Pagination>
 }
 
 @code {
     SalesOrder[] solist;
+
+    private int totalPageQuantity;
+    private int currentPage = 1;
 
     private HubConnection hubCon;
 
@@ -68,14 +73,32 @@ else
         });
     }
 
-    protected async Task LoadData()
+    private async Task SelectedPage(int page)
     {
-        solist = await Http.GetJsonAsync<SalesOrder[]>("api/SalesOrders");
-        StateHasChanged();
+        currentPage = page;
+        await LoadData(page);
+    }
+
+    protected async Task LoadData(int page = 1, int quantityPerPage = 10)
+    {
+         var httpResponse = await Http.GetAsync($"api/SalesOrders?page={page}&quantityPerPage={quantityPerPage}");
+
+        if(httpResponse.IsSuccessStatusCode)
+        {
+            totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            solist = JsonSerializer.Deserialize<SalesOrder[]>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            StateHasChanged();
+        }
+        else
+        {
+            //Error handler
+        }
     }
 
     public void Dispose()
     {
-        _ = hubCon.DisposeAsync();
+    _ = hubCon.DisposeAsync();
     }
 }

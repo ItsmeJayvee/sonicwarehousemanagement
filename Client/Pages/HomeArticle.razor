@@ -1,6 +1,7 @@
 ﻿@page "/articlelist"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
@@ -37,10 +38,14 @@ else
             }
         </tbody>
     </table>
+    <Pagination TotalPagesQuantity="totalPageQuantity" CurrentPage="currentPage" Radius="2" SelectedPage="SelectedPage"></Pagination>
 }
 
 @code {
     ArticleMaster[] amlist;
+
+    private int totalPageQuantity;
+    private int currentPage = 1;
 
     private HubConnection hubCon;
 
@@ -68,10 +73,28 @@ else
         });
     }
 
-    protected async Task LoadData()
+    private async Task SelectedPage(int page)
     {
-        amlist = await Http.GetJsonAsync<ArticleMaster[]>("api/ArticleMasters");
-        StateHasChanged();
+        currentPage = page;
+        await LoadData(page);
+    }
+
+    protected async Task LoadData(int page = 1, int quantityPerPage = 10)
+    {
+        var httpResponse = await Http.GetAsync($"api/ArticleMasters?page={page}&quantityPerPage={quantityPerPage}");
+
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            amlist = JsonSerializer.Deserialize<ArticleMaster[]>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            StateHasChanged();
+        }
+        else
+        {
+            //Error handler
+        }
     }
 
     public void Dispose()
