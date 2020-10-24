@@ -1,4 +1,4 @@
-﻿@page "/editpurchaseorder"
+﻿@page "/editpurchaseorder/{id}"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
 @inject HttpClient Http
@@ -6,10 +6,46 @@
 
 <h2>Update purchase order</h2>
 <hr />
-
+<h2>Edit sales invoice</h2>
+<hr />
+<p>Order number: <b>@po.Article_Doc</b></p>
+<p>Bill Document: @po.Bill_Doc</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Site</th>
+            <th>Item Code</th>
+            <th>Item Description</th>
+            <th>Quantity</th>
+            <th>Posting Date</th>
+            <th>Document Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (pd == null)
+        {
+            // do nothign
+        }
+        else
+        {
+            @foreach (var items in pd)
+            {
+                <tr>
+                    <td style="font-size: small">@items.Site</td>
+                    <td style="font-size: small">@items.Item_Code</td>
+                    <td style="font-size: small">@items.Item_Desc</td>
+                    <td style="font-size: small">@items.Quantity</td>
+                    <td style="font-size: small">@items.Posting_Date</td>
+                    <td style="font-size: small">@items.Document_Date</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
 
 @code {
-    PurchaseOrder po = new PurchaseOrder();
+    PurchaseHeaders po = new PurchaseHeaders();
+    PurchaseDetails[] pd;
 
     private HubConnection hubCon;
 
@@ -18,10 +54,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        po = await Http.GetJsonAsync<PurchaseOrder>("api/PurchaseOrdersManual/" + id);
+        po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseHeadersIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseDetailsIndex/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseOrderManualHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseHeadersHub"))
             .Build();
 
         await hubCon.StartAsync();
@@ -32,7 +69,7 @@
 
     public async Task updatepurchaseorder()
     {
-        await Http.PutJsonAsync("api/PurchaseOrdersManual/" + id, po);
+        await Http.PutJsonAsync("api/PurchaseHeadersIndex/" + id, po);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }

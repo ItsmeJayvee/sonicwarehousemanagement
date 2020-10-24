@@ -1130,11 +1130,9 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netst
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\App.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\AddArticle.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\AddBusinessPartner.razor.g.cs
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\AddSalesInvoice.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\AddSalesman.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\DeleteArticle.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\DeleteBusinessPartner.razor.g.cs
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\DeleteSalesInvoice.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\DeleteSalesman.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\EditArticle.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\EditBusinessPartner.razor.g.cs
@@ -1155,11 +1153,9 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netst
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\App.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\AddArticle.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\AddBusinessPartner.razor.g.cs
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\AddSalesInvoice.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\AddSalesman.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\DeleteArticle.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\DeleteBusinessPartner.razor.g.cs
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\DeleteSalesInvoice.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\DeleteSalesman.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\EditArticle.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\EditBusinessPartner.razor.g.cs
@@ -1416,8 +1412,8 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netst
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\EditDeliveryReceipt.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\WJ_RyCnb6q-BHkNWyJzcqU40QviiNrAKwWGaxswSU84=.hash
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\ZDQLdtWrReCiWENJ1dmykhbqtLthYfKbO6A3vHxFy0g=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\k0gfNOoOTSnSVeCo34wC1sFjClum2Kze__lbb_sYHeI=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\ewyi-Jkep2k7Toc6Q-pL-O1Lz-l3gFAsWa0PuQM_1v8=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\GRqpHxiGXm8FohTnbOurjmPA9snY7GXPoPSVMGXb2bw=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\nlgutazNaPQW-JVF7pNx9X87Iq_GIt95JI2EtDoP7yc=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\apAGtlvALpVLO6ax5KvRof0pQJg6dyGKj8axc23EiF8=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\ZNE9jmHZ5Cl-SyAxntkf-ULuaEtwkLNNkV9j5hvj3HU=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\qactfaAbTUrC5-KpAWd0Me3gBnu7C6WQHyRT25-8NyA=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\2zLkxULgB8YOD9MpAtqHXIhMk-1E-sAXKSW43tYyszo=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\VaFGgvrQRFivMb3GFniIK8mKeU_Ta0uc6g5n1Abo1XQ=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\I2weh9yf8r3-s2gf_veBW_UZyHsPKXn6F5kMFIH8g0A=.hash

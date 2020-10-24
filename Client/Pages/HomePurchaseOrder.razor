@@ -18,21 +18,21 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th style="font-size: small;">ID</th>
-                <th style="font-size: small;">Invoice number</th>
-                <th style="font-size: small;">Posting date</th>
+                <th>ID</th>
+                <th>Invoice number</th>
+                <th>Posting date</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var po in polist)
             {
                 <tr>
-                    <td style="font-size: small;">@po.ID</td>
-                    <td style="font-size: small;">@po.Article_Doc</td>
-                    <td style="font-size: small;">@po.Posting_Date</td>
+                    <td>@po.ID</td>
+                    <td>@po.Article_Doc</td>
+                    <td>@po.Bill_Doc</td>
                     <td>
-                        <a style="font-size: small;" href="/editpurchaseorder/@po.ID" class="btn-sm btn-primary">Edit</a>
-                        <a style="font-size: small;" href="/deletepurchaseorder/@po.ID" class="btn-sm btn-danger">Delete</a>
+                        <a href="/editpurchaseorder/@po.ID" class="btn-sm btn-primary">Edit</a>
+                        <a href="/deletepurchaseorder/@po.ID" class="btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
             }
@@ -42,7 +42,7 @@ else
 }
 
 @code {
-    PurchaseOrder[] polist;
+    PurchaseHeaders[] polist;
 
     private int totalPageQuantity;
     private int currentPage = 1;
@@ -52,7 +52,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseOrderManualHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseHeadersHub"))
             .Build();
 
         hubCon.On("ReceiveMessage", () =>
@@ -81,13 +81,13 @@ else
 
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/PurchaseOrdersManual?page={page}&quantityPerPage={quantityPerPage}");
+        var httpResponse = await Http.GetAsync($"api/PurchaseHeadersIndex?page={page}&quantityPerPage={quantityPerPage}");
 
         if (httpResponse.IsSuccessStatusCode)
         {
             totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            polist = JsonSerializer.Deserialize<PurchaseOrder[]>(responseString,
+            polist = JsonSerializer.Deserialize<PurchaseHeaders[]>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             StateHasChanged();
         }
