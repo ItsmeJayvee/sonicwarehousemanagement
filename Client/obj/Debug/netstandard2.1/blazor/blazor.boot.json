@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "SonicWarehouseManagement.Client.dll": "sha256-YaPjH+iVj56zh3UP0+xlkCQN4AAHB1yal2FgUbq9DYQ=",
+      "SonicWarehouseManagement.Client.dll": "sha256-ewyi\/Jkep2k7Toc6Q\/pL\/O1Lz\/l3gFAsWa0PuQM+1v8=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -58,7 +58,7 @@
       "System.ComponentModel.Annotations.dll": "sha256-tmnkCmP9OzLUkpQ3LP7PRosi7gt5pyfEZCM6aqAokFI=",
       "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=",
-      "SonicWarehouseManagement.Shared.dll": "sha256-0ONO0XeoYoVpdFBX\/xxIkReA3Ygtt9AUTk6giULq6tQ=",
+      "SonicWarehouseManagement.Shared.dll": "sha256-WJ+RyCnb6q\/BHkNWyJzcqU40QviiNrAKwWGaxswSU84=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-FJ+rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=",
       "Microsoft.Extensions.Configuration.dll": "sha256-zTPnU1+9ypAxCxa2fYaOenSFRqQPNlOzqY11ZMnf0uU=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-OiB7aMJ4FWCMAGUuPV8m\/9CZgx0Kap+ejQFSALUhpeQ=",
@@ -71,8 +71,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "SonicWarehouseManagement.Client.pdb": "sha256-rnUKeKYRdoum6+gYecazxApwQ4RwQ\/f6nXkMj95Ksj4=",
-      "SonicWarehouseManagement.Shared.pdb": "sha256-wietX0LIEqIE\/bswfl1k6plOeZWX4PQLMbfP+tXJZ2s="
+      "SonicWarehouseManagement.Client.pdb": "sha256-GRqpHxiGXm8FohTnbOurjmPA9snY7GXPoPSVMGXb2bw=",
+      "SonicWarehouseManagement.Shared.pdb": "sha256-ZDQLdtWrReCiWENJ1dmykhbqtLthYfKbO6A3vHxFy0g="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",

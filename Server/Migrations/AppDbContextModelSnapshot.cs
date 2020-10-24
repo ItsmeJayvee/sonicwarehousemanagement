@@ -655,6 +655,39 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.ToTable("Purchase_Orders");
                 });
 
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.SAPSalesmanMaster", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DamageLoc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GiftLoc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Route_Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SAP_Salesman_Code")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SalesLoc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Salesman_Code")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Salesman_Customer_Code")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("SAP_SalesmanMasters");
+                });
+
             modelBuilder.Entity("SonicWarehouseManagement.Shared.SalesInvoice", b =>
                 {
                     b.Property<int>("ID")

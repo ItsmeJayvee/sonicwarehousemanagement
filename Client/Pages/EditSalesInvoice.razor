@@ -4,96 +4,59 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-    <h2>Edit sales invoice</h2>
-    <hr />
-    <p>Sales Invoice: <b>@si.Invoice_No</b></p>
-    <p>Site: @si.Site - @si.Distributor_Desc</p>
-    <p>Date: @si.Calendar_Day</p>
-    <hr />
-    <table>
-        <thead>
-            <tr>
-                <th style="font-size: x-small;">Item Id</th>
-                <th style="font-size: x-small;">Item Name</th>
-                <th style="font-size: x-small;">Pack Size</th>
-                <th style="font-size: x-small;">Brand</th>
-                <th style="font-size: x-small;">Brand Name</th>
-                <th style="font-size: x-small;">Basepack</th>
-                <th style="font-size: x-small;">Basepack Name</th>
-                <th style="font-size: x-small;">Lead Basepack</th>
-                <th style="font-size: x-small;">Sales CS</th>
-                <th style="font-size: x-small;">Sales PC</th>
-                <th style="font-size: x-small;">Free CS</th>
-                <th style="font-size: x-small;">Free PC</th>
-                <th style="font-size: x-small;">Sales Liter</th>
-                <th style="font-size: x-small;">Free Liter</th>
-                <th style="font-size: x-small;">Sales Aggr CS</th>
-                <th style="font-size: x-small;">Sales Aggr PC</th>
-                <th style="font-size: x-small;">Free Aggr CS</th>
-                <th style="font-size: x-small;">Free Aggr PC</th>
-                <th style="font-size: x-small;">GSV</th>
-                <th style="font-size: x-small;">TPR</th>
-                <th style="font-size: x-small;">UW</th>
-                <th style="font-size: x-small;">DT Discount</th>
-                <th style="font-size: x-small;">Sales After</th>
-                <th style="font-size: x-small;">Volume Discount</th>
-                <th style="font-size: x-small;">Coupon Discount</th>
-                <th style="font-size: x-small;">NIV</th>
-                <th style="font-size: x-small;">VAT</th>
-                <th style="font-size: x-small;">Total Sales</th>
-                <th style="font-size: x-small;">Aggr Pieces</th>
-                <th style="font-size: x-small;">Cabinet Count</th>
-            </tr>
-        </thead>
-    <tbody>
-            @if (sid == null)
-            {
-                // do nothign
-            }
-            else
-            {
-                @foreach (var items in sid)
-                {
-                    <tr>
-                        <td style="font-size: x-small;">@items.Product_Id</td>
-                        <td style="font-size: x-small;">@items.Product_Name</td>
-                        <td style="font-size: x-small;">@items.Pack_Size</td>
-                        <td style="font-size: x-small;">@items.Master_Brand</td>
-                        <td style="font-size: x-small;">@items.Master_Brand_Name</td>
-                        <td style="font-size: x-small;">@items.Master_Basepack</td>
-                        <td style="font-size: x-small;">@items.Master_Basepack_Name</td>
-                        <td style="font-size: x-small;">@items.Lead_Basepack</td>
-                        <td style="font-size: x-small;">@items.Sales_Qty_CS</td>
-                        <td style="font-size: x-small;">@items.Sales_Qty_PC</td>
-                        <td style="font-size: x-small;">@items.Free_Qty_CS</td>
-                        <td style="font-size: x-small;">@items.Free_Qty_PC</td>
-                        <td style="font-size: x-small;">@items.Sales_Qty_Liter</td>
-                        <td style="font-size: x-small;">@items.Free_Qty_Liter</td>
-                        <td style="font-size: x-small;">@items.Sales_Qty_Aggr_CS</td>
-                        <td style="font-size: x-small;">@items.Sales_Qty_Aggr_PC</td>
-                        <td style="font-size: x-small;">@items.Free_Qty_Aggr_CS</td>
-                        <td style="font-size: x-small;">@items.Free_Qty_Aggr_PC</td>
-                        <td style="font-size: x-small;">@items.GSV</td>
-                        <td style="font-size: x-small;">@items.TPR</td>
-                        <td style="font-size: x-small;">@items.UW</td>
-                        <td style="font-size: x-small;">@items.DT_Discount</td>
-                        <td style="font-size: x-small;">@items.Sales_After</td>
-                        <td style="font-size: x-small;">@items.Volume_Discount</td>
-                        <td style="font-size: x-small;">@items.Coupon_Discount</td>
-                        <td style="font-size: x-small;">@items.NIV</td>
-                        <td style="font-size: x-small;">@items.VAT</td>
-                        <td style="font-size: x-small;">@items.Total_Sales_Amnt_Inc</td>
-                        <td style="font-size: x-small;">@items.Aggr_Pieces</td>
-                        <td style="font-size: x-small;">@items.Cabinet_Count</td>
-                    </tr>
-                }
-            }
-    </tbody>
+<h2>Edit sales invoice</h2>
+<hr />
+<p>Sales Invoice: <b>@si.Invoice_No</b></p>
+<p>Site: @si.Site - @si.Distributor_Desc</p>
+<p>Date: @si.Calendar_Day</p>
+<p>Sales Location: <b>@ssm.SalesLoc</b> | Gift Location: <b>@ssm.GiftLoc</b> | Damage Location: <b>@ssm.DamageLoc</b></p>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Id</th>
+            <th>Item Name</th>
+            <th>Pack Size</th>
+            <th>Sales CS</th>
+            <th>Sales PC</th>
+            <th>Free CS</th>
+            <th>Free PC</th>
+            <th>Sales Liter</th>
+            <th>Free Liter</th>
+            <th>GSV</th>
+        </tr>
+    </thead>
+<tbody>
+@if (sid == null)
+{
+    // do nothign
+}
+else
+{
+    @foreach (var items in sid)
+    {
+        <tr>
+            <td>@items.Product_Id</td>
+            <td>@items.Product_Name</td>
+            <td>@items.Pack_Size</td>
+            <td>@items.Sales_Qty_CS</td>
+            <td>@items.Sales_Qty_PC</td>
+            <td>@items.Free_Qty_CS</td>
+            <td>@items.Free_Qty_PC</td>
+            <td>@items.Sales_Qty_Liter</td>
+            <td>@items.Free_Qty_Liter</td>
+            <td>@items.GSV</td>
+        </tr>
+    }
+}
+</tbody>
 </table>
+
 @code {
 
     SalesInvoice_Headers si = new SalesInvoice_Headers();
     SalesInvoice_Details[] sid;
+    SAPSalesmanMaster ssm = new SAPSalesmanMaster();
 
     private HubConnection hubCon;
 
@@ -102,8 +65,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-        si = await Http.GetJsonAsync<SalesInvoice_Headers>("api/SalesInvoiceHeaders/" + id);
+        si = await Http.GetJsonAsync<SalesInvoice_Headers>("api/SalesInvoiceHeadersIndex/" + id);
         sid = await Http.GetJsonAsync<SalesInvoice_Details[]>("api/SalesInvoiceDetailsIndex/" + id);
+        ssm = await Http.GetJsonAsync<SAPSalesmanMaster>("api/SAPSalesmanMasters/" + id);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/SalesInvoiceHeadersHub"))
