@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "SonicWarehouseManagement.Client.dll": "sha256-qactfaAbTUrC5\/KpAWd0Me3gBnu7C6WQHyRT25\/8NyA=",
+      "SonicWarehouseManagement.Client.dll": "sha256-nCEYJZahqaOAeTBUJ+xgVKRnI1U0m08v10o48tL1IRg=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -71,7 +71,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "SonicWarehouseManagement.Client.pdb": "sha256-2zLkxULgB8YOD9MpAtqHXIhMk\/1E\/sAXKSW43tYyszo=",
+      "SonicWarehouseManagement.Client.pdb": "sha256-TmVWrQwX7J2bA5EEuCxoNyAi54CbotgNSOQP9GzTW3U=",
       "SonicWarehouseManagement.Shared.pdb": "sha256-ZDQLdtWrReCiWENJ1dmykhbqtLthYfKbO6A3vHxFy0g="
     },
     "runtime": {

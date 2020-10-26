@@ -1412,8 +1412,8 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netst
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\EditDeliveryReceipt.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\WJ_RyCnb6q-BHkNWyJzcqU40QviiNrAKwWGaxswSU84=.hash
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\ZDQLdtWrReCiWENJ1dmykhbqtLthYfKbO6A3vHxFy0g=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\ZNE9jmHZ5Cl-SyAxntkf-ULuaEtwkLNNkV9j5hvj3HU=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\qactfaAbTUrC5-KpAWd0Me3gBnu7C6WQHyRT25-8NyA=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\2zLkxULgB8YOD9MpAtqHXIhMk-1E-sAXKSW43tYyszo=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\VaFGgvrQRFivMb3GFniIK8mKeU_Ta0uc6g5n1Abo1XQ=.hash
-C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\I2weh9yf8r3-s2gf_veBW_UZyHsPKXn6F5kMFIH8g0A=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Y99OcCNIQaFK9KOi8sJdf7dJ0ObtSFCg4FSrR8aBXF0=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\nCEYJZahqaOAeTBUJ_xgVKRnI1U0m08v10o48tL1IRg=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\TmVWrQwX7J2bA5EEuCxoNyAi54CbotgNSOQP9GzTW3U=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\NUnBPfbBzrrmXZd-_LTTqqUOg2dP5k-hRbEWp9FAKZU=.hash
+C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\MgRkxnx6kCcUmQbWXt63TAC_TcAKE99gKKMeT6bEbXA=.hash

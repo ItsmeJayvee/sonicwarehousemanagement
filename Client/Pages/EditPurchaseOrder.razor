@@ -6,8 +6,6 @@
 
 <h2>Update purchase order</h2>
 <hr />
-<h2>Edit sales invoice</h2>
-<hr />
 <p>Order number: <b>@po.Article_Doc</b></p>
 <p>Bill Document: @po.Bill_Doc</p>
 <table class="table">
@@ -46,6 +44,9 @@
 @code {
     PurchaseHeaders po = new PurchaseHeaders();
     PurchaseDetails[] pd;
+
+    private int totalPageQuantity;
+    private int currentPage = 1;
 
     private HubConnection hubCon;
 
