@@ -24,9 +24,13 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/ArticleMasters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ArticleMaster>>> GetArticle_Masters([FromQuery] SalesInvoicePagination pagination)
+        public async Task<ActionResult<IEnumerable<ArticleMaster>>> GetArticle_Masters([FromQuery] SalesInvoicePagination pagination, [FromQuery] string article)
         {
             var queryable = _context.Article_Masters.AsQueryable();
+            if(!string.IsNullOrEmpty(article))
+            {
+                queryable = queryable.Where(x => x.Article_Code.Contains(article));
+            }
             await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
             return await queryable.Paginate(pagination).ToListAsync();
         }

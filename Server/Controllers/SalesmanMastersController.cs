@@ -24,9 +24,13 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/SalesmanMasters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SalesmanMaster>>> GetSalesman_Masters([FromQuery] SalesInvoicePagination pagination)
+        public async Task<ActionResult<IEnumerable<SalesmanMaster>>> GetSalesman_Masters([FromQuery] SalesInvoicePagination pagination, [FromQuery] string code)
         {
             var queryable = _context.Salesman_Masters.AsQueryable();
+            if (!string.IsNullOrEmpty(code))
+            {
+                queryable = queryable.Where(x => x.Salesman_Code.Contains(code));
+            }
             await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
             return await queryable.Paginate(pagination).ToListAsync();
         }

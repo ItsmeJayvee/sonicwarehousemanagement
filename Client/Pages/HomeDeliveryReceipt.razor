@@ -9,6 +9,12 @@
 <hr />
 <a href="/adddeliveryreceipt" class="btn btn-primary">Create new delivery receipt</a>
 <hr />
+<div class="form-inline">
+    <label class="sr-only" for="search-ordernumber">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchdelivery" placeholder="Search delivery number" />
+    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+</div>
+<hr />
 @if (drlist == null)
 {
     <p><em>Loading...</em></p>
@@ -19,8 +25,8 @@ else
         <thead>
             <tr>
                 <th style="font-size: small;">ID</th>
-                <th style="font-size: small;">Article Code</th>
-                <th style="font-size: small;">Article Description</th>
+                <th style="font-size: small;">Delivery Receipt No</th>
+                <th style="font-size: small;">Delivery Due Date</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +52,7 @@ else
 
     private int totalPageQuantity;
     private int currentPage = 1;
+    private string searchdelivery = string.Empty;
 
     private HubConnection hubCon;
 
@@ -79,9 +86,15 @@ else
         await LoadData(page);
     }
 
+    private async Task Search()
+    {
+        currentPage = 1;
+        await LoadData();
+    }
+
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/DeliveryReceipts?page={page}&quantityPerPage={quantityPerPage}");
+        var httpResponse = await Http.GetAsync($"api/DeliveryReceipts?page={page}&quantityPerPage={quantityPerPage}&delivery={searchdelivery}");
 
         if (httpResponse.IsSuccessStatusCode)
         {

@@ -24,9 +24,13 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/PurchaseHeadersIndex
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PurchaseHeaders>>> GetPurchase_Headers([FromQuery] SalesInvoicePagination pagination)
+        public async Task<ActionResult<IEnumerable<PurchaseHeaders>>> GetPurchase_Headers([FromQuery] SalesInvoicePagination pagination, [FromQuery] string article)
         {
             var queryable = _context.Purchase_Headers.AsQueryable();
+            if (!string.IsNullOrEmpty(article))
+            {
+                queryable = queryable.Where(x => x.Article_Doc.Contains(article));
+            }
             await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
             return await queryable.Paginate(pagination).ToListAsync();
         }

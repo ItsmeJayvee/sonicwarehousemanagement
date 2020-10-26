@@ -24,9 +24,13 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/DeliveryReceipts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DeliveryReceipt>>> GetDelivery_Receipts([FromQuery] SalesInvoicePagination pagination)
+        public async Task<ActionResult<IEnumerable<DeliveryReceipt>>> GetDelivery_Receipts([FromQuery] SalesInvoicePagination pagination, [FromQuery] string article)
         {
             var queryable = _context.Delivery_Receipts.AsQueryable();
+            if(!string.IsNullOrEmpty(article))
+            {
+                queryable = queryable.Where(x => x.Delivery_Receipt_No.Contains(article));
+            }
             await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
             return await queryable.Paginate(pagination).ToListAsync();
         }

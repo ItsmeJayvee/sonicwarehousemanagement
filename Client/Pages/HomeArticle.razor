@@ -9,6 +9,12 @@
 <hr />
 <a href="/addarticle" class="btn btn-primary">Create new article</a>
 <hr />
+<div class="form-inline">
+    <label class="sr-only" for="search-ordernumber">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searcharticle" placeholder="Search article code" />
+    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+</div>
+<hr />
 @if (amlist == null)
 {
     <p><em>Loading...</em></p>
@@ -46,6 +52,7 @@ else
 
     private int totalPageQuantity;
     private int currentPage = 1;
+    private string searcharticle = string.Empty;
 
     private HubConnection hubCon;
 
@@ -79,9 +86,15 @@ else
         await LoadData(page);
     }
 
+    private async Task Search()
+    {
+        currentPage = 1;
+        await LoadData();
+    }
+
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/ArticleMasters?page={page}&quantityPerPage={quantityPerPage}");
+        var httpResponse = await Http.GetAsync($"api/ArticleMasters?page={page}&quantityPerPage={quantityPerPage}&article={searcharticle}");
 
         if (httpResponse.IsSuccessStatusCode)
         {

@@ -9,6 +9,12 @@
 <hr />
 <a href="/addsalesinvoice" class="btn btn-primary">Create new sales invoice</a>
 <hr />
+<div class="form-inline">
+    <label class="sr-only" for="search-ordernumber">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchinvoicenum" placeholder="Search invoice number" />
+    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+</div>
+<hr />
 @if (Items == null)
 {
     <p><em>Loading...</em></p>
@@ -45,6 +51,7 @@ else
 
     private int totalPageQuantity;
     private int currentPage = 1;
+    private string searchinvoicenum = string.Empty;
 
     private HubConnection hubCon;
 
@@ -72,6 +79,12 @@ else
         });
     }
 
+    private async Task Search()
+    {
+        currentPage = 1;
+        await LoadData();
+    }
+
     private async Task SelectedPage(int page)
     {
         currentPage = page;
@@ -80,9 +93,9 @@ else
 
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/SalesInvoiceHeadersIndex?page={page}&quantityPerPage={quantityPerPage}");
+        var httpResponse = await Http.GetAsync($"api/SalesInvoiceHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&invoice={searchinvoicenum}");
 
-        if(httpResponse.IsSuccessStatusCode)
+        if (httpResponse.IsSuccessStatusCode)
         {
             totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
             var responseString = await httpResponse.Content.ReadAsStringAsync();

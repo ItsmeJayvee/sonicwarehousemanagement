@@ -13,54 +13,54 @@ namespace SonicWarehouseManagement.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BusinessPartnersController : ControllerBase
+    public class SalesOrderHeadersIndexController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public BusinessPartnersController(AppDbContext context)
+        public SalesOrderHeadersIndexController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/BusinessPartners
+        // GET: api/SalesOrderHeadersIndex
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BusinessPartner>>> GetBusiness_Partners([FromQuery] SalesInvoicePagination pagination, [FromQuery] string card)
+        public async Task<ActionResult<IEnumerable<SalesOrderHeaders>>> GetSalesOrder_Headers([FromQuery] SalesInvoicePagination pagination, [FromQuery] string order)
         {
-            var queryable = _context.Business_Partners.AsQueryable();
-            if(!string.IsNullOrEmpty(card))
+            var queryable = _context.SalesOrder_Headers.AsQueryable();
+            if (!string.IsNullOrEmpty(order))
             {
-                queryable = queryable.Where(x => x.Card_Code.Contains(card));
+                queryable = queryable.Where(x => x.Order_Number.Contains(order));
             }
             await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
             return await queryable.Paginate(pagination).ToListAsync();
         }
 
-        // GET: api/BusinessPartners/5
+        // GET: api/SalesOrderHeadersIndex/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BusinessPartner>> GetBusinessPartner(int id)
+        public async Task<ActionResult<SalesOrderHeaders>> GetSalesOrderHeaders(int id)
         {
-            var businessPartner = await _context.Business_Partners.FindAsync(id);
+            var salesOrderHeaders = await _context.SalesOrder_Headers.FindAsync(id);
 
-            if (businessPartner == null)
+            if (salesOrderHeaders == null)
             {
                 return NotFound();
             }
 
-            return businessPartner;
+            return salesOrderHeaders;
         }
 
-        // PUT: api/BusinessPartners/5
+        // PUT: api/SalesOrderHeadersIndex/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBusinessPartner(int id, BusinessPartner businessPartner)
+        public async Task<IActionResult> PutSalesOrderHeaders(int id, SalesOrderHeaders salesOrderHeaders)
         {
-            if (id != businessPartner.Id)
+            if (id != salesOrderHeaders.ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(businessPartner).State = EntityState.Modified;
+            _context.Entry(salesOrderHeaders).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BusinessPartnerExists(id))
+                if (!SalesOrderHeadersExists(id))
                 {
                     return NotFound();
                 }
@@ -81,37 +81,37 @@ namespace SonicWarehouseManagement.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/BusinessPartners
+        // POST: api/SalesOrderHeadersIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BusinessPartner>> PostBusinessPartner(BusinessPartner businessPartner)
+        public async Task<ActionResult<SalesOrderHeaders>> PostSalesOrderHeaders(SalesOrderHeaders salesOrderHeaders)
         {
-            _context.Business_Partners.Add(businessPartner);
+            _context.SalesOrder_Headers.Add(salesOrderHeaders);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBusinessPartner", new { id = businessPartner.Id }, businessPartner);
+            return CreatedAtAction("GetSalesOrderHeaders", new { id = salesOrderHeaders.ID }, salesOrderHeaders);
         }
 
-        // DELETE: api/BusinessPartners/5
+        // DELETE: api/SalesOrderHeadersIndex/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BusinessPartner>> DeleteBusinessPartner(int id)
+        public async Task<ActionResult<SalesOrderHeaders>> DeleteSalesOrderHeaders(int id)
         {
-            var businessPartner = await _context.Business_Partners.FindAsync(id);
-            if (businessPartner == null)
+            var salesOrderHeaders = await _context.SalesOrder_Headers.FindAsync(id);
+            if (salesOrderHeaders == null)
             {
                 return NotFound();
             }
 
-            _context.Business_Partners.Remove(businessPartner);
+            _context.SalesOrder_Headers.Remove(salesOrderHeaders);
             await _context.SaveChangesAsync();
 
-            return businessPartner;
+            return salesOrderHeaders;
         }
 
-        private bool BusinessPartnerExists(int id)
+        private bool SalesOrderHeadersExists(int id)
         {
-            return _context.Business_Partners.Any(e => e.Id == id);
+            return _context.SalesOrder_Headers.Any(e => e.ID == id);
         }
     }
 }

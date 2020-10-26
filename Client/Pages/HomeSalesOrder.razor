@@ -9,6 +9,12 @@
 <hr />
 <a href="/addsalesorder" class="btn btn-primary">Create new sales order</a>
 <hr />
+<div class="form-inline">
+    <label class="sr-only" for="search-ordernumber">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchordernum" placeholder="Search order number" />
+    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+</div>
+<hr />
 @if (solist == null)
 {
     <p><em>Loading...</em></p>
@@ -42,17 +48,18 @@ else
 }
 
 @code {
-    SalesOrder[] solist;
+    SalesOrderHeaders[] solist;
 
     private int totalPageQuantity;
     private int currentPage = 1;
+    private string searchordernum = string.Empty;
 
     private HubConnection hubCon;
 
     protected override async Task OnInitializedAsync()
     {
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHeadersHub"))
             .Build();
 
         hubCon.On("ReceiveMessage", () =>
@@ -79,26 +86,32 @@ else
         await LoadData(page);
     }
 
+    private async Task Search()
+    {
+        currentPage = 1;
+        await LoadData();
+    }
+
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-         var httpResponse = await Http.GetAsync($"api/SalesOrders?page={page}&quantityPerPage={quantityPerPage}");
+        var httpResponse = await Http.GetAsync($"api/SalesOrderHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&order={searchordernum}");
 
         if(httpResponse.IsSuccessStatusCode)
         {
             totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            solist = JsonSerializer.Deserialize<SalesOrder[]>(responseString,
+            solist = JsonSerializer.Deserialize<SalesOrderHeaders[]>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             StateHasChanged();
         }
         else
         {
             //Error handler
-        } 
+        }
     }
 
     public void Dispose()
     {
-    _ = hubCon.DisposeAsync();
+        _ = hubCon.DisposeAsync();
     }
 }

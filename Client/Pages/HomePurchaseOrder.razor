@@ -9,6 +9,12 @@
 <hr />
 <a href="/addpurchaseorder" class="btn btn-primary">Create new purchase order</a>
 <hr />
+<div class="form-inline">
+    <label class="sr-only" for="search-ordernumber">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchartnum" placeholder="Search article number" />
+    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+</div>
+<hr />
 @if (polist == null)
 {
     <p><em>Loading...</em></p>
@@ -19,17 +25,17 @@ else
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Invoice number</th>
-                <th>Posting date</th>
+                <th>Article document</th>
+                <th>Bill document</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var po in polist)
             {
                 <tr>
-                    <td>@po.ID</td>
-                    <td>@po.Article_Doc</td>
-                    <td>@po.Bill_Doc</td>
+                    <td style="font-size: small;">@po.ID</td>
+                    <td style="font-size: small;">@po.Article_Doc</td>
+                    <td style="font-size: small;">@po.Bill_Doc</td>
                     <td>
                         <a href="/editpurchaseorder/@po.ID" class="btn-sm btn-primary">Edit</a>
                         <a href="/deletepurchaseorder/@po.ID" class="btn-sm btn-danger">Delete</a>
@@ -46,6 +52,7 @@ else
 
     private int totalPageQuantity;
     private int currentPage = 1;
+    private string searchartnum = string.Empty;
 
     private HubConnection hubCon;
 
@@ -79,9 +86,15 @@ else
         await LoadData(page);
     }
 
+    private async Task Search()
+    {
+        currentPage = 1;
+        await LoadData();
+    }
+
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/PurchaseHeadersIndex?page={page}&quantityPerPage={quantityPerPage}");
+        var httpResponse = await Http.GetAsync($"api/PurchaseHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&article={searchartnum}");
 
         if (httpResponse.IsSuccessStatusCode)
         {

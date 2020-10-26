@@ -1,4 +1,4 @@
-﻿@*@page "/addpurchaseorder"
+﻿@page "/addpurchaseorder"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
 @inject HttpClient Http
@@ -61,7 +61,7 @@
     protected override async Task OnInitializedAsync()
     {
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseOrderManualHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseHeadersHub"))
             .Build();
 
         await hubCon.StartAsync();
@@ -72,7 +72,7 @@
 
     public async Task addpurchaseorder()
     {
-        await Http.PostJsonAsync("api/PurchaseOrdersManual", po);
+        await Http.PostJsonAsync("api/PurchaseHeadersIndex", po);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }
@@ -88,4 +88,4 @@
     {
         _ = hubCon.DisposeAsync();
     }
-}*@
+}
