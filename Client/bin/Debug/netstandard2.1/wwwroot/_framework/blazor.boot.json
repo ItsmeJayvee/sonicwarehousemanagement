@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "SonicWarehouseManagement.Client.dll": "sha256-Pxu0Am4vBldbwuBl+6dkpH6G80Xlnn72i8bqfcv\/bxA=",
+      "SonicWarehouseManagement.Client.dll": "sha256-6RB7vdMDhsetI6GYviu2n6CUKetKWl+XOQ52Fu\/bNgc=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -58,7 +58,7 @@
       "System.ComponentModel.Annotations.dll": "sha256-tmnkCmP9OzLUkpQ3LP7PRosi7gt5pyfEZCM6aqAokFI=",
       "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=",
-      "SonicWarehouseManagement.Shared.dll": "sha256-0ONO0XeoYoVpdFBX\/xxIkReA3Ygtt9AUTk6giULq6tQ=",
+      "SonicWarehouseManagement.Shared.dll": "sha256-EX97+pdTDnG7Ob9fuD9vmXLtv9us8i5zb326FLXtUWg=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-FJ+rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=",
       "Microsoft.Extensions.Configuration.dll": "sha256-zTPnU1+9ypAxCxa2fYaOenSFRqQPNlOzqY11ZMnf0uU=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-OiB7aMJ4FWCMAGUuPV8m\/9CZgx0Kap+ejQFSALUhpeQ=",
@@ -71,8 +71,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "SonicWarehouseManagement.Client.pdb": "sha256-vYe9oHYvGT2Z8umUFQEYJ6o1DM8V10Wr+ulrqghf6bU=",
-      "SonicWarehouseManagement.Shared.pdb": "sha256-wietX0LIEqIE\/bswfl1k6plOeZWX4PQLMbfP+tXJZ2s="
+      "SonicWarehouseManagement.Client.pdb": "sha256-gxZcYUq2GJ2FcWXssJM9Mb6ed4TmtuLyHO2AWa9mfj8=",
+      "SonicWarehouseManagement.Shared.pdb": "sha256-nL+OHrghQtuoQD2LPhyfnZCZA6Byn5eaBEhbCQR+caQ="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",
