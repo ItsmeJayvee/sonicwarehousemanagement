@@ -26,5 +26,6 @@ namespace SonicWarehouseManagement.Shared
         [MaxLength(100)]
         public string Item_Desc { get; set; }
         public int Quantity { get; set; }
+        public string Uom { get; set; }
     }
 }

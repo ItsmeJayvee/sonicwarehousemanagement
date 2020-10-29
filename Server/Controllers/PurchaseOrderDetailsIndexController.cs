@@ -12,27 +12,27 @@ namespace SonicWarehouseManagement.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PurchaseDetailsIndexController : ControllerBase
+    public class PurchaseOrderDetailsIndexController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public PurchaseDetailsIndexController(AppDbContext context)
+        public PurchaseOrderDetailsIndexController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/PurchaseDetailsIndex
+        // GET: api/PurchaseOrderDetailsIndex
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PurchaseDetails>>> GetPurchase_Details()
         {
             return await _context.Purchase_Details.ToListAsync();
         }
 
-        // GET: api/PurchaseDetailsIndex/5
+        // GET: api/PurchaseOrderDetailsIndex/5
         [HttpGet("{id}")]
         public async Task<ActionResult<PurchaseDetails>> GetPurchaseDetails(int id)
         {
-            var purchaseDetails = _context.Purchase_Details.Where(p => p.Header_ID == id).ToList();
+            var purchaseDetails = _context.Purchase_Details.Where(x=> x.Header_ID == id).ToList();
 
             if (purchaseDetails == null)
             {
@@ -42,7 +42,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return Ok(purchaseDetails);
         }
 
-        // PUT: api/PurchaseDetailsIndex/5
+        // PUT: api/PurchaseOrderDetailsIndex/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -74,7 +74,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/PurchaseDetailsIndex
+        // POST: api/PurchaseOrderDetailsIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
@@ -86,7 +86,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return CreatedAtAction("GetPurchaseDetails", new { id = purchaseDetails.ID }, purchaseDetails);
         }
 
-        // DELETE: api/PurchaseDetailsIndex/5
+        // DELETE: api/PurchaseOrderDetailsIndex/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<PurchaseDetails>> DeletePurchaseDetails(int id)
         {

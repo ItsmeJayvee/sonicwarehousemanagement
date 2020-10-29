@@ -78,6 +78,7 @@ namespace SonicWarehouseManagement.Server
                 endpoints.MapHub<BusinessUnitHub>("/BusinessUnitHub"); 
                 endpoints.MapHub<SAPSalesmanMasterHub>("/SAPSalesmanMasterHub");
                 endpoints.MapHub<SalesOrderHeadersHub>("/SalesOrderHeadersHub");
+                endpoints.MapHub<InventoryHub>("/InventoryHub");
                 endpoints.MapFallbackToFile("index.html");
             });
         }

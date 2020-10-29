@@ -32,5 +32,6 @@ namespace SonicWarehouseManagement.Server.Data
         public DbSet<DeliveryReceipt> Delivery_Receipts { get; set; }
         public DbSet<BusinessUnit> Business_Units { get; set; }
         public DbSet<SAPSalesmanMaster> SAP_SalesmanMasters { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
     }
 }

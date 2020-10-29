@@ -7,7 +7,7 @@
 <h2>Update purchase order</h2>
 <hr />
 <p>Order number: <b>@po.Article_Doc</b></p>
-<p>Bill Document: @po.Bill_Doc</p>
+<p>Bill Document: <b>@po.Bill_Doc</b></p>
 <table class="table">
     <thead>
         <tr>
@@ -15,6 +15,7 @@
             <th>Item Code</th>
             <th>Item Description</th>
             <th>Quantity</th>
+            <th>Uom</th>
             <th>Posting Date</th>
             <th>Document Date</th>
         </tr>
@@ -22,7 +23,7 @@
     <tbody>
         @if (pd == null)
         {
-            // do nothign
+            // do nothing
         }
         else
         {
@@ -33,6 +34,7 @@
                     <td style="font-size: small">@items.Item_Code</td>
                     <td style="font-size: small">@items.Item_Desc</td>
                     <td style="font-size: small">@items.Quantity</td>
+                    <td style="font-size: small">@items.Uom</td>
                     <td style="font-size: small">@items.Posting_Date</td>
                     <td style="font-size: small">@items.Document_Date</td>
                 </tr>
@@ -45,9 +47,6 @@
     PurchaseHeaders po = new PurchaseHeaders();
     PurchaseDetails[] pd;
 
-    private int totalPageQuantity;
-    private int currentPage = 1;
-
     private HubConnection hubCon;
 
     [Parameter]
@@ -55,11 +54,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseHeadersIndex/" + id);
-        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseDetailsIndex/" + id);
+        po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseHeadersHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
             .Build();
 
         await hubCon.StartAsync();
@@ -68,19 +67,19 @@
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    public async Task updatepurchaseorder()
-    {
-        await Http.PutJsonAsync("api/PurchaseHeadersIndex/" + id, po);
-        if (IsConnected) await SendMessage();
-        NavigationManager.NavigateTo("purchaseorderlist");
-    }
+    //public async Task updatesalesinvoice()
+    //{
+    //    await Http.PutJsonAsync("api/PurchaseDetailsIndex/" + id, po);
+    //    if (IsConnected) await SendMessage();
+    //    NavigationManager.NavigateTo("purchaseorderlist");
+    //}
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 
-    void cancel()
-    {
-        NavigationManager.NavigateTo("purchaseorderlist");
-    }
+    //void cancel()
+    //{
+    //    NavigationManager.NavigateTo("purchaseorderlist");
+    //}
 
     public void Dispose()
     {

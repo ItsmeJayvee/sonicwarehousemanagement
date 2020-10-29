@@ -537,6 +537,39 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.ToTable("Delivery_Receipts");
                 });
 
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.Inventory", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Item_Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transaction_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Uom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Warehouse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Inventories");
+                });
+
             modelBuilder.Entity("SonicWarehouseManagement.Shared.Location", b =>
                 {
                     b.Property<int>("ID")
@@ -588,6 +621,9 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("Site")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<string>("Uom")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -649,6 +685,9 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("Site")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<string>("Uom")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SonicWarehouseManagement.Server.Migrations
 {
-    public partial class thirdcreate : Migration
+    public partial class secondthirdcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,7 +19,8 @@ namespace SonicWarehouseManagement.Server.Migrations
                     Document_Date = table.Column<DateTime>(type: "datetime", nullable: true),
                     Item_Code = table.Column<string>(maxLength: 100, nullable: true),
                     Item_Desc = table.Column<string>(maxLength: 100, nullable: true),
-                    Quantity = table.Column<int>(nullable: true)
+                    Quantity = table.Column<int>(nullable: true),
+                    Uom = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -39,6 +40,27 @@ namespace SonicWarehouseManagement.Server.Migrations
                 {
                     table.PrimaryKey("PK_Purchase_Headers", x => x.ID);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Purchase_Orders",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Site = table.Column<string>(maxLength: 100, nullable: true),
+                    Posting_Date = table.Column<DateTime>(type: "datetime", nullable: true),
+                    Document_Date = table.Column<DateTime>(type: "datetime", nullable: true),
+                    Article_Doc = table.Column<string>(maxLength: 100, nullable: true),
+                    Bill_Doc = table.Column<string>(maxLength: 100, nullable: true),
+                    Item_Code = table.Column<string>(maxLength: 100, nullable: true),
+                    Item_Desc = table.Column<string>(maxLength: 100, nullable: true),
+                    Quantity = table.Column<int>(nullable: true),
+                    Uom = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Purchase_Orders", x => x.ID);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -48,6 +70,9 @@ namespace SonicWarehouseManagement.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Purchase_Headers");
+
+            migrationBuilder.DropTable(
+                name: "Purchase_Orders");
         }
     }
 }

@@ -16,3 +16,12 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Shared\obj\Release\net
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.csproj.CoreCompileInputs.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.dll
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.pdb
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\bin\Release\netstandard2.1\SonicWarehouseManagement.Shared.deps.json
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\bin\Release\netstandard2.1\SonicWarehouseManagement.Shared.dll
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\bin\Release\netstandard2.1\SonicWarehouseManagement.Shared.pdb
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.csprojAssemblyReference.cache
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfoInputs.cache
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfo.cs
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.csproj.CoreCompileInputs.cache
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.dll
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Release\netstandard2.1\SonicWarehouseManagement.Shared.pdb

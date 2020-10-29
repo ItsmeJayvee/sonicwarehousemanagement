@@ -1,4 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Client\bin\Release\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\bin\Release\netstandard2.1\wwwroot\" />
 </StaticWebAssets>

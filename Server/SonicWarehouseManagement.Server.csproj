@@ -14,6 +14,8 @@
     <Compile Remove="Migrations\20201019085536_sixthcreate.Designer.cs" />
     <Compile Remove="Migrations\20201020061716_eighthcreate.cs" />
     <Compile Remove="Migrations\20201020061716_eighthcreate.Designer.cs" />
+    <Compile Remove="Migrations\20201029063629_eleventhcreate.cs" />
+    <Compile Remove="Migrations\20201029063629_eleventhcreate.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

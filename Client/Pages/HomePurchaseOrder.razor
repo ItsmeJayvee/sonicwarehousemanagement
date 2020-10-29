@@ -94,7 +94,7 @@ else
 
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/PurchaseHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&article={searchartnum}");
+        var httpResponse = await Http.GetAsync($"api/PurchaseOrderHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&article={searchartnum}");
 
         if (httpResponse.IsSuccessStatusCode)
         {

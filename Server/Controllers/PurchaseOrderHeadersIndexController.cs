@@ -13,16 +13,16 @@ namespace SonicWarehouseManagement.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PurchaseHeadersIndexController : ControllerBase
+    public class PurchaseOrderHeadersIndexController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public PurchaseHeadersIndexController(AppDbContext context)
+        public PurchaseOrderHeadersIndexController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/PurchaseHeadersIndex
+        // GET: api/PurchaseOrderHeadersIndex
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PurchaseHeaders>>> GetPurchase_Headers([FromQuery] SalesInvoicePagination pagination, [FromQuery] string article)
         {
@@ -35,7 +35,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return await queryable.Paginate(pagination).ToListAsync();
         }
 
-        // GET: api/PurchaseHeadersIndex/5
+        // GET: api/PurchaseOrderHeadersIndex/5
         [HttpGet("{id}")]
         public async Task<ActionResult<PurchaseHeaders>> GetPurchaseHeaders(int id)
         {
@@ -49,7 +49,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return purchaseHeaders;
         }
 
-        // PUT: api/PurchaseHeadersIndex/5
+        // PUT: api/PurchaseOrderHeadersIndex/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -81,7 +81,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/PurchaseHeadersIndex
+        // POST: api/PurchaseOrderHeadersIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
@@ -93,7 +93,7 @@ namespace SonicWarehouseManagement.Server.Controllers
             return CreatedAtAction("GetPurchaseHeaders", new { id = purchaseHeaders.ID }, purchaseHeaders);
         }
 
-        // DELETE: api/PurchaseHeadersIndex/5
+        // DELETE: api/PurchaseOrderHeadersIndex/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<PurchaseHeaders>> DeletePurchaseHeaders(int id)
         {

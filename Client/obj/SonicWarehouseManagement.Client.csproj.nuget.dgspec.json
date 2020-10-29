@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj": {}
+    "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj": {}
   },
   "projects": {
-    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj": {
+    "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj",
+        "projectUniqueName": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj",
         "projectName": "SonicWarehouseManagement.Client",
-        "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj",
-        "packagesPath": "C:\\Users\\ej.monta\\.nuget\\packages\\",
-        "outputPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Client\\obj\\",
+        "projectPath": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\SonicWarehouseManagement.Client.csproj",
+        "packagesPath": "C:\\Users\\jv.limbaroc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ej.monta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jv.limbaroc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
-                "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj"
+              "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
+                "projectPath": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj"
               }
             }
           }
@@ -87,24 +87,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
+    "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
         "projectName": "SonicWarehouseManagement.Shared",
-        "projectPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
-        "packagesPath": "C:\\Users\\ej.monta\\.nuget\\packages\\",
-        "outputPath": "D:\\IntegratedWebAPI\\sonicwarehousemanagement\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Shared\\SonicWarehouseManagement.Shared.csproj",
+        "packagesPath": "C:\\Users\\jv.limbaroc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ej.monta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jv.limbaroc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -148,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
