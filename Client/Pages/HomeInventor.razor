@@ -5,15 +5,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<h2>Sales order</h2>
-<hr />
-<a href="/addsalesorder" class="btn btn-primary">Create new sales order</a>
-<hr />
-<div class="form-inline">
-    <label class="sr-only" for="search-ordernumber">Search</label>
-    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchitemnum" placeholder="Search item number" />
-    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
-</div>
+<h2>Inventory list</h2>
 <hr />
 @if (ilist == null)
 {
@@ -93,7 +85,7 @@ else
 
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/SalesOrderHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&item={searchitemnum}");
+        var httpResponse = await Http.GetAsync($"api/Inventories?page={page}&quantityPerPage={quantityPerPage}&item={searchitemnum}");
 
         if (httpResponse.IsSuccessStatusCode)
         {
