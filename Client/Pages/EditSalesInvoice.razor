@@ -26,35 +26,233 @@
             <th>GSV</th>
         </tr>
     </thead>
-<tbody>
-@if (sid == null)
-{
-    // do nothign
-}
-else
-{
-    @foreach (var items in sid)
-    {
-        <tr>
-            <td style="font-size: small">@items.Product_Id</td>
-            <td style="font-size: small">@items.Product_Name</td>
-            <td style="font-size: small">@items.Pack_Size</td>
-            <td style="font-size: small">@items.Sales_Qty_CS</td>
-            <td style="font-size: small">@items.Sales_Qty_PC</td>
-            <td style="font-size: small">@items.Free_Qty_CS</td>
-            <td style="font-size: small">@items.Free_Qty_PC</td>
-            <td style="font-size: small">@items.Sales_Qty_Liter</td>
-            <td style="font-size: small">@items.Free_Qty_Liter</td>
-            <td style="font-size: small">@items.GSV</td>
-        </tr>
-    }
-}
-</tbody>
+    <tbody>
+        @if (sid == null)
+        {
+            // do nothign
+        }
+        else
+        {
+            @foreach (var items in sid)
+            {
+                <tr>
+                    <td style="font-size: small">@items.Product_Id</td>
+                    <td style="font-size: small">@items.Product_Name</td>
+                    <td style="font-size: small">@items.Pack_Size</td>
+                    <td style="font-size: small">@items.Sales_Qty_CS</td>
+                    <td style="font-size: small">@items.Sales_Qty_PC</td>
+                    <td style="font-size: small">@items.Free_Qty_CS</td>
+                    <td style="font-size: small">@items.Free_Qty_PC</td>
+                    <td style="font-size: small">@items.Sales_Qty_Liter</td>
+                    <td style="font-size: small">@items.Free_Qty_Liter</td>
+                    <td style="font-size: small">@items.GSV</td>
+                </tr>
+            }
+        }
+    </tbody>
 </table>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="text-left col-md-12">
+            <h6><b>Insert Sales Invoice Details:</b></h6>
+        </div>
+        <hr />
+        <form>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="prodcode" class="control-label" style="font-size: small;">Product code</label>
+                        <input form="prodcode" class="form-control" @bind="@sid2.Product_Id" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="prodname" class="control-label" style="font-size: small;">Product name</label>
+                        <input form="prodname" class="form-control" @bind="@sid2.Product_Name" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="packsize" class="control-label" style="font-size: small;">Pack size</label>
+                        <input form="packsize" class="form-control" @bind="@sid2.Pack_Size" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="masterbrand" class="control-label" style="font-size: small;">Master brand</label>
+                        <input form="masterbrand" class="form-control" @bind="@sid2.Master_Brand" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="masterbrandname" class="control-label" style="font-size: small;">Master brand name</label>
+                        <input form="masterbrandname" class="form-control" @bind="@sid2.Master_Brand_Name" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="masterbasepack" class="control-label" style="font-size: small;">Master basepack</label>
+                        <input form="masterbasepack" class="form-control" @bind="@sid2.Master_Basepack" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="masterbasepackname" class="control-label" style="font-size: small;">Master basepack name</label>
+                        <input form="masterbasepackname" class="form-control" @bind="@sid2.Master_Basepack_Name" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="leadbasepack" class="control-label" style="font-size: small;">Lead basepack</label>
+                        <input form="leadbasepack" class="form-control" @bind="@sid2.Lead_Basepack" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="sqtycs" class="control-label" style="font-size: small;">Sales qty cs</label>
+                        <input form="sqtycs" class="form-control" @bind="@sid2.Sales_Qty_CS" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="sqtypc" class="control-label" style="font-size: small;">Sales qty pc</label>
+                        <input form="sqtypc" class="form-control" @bind="@sid2.Sales_Qty_PC" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="fqtycs" class="control-label" style="font-size: small;">Free qty cs</label>
+                        <input form="fqtycs" class="form-control" @bind="@sid2.Free_Qty_CS" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="fqtypc" class="control-label" style="font-size: small;">Free qty pc</label>
+                        <input form="fqtypc" class="form-control" @bind="@sid2.Free_Qty_PC" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="sqtyl" class="control-label" style="font-size: small;">Sales qty liter</label>
+                        <input form="sqtyl" class="form-control" @bind="@sid2.Sales_Qty_Liter" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="freeqtyl" class="control-label" style="font-size: small;">Free qty liter</label>
+                        <input form="freeqtyl" class="form-control" @bind="@sid2.Free_Qty_Liter" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="sqacs" class="control-label" style="font-size: small;">Sales qty aggr cs</label>
+                        <input form="sqacs" class="form-control" @bind="@sid2.Sales_Qty_Aggr_CS" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="sqapc" class="control-label" style="font-size: small;">Sales qty aggr pc</label>
+                        <input form="sqapc" class="form-control" @bind="@sid2.Sales_Qty_Aggr_PC" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="fqacs" class="control-label" style="font-size: small;">Free qty aggr cs</label>
+                        <input form="fqacs" class="form-control" @bind="@sid2.Free_Qty_Aggr_CS" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="fqapc" class="control-label" style="font-size: small;">Free qty aggr pc</label>
+                        <input form="fqapc" class="form-control" @bind="@sid2.Free_Qty_Aggr_PC" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="gsv" class="control-label" style="font-size: small;">GSV</label>
+                        <input form="gsv" class="form-control" @bind="@sid2.GSV" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="tpr" class="control-label" style="font-size: small;">TPR</label>
+                        <input form="tpr" class="form-control" @bind="@sid2.TPR" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="uw" class="control-label" style="font-size: small;">UW</label>
+                        <input form="uw" class="form-control" @bind="@sid2.UW" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="dtdisc" class="control-label" style="font-size: small;">DT discount</label>
+                        <input form="dtdisc" class="form-control" @bind="@sid2.DT_Discount" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="salesafter" class="control-label" style="font-size: small;">Sales after</label>
+                        <input form="salesafter" class="form-control" @bind="@sid2.Sales_After" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="voldisc" class="control-label" style="font-size: small;">Volume discount</label>
+                        <input form="voldisc" class="form-control" @bind="@sid2.Volume_Discount" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="coupdisc" class="control-label" style="font-size: small;">Coupon discount</label>
+                        <input form="coupdisc" class="form-control" @bind="@sid2.Coupon_Discount" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="niv" class="control-label" style="font-size: small;">NIV</label>
+                        <input form="niv" class="form-control" @bind="@sid2.NIV" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="vat" class="control-label" style="font-size: small;">VAT</label>
+                        <input form="vat" class="form-control" @bind="@sid2.VAT" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="tsai" class="control-label" style="font-size: small;">Total sales amnt inc</label>
+                        <input form="tsai" class="form-control" @bind="@sid2.Total_Sales_Amnt_Inc" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="aggrpcs" class="control-label" style="font-size: small;">Aggr pieces</label>
+                        <input form="aggrpcs" class="form-control" @bind="@sid2.Aggr_Pieces" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="cabinetcount" class="control-label" style="font-size: small;">Cabinet count</label>
+                        <input form="cabinetcount" class="form-control" @bind="@sid2.Cabinet_Count" />
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="button" class="btn btn-success" @onclick="@insertDetails" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
+
 
 @code {
 
     SalesInvoice_Headers si = new SalesInvoice_Headers();
+    SalesInvoice_Details sid2 = new SalesInvoice_Details();
     SalesInvoice_Details[] sid;
     SAPSalesmanMaster ssm = new SAPSalesmanMaster();
 
@@ -79,9 +277,9 @@ else
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    public async Task updatesalesinvoice()
+    public async Task insertDetails()
     {
-        await Http.PutJsonAsync("api/SalesInvoiceHeaders/" + id, si);
+        await Http.PostJsonAsync("api/SalesInvoiceDetailsIndex/" + id, sid2);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("salesinvoicelist");
     }

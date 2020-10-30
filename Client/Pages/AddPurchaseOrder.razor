@@ -10,44 +10,12 @@
     <div class="row">
         <div class="col-md-8">
             <div class="form-group">
-                <label for="site" class="control-label">Site</label>
-                <input form="site" class="form-control" @bind="@po.Site" />
-            </div>
-            <div class="form-group">
                 <label for="postingdate" class="control-label">Posting date</label>
-                <input form="postingdate" class="form-control" @bind="@po.Posting_Date" />
+                <input form="postingdate" class="form-control" @bind="@po.Article_Doc" />
             </div>
             <div class="form-group">
                 <label for="docdate" class="control-label">Document date</label>
-                <input form="docdate" class="form-control" @bind="@po.Document_Date" />
-            </div>
-            <div class="form-group">
-                <label for="artdoc" class="control-label">Article document</label>
-                <input form="artdoc" class="form-control" @bind="@po.Article_Doc" />
-            </div>
-            <div class="form-group">
-                <label for="billdoc" class="control-label">Bill Document</label>
-                <input form="billdoc" class="form-control" @bind="@po.Bill_Doc" />
-            </div>
-            <div class="form-group">
-                <label for="itemcode" class="control-label">Item code</label>
-                <input form="itemcode" class="form-control" @bind="@po.Item_Code" />
-            </div>
-            <div class="form-group">
-                <label for="itemdesc" class="control-label">Item description</label>
-                <input form="itemdesc" class="form-control" @bind="@po.Item_Desc" />
-            </div>
-            <div class="form-group">
-                <label for="qty" class="control-label">Quantity</label>
-                <input form="qty" class="form-control" @bind="@po.Quantity" />
-            </div>
-            <div class="form-group">
-                <label for="qty" class="control-label">Quantity</label>
-                <select form="qty" class="form-control" @bind="@po.Uom">
-                    <option value="" disabled selected>Choose</option>
-                    <option value="CS">CS</option>
-                    <option value="PC">PC</option>
-                </select>
+                <input form="docdate" class="form-control" @bind="@po.Bill_Doc" />
             </div>
         </div>
     </div>
@@ -62,7 +30,7 @@
 </form>
 
 @code {
-    PurchaseOrder po = new PurchaseOrder();
+    PurchaseHeaders po = new PurchaseHeaders();
 
     private HubConnection hubCon;
 
@@ -80,7 +48,7 @@
 
     public async Task addpurchaseorder()
     {
-        await Http.PostJsonAsync("api/PurchaseHeadersIndex", po);
+        await Http.PostJsonAsync("api/PurchaseOrderHeadersIndex", po);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }

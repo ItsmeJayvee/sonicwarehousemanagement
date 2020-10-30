@@ -1903,8 +1903,8 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\ViewInventory.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\HomeInventor.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\ViewInventory.razor.g.cs
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\A7dkQ061h74aF_4ETByVWiz6NiuLwAkUVFHXBs7o3UI=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\K71WD3enWMA8h_KdsghBBZKkApd3IGiMNIrHTHCSnlE=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\vB8Zuu6GMWyxFvIEgXazBXAohveSrIAW4J2652a0L3o=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Qjq4XBYS4tAZLsbT36mubqQAYiZi6JSPXnOEb-ANPyo=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\q-672IAaCM0HhNYSySvbPINH9mi1UNewYxEjoiPgtNY=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\-3O4fTXBuxnLNisXWIPj9gorU3vfHaV19UJ23gsX6YU=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Z5vYHSXHag7J7qToojzl79yZ0tjlnMX_OsWsp5rCLWY=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Xp4OE4NZ6oab58InUx9vWfKwzzvXuKcPMXMKUMIqITY=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\KVICfWcfdGgehTV-ndujvNHwllBrS0lb8lvMhMv4rqQ=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\5EHm04ScPJSgEq3tIYL-ASrGKDzz-ECC5-lai4oYvJ8=.hash

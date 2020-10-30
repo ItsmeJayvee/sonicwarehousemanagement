@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -48,12 +49,12 @@ namespace SonicWarehouseManagement.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSalesInvoice_Details(int id, SalesInvoice_Details salesInvoice_Details)
         {
-            if (id != salesInvoice_Details.ID)
+            if (id != salesInvoice_Details.Header_ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(salesInvoice_Details).State = EntityState.Modified;
+            _context.Entry(salesInvoice_Details).State = EntityState.Added;
 
             try
             {
@@ -77,10 +78,18 @@ namespace SonicWarehouseManagement.Server.Controllers
         // POST: api/SalesInvoiceDetailsIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<SalesInvoice_Details>> PostSalesInvoice_Details(SalesInvoice_Details salesInvoice_Details)
+        [HttpPost("{id}")]
+        public async Task<ActionResult<SalesInvoice_Details>> PostSalesInvoice_Details(int id, SalesInvoice_Details salesInvoice_Details)
         {
+            var check = _context.SalesInvoice_Details.Where(x => x.Header_ID == id).ToList();
+
+            if(check == null)
+            {
+                return NotFound();
+            }
+            salesInvoice_Details.Header_ID = id;
             _context.SalesInvoice_Details.Add(salesInvoice_Details);
+
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetSalesInvoice_Details", new { id = salesInvoice_Details.ID }, salesInvoice_Details);
