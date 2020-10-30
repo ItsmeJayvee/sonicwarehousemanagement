@@ -77,9 +77,17 @@ namespace SonicWarehouseManagement.Server.Controllers
         // POST: api/PurchaseOrderDetailsIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<PurchaseDetails>> PostPurchaseDetails(PurchaseDetails purchaseDetails)
+        [HttpPost("{id}")]
+        public async Task<ActionResult<PurchaseDetails>> PostPurchaseDetails(int id, PurchaseDetails purchaseDetails)
         {
+            var check = _context.Purchase_Details.Where(x => x.Header_ID == id).ToList();
+
+            if(check == null)
+            {
+                return NotFound();
+            }
+
+            purchaseDetails.Header_ID = id;
             _context.Purchase_Details.Add(purchaseDetails);
             await _context.SaveChangesAsync();
 

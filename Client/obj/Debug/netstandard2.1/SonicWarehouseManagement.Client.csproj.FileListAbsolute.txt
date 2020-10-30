@@ -1903,8 +1903,8 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\ViewInventory.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\HomeInventor.razor.g.cs
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\Razor\Pages\ViewInventory.razor.g.cs
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\-3O4fTXBuxnLNisXWIPj9gorU3vfHaV19UJ23gsX6YU=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Z5vYHSXHag7J7qToojzl79yZ0tjlnMX_OsWsp5rCLWY=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Xp4OE4NZ6oab58InUx9vWfKwzzvXuKcPMXMKUMIqITY=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\KVICfWcfdGgehTV-ndujvNHwllBrS0lb8lvMhMv4rqQ=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\5EHm04ScPJSgEq3tIYL-ASrGKDzz-ECC5-lai4oYvJ8=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\KquE3VjlFt34PEgZfK03PMM82i9J27l6wLDOG-zuRHQ=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\kpwgNsM83zhsGKpT9QFTgMy9WAQIA0zpDHiDjfG9kJk=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\QXNSsKqHd8ujSECL1YzpxfkxXL8Y170lqJf3ivbWFEQ=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\OpsfGm8TPMQ3EOdVRVVoKAyTWCezYfmVFGfaRqeiz3Y=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Io3hRsjWAL-XhITNOWYFzXbqh3VnBctPedeMTfJm4N4=.hash
