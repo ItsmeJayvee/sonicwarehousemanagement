@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\kpwgNsM83zhsGKpT9QFTgMy9WAQIA0zpDHiDjfG9kJk=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\dWjF6LBwDXWtIJSJ_QHA0wQcILHSYGTJiv-IAYiM6es=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\SonicWarehouseManagement.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Client.dll.gz"
     },
@@ -261,7 +261,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\h40yCfRHTmjdfg0usGTLOFH9cYwKojWLtB41ZoiuvW4=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\-Y9YYlMlyN_1A_LQsIdrC4WDz8OVltY90dkitLQjOAY=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\SonicWarehouseManagement.Shared.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Shared.dll.gz"
     },
@@ -316,12 +316,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\QXNSsKqHd8ujSECL1YzpxfkxXL8Y170lqJf3ivbWFEQ=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\6nGRZdhMdf3cugP7s3ejl02mzKRLGqFu4XobtVeR1GE=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\SonicWarehouseManagement.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Client.pdb.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Xh7x8B7AMLjVwbmsZ4DnKaTdMM39yZpSOcMjAk0j99U=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\QWP0UH9GR3j3M0XLh7H6uHZdeXJ_FLB_rwVJTKNTUIY=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\SonicWarehouseManagement.Shared.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Shared.pdb.gz"
     },
@@ -346,12 +346,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\OpsfGm8TPMQ3EOdVRVVoKAyTWCezYfmVFGfaRqeiz3Y=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\-yAm7c7-3yNjgketOZ1W4KiBRjY11ZLEz2DdfXi1RDM=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Io3hRsjWAL-XhITNOWYFzXbqh3VnBctPedeMTfJm4N4=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\e5aBQwj5e6ds-_tvUlpHItHsCFmDcWpwlyAFI18rsUc=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\service-worker-assets.js.gz"
     }

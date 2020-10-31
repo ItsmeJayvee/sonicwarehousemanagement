@@ -545,9 +545,9 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
-                    b.Property<string>("Item_Number")
+                    b.Property<string>("Item_Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")

@@ -133,6 +133,8 @@
     public async Task insertsalesinvoice()
     {
         await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
+        await Http.PostJsonAsync("api/Inventories", pds);
+
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
-using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
 
 namespace SonicWarehouseManagement.Server.Controllers
@@ -24,15 +23,9 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/Inventories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Inventory>>> GetInventories([FromQuery] SalesInvoicePagination pagination, [FromQuery] string item)
+        public async Task<ActionResult<IEnumerable<Inventory>>> GetInventories()
         {
-            var queryable = _context.Inventories.AsQueryable();
-            if (!string.IsNullOrEmpty(item))
-            {
-                queryable = queryable.Where(x => x.Item_Number.Contains(item));
-            }
-            await HttpContext.InsertPaginationParameterResponse(queryable, pagination.QuantityPerPage);
-            return await queryable.Paginate(pagination).ToListAsync();
+            return await _context.Inventories.ToListAsync();
         }
 
         // GET: api/Inventories/5
