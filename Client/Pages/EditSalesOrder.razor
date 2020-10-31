@@ -42,107 +42,113 @@
         }
     </tbody>
 </table>
+<hr />
 <div class="container">
-    <form>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="mn" class="control-label">Material Number</label>
-                    <input form="mn" class="form-control" @bind="@sodlist.Material_N" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="ad" class="control-label">Article Description</label>
-                    <input form="ad" class="form-control" @bind="@sodlist.Article_Description" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="ps" class="control-label">Pack Size</label>
-                    <input form="ps" class="form-control" @bind="@sodlist.Pack_Size" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="cs" class="control-label">Cases</label>
-                    <input form="cs" class="form-control" @bind="@sodlist.Cases" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="pc" class="control-label">Pieces</label>
-                    <input form="pc" class="form-control" @bind="@sodlist.Pieces" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="fcs" class="control-label">Free Cases</label>
-                    <input form="fcs" class="form-control" @bind="@sodlist.Free_Cases" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="fp" class="control-label">Free Piece</label>
-                    <input form="fp" class="form-control" @bind="@sodlist.Free_Piece" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="dqcs" class="control-label">Delivery Qty CS</label>
-                    <input form="dqcs" class="form-control" @bind="@sodlist.Delivery_Qty_CS" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="dqpc" class="control-label">Delivery Qty PC</label>
-                    <input form="dqpc" class="form-control" @bind="@sodlist.Delivery_Qty_PC" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="sv" class="control-label">Sales_Value</label>
-                    <input form="sv" class="form-control" @bind="@sodlist.Sales_Value" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="vv" class="control-label">VAT Value</label>
-                    <input form="vv" class="form-control" @bind="@sodlist.VAT_Value" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="ns" class="control-label">Net Sales</label>
-                    <input form="ns" class="form-control" @bind="@sodlist.Net_Sales" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="in" class="control-label">Item Number</label>
-                    <input form="in" class="form-control" @bind="@sodlist.Item_Number" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="cspc" class="control-label">Cases Pieces</label>
-                    <input form="cspc" class="form-control" @bind="@sodlist.Cases_Pieces" />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="fcspc" class="control-label">Free CS PC</label>
-                    <input form="fcspc" class="form-control" @bind="@sodlist.Free_CS_PS" />
-                </div>
-            </div>
+    <div class="row">
+        <div class="text-left col-md-12">
+            <h6><b>Insert Sales Order Details:</b></h6>
         </div>
-        <div class="row">
+        <hr />
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="mn" class="control-label">Material Number</label>
+                        <input form="mn" class="form-control" @bind="@sodlist.Material_N" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ad" class="control-label">Article Description</label>
+                        <input form="ad" class="form-control" @bind="@sodlist.Article_Description" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ps" class="control-label">Pack Size</label>
+                        <input form="ps" class="form-control" @bind="@sodlist.Pack_Size" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="cs" class="control-label">Cases</label>
+                        <input form="cs" class="form-control" @bind="@sodlist.Cases" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="pc" class="control-label">Pieces</label>
+                        <input form="pc" class="form-control" @bind="@sodlist.Pieces" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fcs" class="control-label">Free Cases</label>
+                        <input form="fcs" class="form-control" @bind="@sodlist.Free_Cases" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fp" class="control-label">Free Piece</label>
+                        <input form="fp" class="form-control" @bind="@sodlist.Free_Piece" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="dqcs" class="control-label">Delivery Qty CS</label>
+                        <input form="dqcs" class="form-control" @bind="@sodlist.Delivery_Qty_CS" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="dqpc" class="control-label">Delivery Qty PC</label>
+                        <input form="dqpc" class="form-control" @bind="@sodlist.Delivery_Qty_PC" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sv" class="control-label">Sales_Value</label>
+                        <input form="sv" class="form-control" @bind="@sodlist.Sales_Value" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="vv" class="control-label">VAT Value</label>
+                        <input form="vv" class="form-control" @bind="@sodlist.VAT_Value" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ns" class="control-label">Net Sales</label>
+                        <input form="ns" class="form-control" @bind="@sodlist.Net_Sales" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="in" class="control-label">Item Number</label>
+                        <input form="in" class="form-control" @bind="@sodlist.Item_Number" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="cspc" class="control-label">Cases Pieces</label>
+                        <input form="cspc" class="form-control" @bind="@sodlist.Cases_Pieces" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fcspc" class="control-label">Free CS PC</label>
+                        <input form="fcspc" class="form-control" @bind="@sodlist.Free_CS_PS" />
+                    </div>
+                </div>
+            </div>
             <div class="text-center">
-                <input type="button" class="btn btn-success" @onclick="@updatesalesorder" value="Update" />
+                <input type="button" class="btn btn-success" @onclick="@updatesalesorder" value="Save" />
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
+
 @code {
     SalesOrderHeaders solist = new SalesOrderHeaders();
     SalesOrderDetails sodlist = new SalesOrderDetails();
