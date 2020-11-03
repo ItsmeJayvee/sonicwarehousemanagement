@@ -11,7 +11,6 @@ namespace SonicWarehouseManagement.Shared
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        [Column(TypeName = "datetime")]
         public DateTime Date { get; set; }
         public string Item_Code { get; set; }
         public int Quantity { get; set; }

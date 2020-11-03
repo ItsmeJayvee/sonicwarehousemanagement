@@ -46,7 +46,7 @@
 <div class="container">
     <div class="row">
         <div class="text-left col-md-12">
-            <h6><b>Insert Sales Invoice Details:</b></h6>
+            <h6><b>Insert purchase order Details:</b></h6>
         </div>
         <hr />
         <form>
@@ -134,7 +134,6 @@
     {
         await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
         await Http.PostJsonAsync("api/Inventories", pds);
-
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }

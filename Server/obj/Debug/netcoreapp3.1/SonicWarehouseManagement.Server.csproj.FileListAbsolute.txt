@@ -1046,6 +1046,7 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netco
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.csproj.CoreCompileInputs.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Client.StaticWebAssets.xml
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
@@ -1200,7 +1201,6 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\zh-Hans\Microsoft.CodeAnalysis.resources.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Client.StaticWebAssets.xml
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.StaticWebAssets.xml
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.exe
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.deps.json
