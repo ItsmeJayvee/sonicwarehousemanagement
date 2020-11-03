@@ -21,13 +21,25 @@
         </tr>
     </thead>
     <tbody>
-
+        @if(pd == null)
+        {
+            // do nothing
+        }
+        else
+        {
+            @foreach(var item in pd)
+            {
+                <tr>
+                    <td>@item.Item_Code</td>
+                </tr>
+            }
+        }
     </tbody>
 </table>
 
 @code {
     Inventory inv = new Inventory();
-    Inventory[] inlist;
+    PurchaseDetails[] pd;
 
     private HubConnection hubCon;
 
@@ -36,7 +48,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        inv     = await Http.GetJsonAsync<Inventory>("api/Inventories/" + id);
+        inv = await Http.GetJsonAsync<Inventory>("api/Inventories/getDetails/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/Inventories/getInventoryHead/" + id);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))

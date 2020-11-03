@@ -1903,7 +1903,7 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\blazor\service-worker-assets.js
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\SmIiVOUdeglmlVf6xSoIoGAoZIQvJnMhZsaUhMP3tnw=.hash
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\gzF2hgLSptbXtAiF_8_GK_v6MIp9sPSVk452FdH68FI=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\eUGEwQF4n3TuJ8x16iOhtx2bIFHxGJbolOOTHxFv2g0=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\aWAe87lfopUqk8xbi8QnPLzUhGcgzqzgsEpTrWO0Dq0=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\g0nX8cH1Pyn0JotklNTfRoOuDP4Xkp4Jdmp-O5t1cyA=.hash
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\SMlYf2_9GSFdpHQnTtsfvg7VDgeAdpSGuNXSzTwgDoQ=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\LsizjU6heSDpDEC2-a1D60Xfopgl-0txdy40RXHJ9ZY=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\BkHTqFOpHqx9pPcFlf97HGnjKrZ9acNF7WWjIB-DPgg=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\SD552MoccuSGz5QlnprzK8M85AclWO_-OTZ8NcwOWzI=.hash
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\obj\Debug\netstandard2.1\integrity\Zw7XlgiF_lWrvvFrSkJ3giNoa1X1GIq6_T-hZm6Wqxk=.hash

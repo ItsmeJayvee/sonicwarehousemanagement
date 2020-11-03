@@ -1,6 +1,7 @@
 ﻿@page "/editpurchaseorder/{id}"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
@@ -133,7 +134,7 @@
     public async Task insertsalesinvoice()
     {
         await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
-        await Http.PostJsonAsync("api/Inventories", pds);
+        await Http.PostJsonAsync("api/Inventories/purchaseOrder/Inventory", pds);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }

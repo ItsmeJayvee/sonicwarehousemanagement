@@ -36,17 +36,30 @@ namespace SonicWarehouseManagement.Server.Controllers
         }
 
         // GET: api/Inventories/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Inventory>> GetInventory(int id)
+        [HttpGet("getDetails/{id}")]
+        public async Task<ActionResult<Inventory>> GetInventory(string id)
         {
-            var inventory = await _context.Inventories.FindAsync(id);
+            var inventory = _context.Inventories.Where(p => p.Item_Code == id).ToList();
 
             if (inventory == null)
             {
                 return NotFound();
             }
 
-            return inventory;
+            return Ok(inventory);
+        }
+
+        [HttpGet("getInventoryHead/{id}")]
+        public async Task<ActionResult<PurchaseDetails>> GetInventory2(string id)
+        {
+            var inventory = _context.Purchase_Details.Where(x => x.Item_Code == id).ToList();
+
+            if (inventory == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(inventory);
         }
 
         // PUT: api/Inventories/5
@@ -93,6 +106,15 @@ namespace SonicWarehouseManagement.Server.Controllers
             return CreatedAtAction("GetInventory", new { id = inventory.ID }, inventory);
         }
 
+        [HttpPost("purchaseOrder/Inventory")]
+        public async Task<ActionResult<Inventory>> PostInventoryFromPurchaseOrder(Inventory inventory)
+        {
+            inventory.Transaction_Type = "Purchase Order";
+            _context.Inventories.Add(inventory);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetInventory", new { id = inventory.ID }, inventory);
+        }
         // DELETE: api/Inventories/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Inventory>> DeleteInventory(int id)
