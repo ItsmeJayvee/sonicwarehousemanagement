@@ -80,11 +80,6 @@ namespace SonicWarehouseManagement.Server.Controllers
         [HttpPost("{id}")]
         public async Task<ActionResult<SalesOrderDetails>> PostSalesOrderDetails(int id, SalesOrderDetails salesOrderDetails)
         {
-            var check = _context.SalesOrder_Details.Where(x => x.Header_ID == id).ToList();
-            if(check == null)
-            {
-                return NotFound();
-            }
             salesOrderDetails.Header_ID = id;
             _context.SalesOrder_Details.Add(salesOrderDetails);
             await _context.SaveChangesAsync();

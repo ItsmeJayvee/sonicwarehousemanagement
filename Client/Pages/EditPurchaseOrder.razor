@@ -134,7 +134,10 @@
     public async Task insertsalesinvoice()
     {
         await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
-        await Http.PostJsonAsync("api/Inventories/purchaseOrder/Inventory", pds);
+        var addHeaderItems = new InventoryHeader { Ref_ID = id, Ref_Type = "Purchase Oder", Item_Code = pds.Item_Code };
+        await Http.PostJsonAsync("api/InventoryHeadersIndex", addHeaderItems);
+        var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = pds.Quantity, Uom = pds.Uom, Transaction_Type = "Purchase Order" };
+        await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("purchaseorderlist");
     }

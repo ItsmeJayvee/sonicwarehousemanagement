@@ -570,6 +570,57 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.ToTable("Inventories");
                 });
 
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.InventoryDetails", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Header_Ref")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transaction_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Uom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Warehouse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Inventory_Details");
+                });
+
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.InventoryHeader", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Item_Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ref_ID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ref_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Inventory_Headers");
+                });
+
             modelBuilder.Entity("SonicWarehouseManagement.Shared.Location", b =>
                 {
                     b.Property<int>("ID")

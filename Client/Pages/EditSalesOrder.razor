@@ -176,7 +176,14 @@
 
     public async Task updatesalesorder()
     {
-        await Http.PutJsonAsync("api/SalesOrderDetailsIndex/" + id, sodlist);
+        await Http.PostJsonAsync("api/SalesOrderDetailsIndex/" + id, sodlist);
+
+        var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = sodlist.Material_N, Ref_Type = "Sales Order"};
+        await Http.PostJsonAsync("api/InventoryHeadersIndex", addHeaderItems);
+
+        var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = Int32.Parse(sodlist.Pieces + sodlist.Cases), Uom = "PC", Transaction_Type = "Sales Order" };
+        await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
+
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("salesorderlist");
     }

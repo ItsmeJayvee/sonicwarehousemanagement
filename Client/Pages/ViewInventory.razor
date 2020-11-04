@@ -6,31 +6,31 @@
 
 <h2>Inventory</h2>
 <hr />
-<p>Transaction Type: <b>@inv.Transaction_Type</b></p>
-<p>Date: <b>@inv.Date</b></p>
+<p>Item number: <b>@inv.Item_Code</b></p>
+<p>Transaction Type: <b>@inv.Ref_Type</b></p>
 <table class="table">
     <thead>
         <tr>
-            <th>Site</th>
-            <th>Item Code</th>
-            <th>Item Description</th>
+            <th>Document Reference</th>
             <th>Quantity</th>
+            <th>Transaction Type</th>
             <th>Uom</th>
-            <th>Posting Date</th>
-            <th>Document Date</th>
         </tr>
     </thead>
     <tbody>
-        @if(pd == null)
+        @if(invd == null)
         {
             // do nothing
         }
         else
         {
-            @foreach(var item in pd)
+            @foreach(var item in invd)
             {
                 <tr>
-                    <td>@item.Item_Code</td>
+                    <td style="font-size: small;">@item.Header_Ref</td>
+                    <td style="font-size: small;">@item.Quantity</td>
+                    <td style="font-size: small;">@item.Transaction_Type</td>   
+                    <td style="font-size: small;">@item.Uom</td>
                 </tr>
             }
         }
@@ -38,8 +38,8 @@
 </table>
 
 @code {
-    Inventory inv = new Inventory();
-    PurchaseDetails[] pd;
+    InventoryHeader inv = new InventoryHeader();
+    InventoryDetails[] invd;
 
     private HubConnection hubCon;
 
@@ -48,8 +48,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        inv = await Http.GetJsonAsync<Inventory>("api/Inventories/getDetails/" + id);
-        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/Inventories/getInventoryHead/" + id);
+        inv = await Http.GetJsonAsync<InventoryHeader>("api/InventoryHeadersIndex/" + id);
+        invd = await Http.GetJsonAsync<InventoryDetails[]>("api/InventoryDetailsIndex/" + id);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
