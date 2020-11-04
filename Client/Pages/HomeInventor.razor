@@ -33,7 +33,7 @@
                 <td style="font-size: small;">@i.ID</td>
                 <td style="font-size: small;">@i.Item_Code</td>
                 <td>
-                    <a style="font-size: small;" href="/viewinventory/@i.ID" class="btn-sm btn-primary">View</a>
+                    <a style="font-size: small;" href="/viewinventory/@i.Item_Code" class="btn-sm btn-primary">View</a>
                 </td>
             </tr>
             }
@@ -44,7 +44,7 @@
 
 
 @code {
-    InventoryHeader[] ilist;
+    Inventory[] ilist;
 
     private int totalPageQuantity;
     private int currentPage = 1;
@@ -55,7 +55,7 @@
     protected override async Task OnInitializedAsync()
     {
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHeadersHub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
             .Build();
 
         hubCon.On("ReceiveMessage", () =>
@@ -90,13 +90,13 @@
 
     protected async Task LoadData(int page = 1, int quantityPerPage = 10)
     {
-        var httpResponse = await Http.GetAsync($"api/InventoryHeadersIndex?page={page}&quantityPerPage={quantityPerPage}&item={searchitemnumber}");
+        var httpResponse = await Http.GetAsync($"api/Inventories?page={page}&quantityPerPage={quantityPerPage}&item={searchitemnumber}");
 
         if (httpResponse.IsSuccessStatusCode)
         {
             totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            ilist = JsonSerializer.Deserialize<InventoryHeader[]>(responseString,
+            ilist = JsonSerializer.Deserialize<Inventory[]>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             StateHasChanged();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -84,13 +85,20 @@ namespace SonicWarehouseManagement.Server.Controllers
         // POST: api/InventoryHeadersIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<InventoryHeader>> PostInventoryHeader2(InventoryHeader inventoryHeader)
+        [HttpPost("{id}")]
+        public async Task<ActionResult<InventoryHeader>> PostInventoryHeader2(string id, InventoryHeader inventoryHeader)
         {
-            _context.Inventory_Headers.Add(inventoryHeader);
-            await _context.SaveChangesAsync();
+            var ids = _context.Inventory_Headers.Where(x => x.Item_Code == id).ToList();
 
-            return CreatedAtAction("GetInventoryHeader", new { id = inventoryHeader.ID }, inventoryHeader);
+            if(ids.Count == 0)
+            {
+                _context.Inventory_Headers.Add(inventoryHeader);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetInventoryHeader", new { id = inventoryHeader.ID }, inventoryHeader);
+            }
+
+            return Ok();
         }
 
         // DELETE: api/InventoryHeadersIndex/5

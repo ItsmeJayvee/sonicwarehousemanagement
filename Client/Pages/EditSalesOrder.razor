@@ -178,11 +178,24 @@
     {
         await Http.PostJsonAsync("api/SalesOrderDetailsIndex/" + id, sodlist);
 
-        var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = sodlist.Material_N, Ref_Type = "Sales Order"};
-        await Http.PostJsonAsync("api/InventoryHeadersIndex", addHeaderItems);
+        var addHeaderItems = new InventoryHeader { Ref_ID = sodlist.Material_N, Item_Code = sodlist.Material_N, Ref_Type = "Sales Order"};
+        await Http.PostJsonAsync("api/InventoryHeadersIndex/" + sodlist.Material_N, addHeaderItems);
 
-        var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = Int32.Parse(sodlist.Pieces + sodlist.Cases), Uom = "PC", Transaction_Type = "Sales Order" };
-        await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
+        if(sodlist.Cases == "" || sodlist.Cases == "0")
+        {
+            var addDetailItems = new InventoryDetails { Header_Ref = sodlist.Material_N, Quantity = Int32.Parse(sodlist.Pieces), Uom = "PC", Transaction_Type = "Sales Order" };
+            await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
+            var addItems = new Inventory { Item_Code = sodlist.Item_Number, Quantity = Int32.Parse(sodlist.Pieces), Uom = "PC", Transaction_Type = "Sales Order" };
+            await Http.PostJsonAsync("api/Inventories", addItems);
+        }
+        else
+        {
+            var addDetailItems = new InventoryDetails { Header_Ref = sodlist.Material_N, Quantity = Int32.Parse(sodlist.Cases), Uom = "CS", Transaction_Type = "Sales Order" };
+            await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
+            var addItems = new Inventory { Item_Code = sodlist.Item_Number, Quantity = Int32.Parse(sodlist.Cases), Uom = "CS", Transaction_Type = "Sales Order" };
+            await Http.PostJsonAsync("api/Inventories", addItems);
+        }
+
 
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("salesorderlist");

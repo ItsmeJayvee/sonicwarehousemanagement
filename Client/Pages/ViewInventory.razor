@@ -7,7 +7,7 @@
 <h2>Inventory</h2>
 <hr />
 <p>Item number: <b>@inv.Item_Code</b></p>
-<p>Transaction Type: <b>@inv.Ref_Type</b></p>
+<p>Transaction Type: <b>@inv.Transaction_Type</b></p>
 <table class="table">
     <thead>
         <tr>
@@ -38,7 +38,7 @@
 </table>
 
 @code {
-    InventoryHeader inv = new InventoryHeader();
+    Inventory inv = new Inventory();
     InventoryDetails[] invd;
 
     private HubConnection hubCon;
@@ -48,12 +48,12 @@
 
     protected override async Task OnInitializedAsync()
     {
-        inv = await Http.GetJsonAsync<InventoryHeader>("api/InventoryHeadersIndex/" + id);
+        inv = await Http.GetJsonAsync<Inventory>("api/Inventories/" + id);
         invd = await Http.GetJsonAsync<InventoryDetails[]>("api/InventoryDetailsIndex/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
+        .Build();
 
         await hubCon.StartAsync();
     }
