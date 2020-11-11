@@ -43,8 +43,10 @@ namespace SonicWarehouseManagement.Shared
         public string LSR_Province_Description { get; set; }
         public string LSR_City_Description { get; set; }
         public string LSR_Barangay_Description { get; set; }
-        public string Deactivation_date { get; set; }
-        public string Changed_date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Deactivation_date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Changed_date { get; set; }
         public string Payment_Type { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
@@ -58,7 +60,8 @@ namespace SonicWarehouseManagement.Shared
         public string Search_Term1 { get; set; }
         public string Search_Term2 { get; set; }
         public string Tax1 { get; set; }
-        public string Created_On { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Created_On { get; set; }
         public string Perfect_Store_Audit_Type { get; set; }
         public string eRTM { get; set; }
     }

@@ -1,36 +1,33 @@
 ﻿@page "/viewinventory/{id}"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
 <h2>Inventory</h2>
 <hr />
-<p>Item number: <b>@inv.Item_Code</b></p>
-<p>Transaction Type: <b>@inv.Transaction_Type</b></p>
+<p>Order number: <b>@po.Item_Code</b></p>
+<p>Bill Document: <b>@po.Transaction_Type</b></p>
 <table class="table">
     <thead>
         <tr>
-            <th>Document Reference</th>
             <th>Quantity</th>
-            <th>Transaction Type</th>
             <th>Uom</th>
         </tr>
     </thead>
     <tbody>
-        @if(invd == null)
+        @if (pd == null)
         {
             // do nothing
         }
         else
         {
-            @foreach(var item in invd)
+            @foreach (var items in pd)
             {
                 <tr>
-                    <td style="font-size: small;">@item.Header_Ref</td>
-                    <td style="font-size: small;">@item.Quantity</td>
-                    <td style="font-size: small;">@item.Transaction_Type</td>   
-                    <td style="font-size: small;">@item.Uom</td>
+                    <td style="font-size: small">@items.Quantity</td>
+                    <td style="font-size: small">@items.Uom</td>
                 </tr>
             }
         }
@@ -38,8 +35,8 @@
 </table>
 
 @code {
-    Inventory inv = new Inventory();
-    InventoryDetails[] invd;
+    Inventory po = new Inventory();
+    Inventory[] pd;
 
     private HubConnection hubCon;
 
@@ -48,12 +45,12 @@
 
     protected override async Task OnInitializedAsync()
     {
-        inv = await Http.GetJsonAsync<Inventory>("api/Inventories/" + id);
-        invd = await Http.GetJsonAsync<InventoryDetails[]>("api/InventoryDetailsIndex/" + id);
+        po = await Http.GetJsonAsync<Inventory>("api/Inventories/" + id);
+        pd = await Http.GetJsonAsync<Inventory[]>("api/Inventories/" + id);
 
         hubCon = new HubConnectionBuilder()
-        .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
-        .Build();
+            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
+            .Build();
 
         await hubCon.StartAsync();
     }

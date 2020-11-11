@@ -1,6 +1,7 @@
 ﻿@page "/editsalesorder/{id}"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
+@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
@@ -8,7 +9,7 @@
 <hr />
 <p>Order number: <b>@solist.Order_Number</b></p>
 <p>Order type: @solist.Order_Type_Desc</p>
-<p>Date: @solist.SO_Date</p>
+<p>Date: @solist.SO_Date.ToShortDateString()</p>
 <hr />
 <table class="table">
     <thead>
@@ -22,13 +23,13 @@
         </tr>
     </thead>
     <tbody>
-        @if(sod == null)
+        @if (sod == null)
         {
-
+            <p><em>Loading...</em></p>
         }
         else
         {
-            @foreach(var items in sod)
+            @foreach (var items in sod)
             {
                 <tr>
                     <td style="font-size: small;">@items.Material_N</td>
@@ -46,112 +47,24 @@
 <div class="container">
     <div class="row">
         <div class="text-left col-md-12">
-            <h6><b>Insert Sales Order Details:</b></h6>
+            <h6><b>Insert sales order Details:</b></h6>
+
         </div>
         <hr />
         <form>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
-                        <label for="mn" class="control-label">Material Number</label>
-                        <input form="mn" class="form-control" @bind="@sodlist.Material_N" />
+                        <label for="materialn" class="control-label" style="font-size: small;">Material Number</label>
+                        <input form="materialn" class="form-control" />
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="ad" class="control-label">Article Description</label>
-                        <input form="ad" class="form-control" @bind="@sodlist.Article_Description" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="ps" class="control-label">Pack Size</label>
-                        <input form="ps" class="form-control" @bind="@sodlist.Pack_Size" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="cs" class="control-label">Cases</label>
-                        <input form="cs" class="form-control" @bind="@sodlist.Cases" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="pc" class="control-label">Pieces</label>
-                        <input form="pc" class="form-control" @bind="@sodlist.Pieces" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="fcs" class="control-label">Free Cases</label>
-                        <input form="fcs" class="form-control" @bind="@sodlist.Free_Cases" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="fp" class="control-label">Free Piece</label>
-                        <input form="fp" class="form-control" @bind="@sodlist.Free_Piece" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="dqcs" class="control-label">Delivery Qty CS</label>
-                        <input form="dqcs" class="form-control" @bind="@sodlist.Delivery_Qty_CS" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="dqpc" class="control-label">Delivery Qty PC</label>
-                        <input form="dqpc" class="form-control" @bind="@sodlist.Delivery_Qty_PC" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="sv" class="control-label">Sales_Value</label>
-                        <input form="sv" class="form-control" @bind="@sodlist.Sales_Value" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="vv" class="control-label">VAT Value</label>
-                        <input form="vv" class="form-control" @bind="@sodlist.VAT_Value" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="ns" class="control-label">Net Sales</label>
-                        <input form="ns" class="form-control" @bind="@sodlist.Net_Sales" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="in" class="control-label">Item Number</label>
-                        <input form="in" class="form-control" @bind="@sodlist.Item_Number" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="cspc" class="control-label">Cases Pieces</label>
-                        <input form="cspc" class="form-control" @bind="@sodlist.Cases_Pieces" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="fcspc" class="control-label">Free CS PC</label>
-                        <input form="fcspc" class="form-control" @bind="@sodlist.Free_CS_PS" />
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <input type="button" class="btn btn-success" @onclick="@updatesalesorder" value="Save" />
             </div>
         </form>
     </div>
 </div>
-
 @code {
     SalesOrderHeaders solist = new SalesOrderHeaders();
-    SalesOrderDetails sodlist = new SalesOrderDetails();
     SalesOrderDetails[] sod;
 
     private HubConnection hubCon;
@@ -163,43 +76,15 @@
     {
         solist = await Http.GetJsonAsync<SalesOrderHeaders>("api/SalesOrderHeadersIndex/" + id);
         sod = await Http.GetJsonAsync<SalesOrderDetails[]>("api/SalesOrderDetailsIndex/" + id);
-
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
+        .Build();
 
         await hubCon.StartAsync();
     }
 
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
-
-    public async Task updatesalesorder()
-    {
-        await Http.PostJsonAsync("api/SalesOrderDetailsIndex/" + id, sodlist);
-
-        var addHeaderItems = new InventoryHeader { Ref_ID = sodlist.Material_N, Item_Code = sodlist.Material_N, Ref_Type = "Sales Order"};
-        await Http.PostJsonAsync("api/InventoryHeadersIndex/" + sodlist.Material_N, addHeaderItems);
-
-        if(sodlist.Cases == "" || sodlist.Cases == "0")
-        {
-            var addDetailItems = new InventoryDetails { Header_Ref = sodlist.Material_N, Quantity = Int32.Parse(sodlist.Pieces), Uom = "PC", Transaction_Type = "Sales Order" };
-            await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
-            var addItems = new Inventory { Item_Code = sodlist.Item_Number, Quantity = Int32.Parse(sodlist.Pieces), Uom = "PC", Transaction_Type = "Sales Order" };
-            await Http.PostJsonAsync("api/Inventories", addItems);
-        }
-        else
-        {
-            var addDetailItems = new InventoryDetails { Header_Ref = sodlist.Material_N, Quantity = Int32.Parse(sodlist.Cases), Uom = "CS", Transaction_Type = "Sales Order" };
-            await Http.PostJsonAsync("api/InventoryDetailsIndex", addDetailItems);
-            var addItems = new Inventory { Item_Code = sodlist.Item_Number, Quantity = Int32.Parse(sodlist.Cases), Uom = "CS", Transaction_Type = "Sales Order" };
-            await Http.PostJsonAsync("api/Inventories", addItems);
-        }
-
-
-        if (IsConnected) await SendMessage();
-        NavigationManager.NavigateTo("salesorderlist");
-    }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 

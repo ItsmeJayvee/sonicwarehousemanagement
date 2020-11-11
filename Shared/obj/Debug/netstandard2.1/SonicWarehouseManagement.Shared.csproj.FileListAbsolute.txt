@@ -28,6 +28,7 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Shared\obj\Debug\netst
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.deps.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\bin\Debug\netstandard2.1\SonicWarehouseManagement.Shared.pdb
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csprojAssemblyReference.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfoInputs.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.AssemblyInfo.cs
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Shared\obj\Debug\netstandard2.1\SonicWarehouseManagement.Shared.csproj.CoreCompileInputs.cache

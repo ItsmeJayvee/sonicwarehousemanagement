@@ -98,6 +98,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         public async Task<ActionResult<SalesOrderHeaders>> DeleteSalesOrderHeaders(int id)
         {
             var salesOrderHeaders = await _context.SalesOrder_Headers.FindAsync(id);
+
             if (salesOrderHeaders == null)
             {
                 return NotFound();

@@ -46,6 +46,7 @@ namespace SonicWarehouseManagement.Shared
         public string Height_PC { get; set; }
         public string Length_CS { get; set; }
         public string Height_CS { get; set; }
-        public string Updated_Date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Updated_Date { get; set; }
     }
 }

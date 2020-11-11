@@ -14,6 +14,7 @@ namespace SonicWarehouseManagement.Shared
         public string Route_No { get; set; }
         public string Order_Type { get; set; }
         public string Order_Number { get; set; }
+        [Column(TypeName = "date")]
         public DateTime SO_Date { get; set; }
         public string Outlet_Code { get; set; }
         public string Outlet_Name { get; set; }

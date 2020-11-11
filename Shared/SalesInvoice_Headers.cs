@@ -23,7 +23,9 @@ namespace SonicWarehouseManagement.Shared
         public string Master_FSS_Name { get; set; }
         public string Salesman_Team_Type { get; set; }
         public string Salesman_Team_Type_Desc { get; set; }
+        [Column(TypeName = "date")]
         public DateTime Calendar_Day { get; set; }
+        [Column(TypeName = "date")]
         public DateTime Invoice_Due_Date { get; set; }
         public string Purchase_Order_No { get; set; }
         public string Sales_Order_No { get; set; }

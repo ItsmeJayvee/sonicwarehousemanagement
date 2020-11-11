@@ -113,8 +113,8 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("Uom3")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Updated_Date")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Updated_Date")
+                        .HasColumnType("date");
 
                     b.Property<string>("Volume_CS")
                         .HasColumnType("nvarchar(max)");
@@ -158,8 +158,8 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("Card_Type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Changed_date")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Changed_date")
+                        .HasColumnType("date");
 
                     b.Property<string>("Classification")
                         .HasColumnType("nvarchar(max)");
@@ -170,11 +170,11 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("Contact_Person")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Created_On")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Created_On")
+                        .HasColumnType("date");
 
-                    b.Property<string>("Deactivation_date")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Deactivation_date")
+                        .HasColumnType("date");
 
                     b.Property<string>("Delivering_Site")
                         .HasColumnType("nvarchar(max)");
@@ -350,7 +350,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Calendar_Day")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<int>("Coupon_Discount")
                         .HasColumnType("int");
@@ -359,7 +359,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("decimal(18, 4)");
 
                     b.Property<DateTime>("Delivery_Due_Date")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<string>("Delivery_Receipt_No")
                         .HasColumnType("nvarchar(100)")
@@ -545,7 +545,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Item_Code")
                         .HasColumnType("nvarchar(max)");
@@ -607,13 +607,13 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("date");
+
                     b.Property<string>("Item_Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ref_ID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Ref_Type")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -650,7 +650,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Document_Date")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<int>("Header_ID")
                         .HasColumnType("int");
@@ -664,7 +664,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("Posting_Date")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -717,7 +717,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("Document_Date")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<string>("Item_Code")
                         .HasColumnType("nvarchar(100)")
@@ -728,7 +728,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("Posting_Date")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -800,7 +800,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Calendar_Day")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<int>("Coupon_Discount")
                         .HasColumnType("int");
@@ -835,7 +835,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("decimal(18, 4)");
 
                     b.Property<DateTime>("Invoice_Due_Date")
-                        .HasColumnType("datetime");
+                        .HasColumnType("date");
 
                     b.Property<string>("Invoice_No")
                         .HasColumnType("nvarchar(100)")
@@ -1106,7 +1106,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Calendar_Day")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Distributor")
                         .HasColumnType("nvarchar(max)");
@@ -1115,7 +1115,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Invoice_Due_Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Invoice_No")
                         .HasColumnType("nvarchar(max)");
@@ -1262,7 +1262,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("SO_Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<decimal>("Sales_Value")
                         .HasColumnType("decimal(18, 4)");
@@ -1391,7 +1391,7 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("SO_Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Salesman")
                         .HasColumnType("nvarchar(max)");
@@ -1429,14 +1429,14 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Date_of_Birth")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Date_of_Birth")
+                        .HasColumnType("date");
 
                     b.Property<string>("Education")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("End_Date")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("End_Date")
+                        .HasColumnType("date");
 
                     b.Property<string>("FSS_Code")
                         .HasColumnType("nvarchar(max)");
@@ -1489,8 +1489,8 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.Property<string>("Site_desc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Start_Date")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Start_Date")
+                        .HasColumnType("date");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");

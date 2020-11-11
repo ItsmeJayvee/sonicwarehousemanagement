@@ -14,9 +14,9 @@ namespace SonicWarehouseManagement.Shared
         public int Header_ID { get; set; }
         [MaxLength(100)]
         public string Site { get; set; }
-        [Column(TypeName = "datetime")]
+        [Column(TypeName = "date")]
         public DateTime Posting_Date { get; set; }
-        [Column(TypeName = "datetime")]
+        [Column(TypeName = "date")]
         public DateTime Document_Date { get; set; }
         [MaxLength(100)]
         public string Item_Code { get; set; }

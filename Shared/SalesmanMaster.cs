@@ -27,15 +27,18 @@ namespace SonicWarehouseManagement.Shared
         public string Salesman_Type { get; set; }
         public string Site { get; set; }
         public string Salesman_Type_desc { get; set; }
-        public string Date_of_Birth { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Date_of_Birth { get; set; }
         public string Education { get; set; }
         public string City { get; set; }
         public string Address_2 { get; set; }
         public string Address_1 { get; set; }
         public string PDA_Flag_Description { get; set; }
         public string PDA_Flag { get; set; }
-        public string Start_Date { get; set; }
-        public string End_Date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Start_Date { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime End_Date { get; set; }
         public string Site_desc { get; set; }
         public string Legacy_Salesman_Code { get; set; }
     }

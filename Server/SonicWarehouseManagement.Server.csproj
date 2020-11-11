@@ -6,21 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201019073733_fifthcreate.cs" />
-    <Compile Remove="Migrations\20201019073733_fifthcreate.Designer.cs" />
-    <Compile Remove="Migrations\20201019085429_sixthcreate.cs" />
-    <Compile Remove="Migrations\20201019085429_sixthcreate.Designer.cs" />
-    <Compile Remove="Migrations\20201019085536_sixthcreate.cs" />
-    <Compile Remove="Migrations\20201019085536_sixthcreate.Designer.cs" />
-    <Compile Remove="Migrations\20201020061716_eighthcreate.cs" />
-    <Compile Remove="Migrations\20201020061716_eighthcreate.Designer.cs" />
-    <Compile Remove="Migrations\20201029063629_eleventhcreate.cs" />
-    <Compile Remove="Migrations\20201029063629_eleventhcreate.Designer.cs" />
-    <Compile Remove="Migrations\20201103074022_twelvethcreate.cs" />
-    <Compile Remove="Migrations\20201103074022_twelvethcreate.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />

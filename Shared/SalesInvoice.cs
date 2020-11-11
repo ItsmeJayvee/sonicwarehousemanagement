@@ -33,9 +33,9 @@ namespace SonicWarehouseManagement.Shared
         public string Salesman_Team_Type { get; set; }
         [MaxLength(100)]
         public string Salesman_Team_Type_Desc { get; set; }
-        [Column(TypeName = "datetime")]
+        [Column(TypeName = "date")]
         public DateTime Calendar_Day { get; set; }
-        [Column(TypeName = "datetime")]
+        [Column(TypeName = "date")]
         public DateTime Invoice_Due_Date { get; set; }
         [MaxLength(100)]
         public string Purchase_Order_No { get; set; }

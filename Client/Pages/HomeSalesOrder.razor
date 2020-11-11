@@ -35,7 +35,7 @@ else
                 <tr>
                     <td style="font-size: small;">@so.ID</td>
                     <td style="font-size: small;">@so.Order_Number</td>
-                    <td style="font-size: small;">@so.SO_Date</td>
+                    <td style="font-size: small;">@so.SO_Date.ToShortDateString()</td>
                     <td>
                         <a style="font-size: small;" href="/editsalesorder/@so.ID" class="btn-sm btn-primary">Edit</a>
                     </td>
