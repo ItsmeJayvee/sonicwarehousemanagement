@@ -1045,7 +1045,6 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netco
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.genruntimeconfig.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.csproj.CoreCompileInputs.cache
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Client.StaticWebAssets.xml
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\appsettings.json
@@ -1380,6 +1379,9 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.RazorAssemblyInfo.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.RazorAssemblyInfo.cs
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\staticwebassets\SonicWarehouseManagement.Server.StaticWebAssets.Manifest.cache
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\staticwebassets\SonicWarehouseManagement.Server.StaticWebAssets.xml
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\scopedcss\bundle\SonicWarehouseManagement.Server.styles.css
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.TagHelpers.input.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.TagHelpers.output.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.RazorCoreGenerate.cache
@@ -1389,8 +1391,6 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.RazorTargetAssemblyInfo.cs
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.Views.pdb
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.csproj.CopyComplete
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\staticwebassets\SonicWarehouseManagement.Server.StaticWebAssets.Manifest.cache
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\staticwebassets\SonicWarehouseManagement.Server.StaticWebAssets.xml
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.pdb
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Debug\netcoreapp3.1\SonicWarehouseManagement.Server.genruntimeconfig.cache

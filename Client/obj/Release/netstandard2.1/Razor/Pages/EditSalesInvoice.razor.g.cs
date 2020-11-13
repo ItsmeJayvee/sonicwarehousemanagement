@@ -185,10 +185,7 @@ using SonicWarehouseManagement.Shared;
             __builder.AddMarkupContent(26, "\r\n<hr>\r\n");
             __builder.OpenElement(27, "table");
             __builder.AddAttribute(28, "class", "table");
-            __builder.AddMarkupContent(29, "\r\n    ");
-            __builder.AddMarkupContent(30, @"<thead>
-        <tr>
-            <th>Item Id</th>
+            __builder.AddMarkupContent(29, @"<thead><tr><th>Item Id</th>
             <th>Item Name</th>
             <th>Pack Size</th>
             <th>Sales CS</th>
@@ -197,12 +194,9 @@ using SonicWarehouseManagement.Shared;
             <th>Free PC</th>
             <th>Sales Liter</th>
             <th>Free Liter</th>
-            <th>GSV</th>
-        </tr>
-    </thead>
+            <th>GSV</th></tr></thead>
     ");
-            __builder.OpenElement(31, "tbody");
-            __builder.AddMarkupContent(32, "\r\n");
+            __builder.OpenElement(30, "tbody");
 #nullable restore
 #line 30 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
          if (sid == null)
@@ -224,15 +218,26 @@ using SonicWarehouseManagement.Shared;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(33, "                ");
-            __builder.OpenElement(34, "tr");
+            __builder.OpenElement(31, "tr");
+            __builder.OpenElement(32, "td");
+            __builder.AddAttribute(33, "style", "font-size: small");
+            __builder.AddContent(34, 
+#nullable restore
+#line 39 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Product_Id
+
+#line default
+#line hidden
+#nullable disable
+            );
+            __builder.CloseElement();
             __builder.AddMarkupContent(35, "\r\n                    ");
             __builder.OpenElement(36, "td");
             __builder.AddAttribute(37, "style", "font-size: small");
             __builder.AddContent(38, 
 #nullable restore
-#line 39 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Product_Id
+#line 40 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Product_Name
 
 #line default
 #line hidden
@@ -244,8 +249,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(41, "style", "font-size: small");
             __builder.AddContent(42, 
 #nullable restore
-#line 40 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Product_Name
+#line 41 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Pack_Size
 
 #line default
 #line hidden
@@ -257,8 +262,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(45, "style", "font-size: small");
             __builder.AddContent(46, 
 #nullable restore
-#line 41 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Pack_Size
+#line 42 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Sales_Qty_CS
 
 #line default
 #line hidden
@@ -270,8 +275,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(49, "style", "font-size: small");
             __builder.AddContent(50, 
 #nullable restore
-#line 42 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Sales_Qty_CS
+#line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Sales_Qty_PC
 
 #line default
 #line hidden
@@ -283,8 +288,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(53, "style", "font-size: small");
             __builder.AddContent(54, 
 #nullable restore
-#line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Sales_Qty_PC
+#line 44 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Free_Qty_CS
 
 #line default
 #line hidden
@@ -296,8 +301,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(57, "style", "font-size: small");
             __builder.AddContent(58, 
 #nullable restore
-#line 44 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Free_Qty_CS
+#line 45 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Free_Qty_PC
 
 #line default
 #line hidden
@@ -309,8 +314,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(61, "style", "font-size: small");
             __builder.AddContent(62, 
 #nullable restore
-#line 45 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Free_Qty_PC
+#line 46 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Sales_Qty_Liter
 
 #line default
 #line hidden
@@ -322,8 +327,8 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(65, "style", "font-size: small");
             __builder.AddContent(66, 
 #nullable restore
-#line 46 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Sales_Qty_Liter
+#line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
+                                                  items.Free_Qty_Liter
 
 #line default
 #line hidden
@@ -335,19 +340,6 @@ using SonicWarehouseManagement.Shared;
             __builder.AddAttribute(69, "style", "font-size: small");
             __builder.AddContent(70, 
 #nullable restore
-#line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
-                                                  items.Free_Qty_Liter
-
-#line default
-#line hidden
-#nullable disable
-            );
-            __builder.CloseElement();
-            __builder.AddMarkupContent(71, "\r\n                    ");
-            __builder.OpenElement(72, "td");
-            __builder.AddAttribute(73, "style", "font-size: small");
-            __builder.AddContent(74, 
-#nullable restore
 #line 48 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                   items.GSV
 
@@ -356,9 +348,7 @@ using SonicWarehouseManagement.Shared;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(75, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(76, "\r\n");
 #nullable restore
 #line 50 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
             }
@@ -374,34 +364,26 @@ using SonicWarehouseManagement.Shared;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(77, "    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(78, "\r\n");
             __builder.CloseElement();
-            __builder.AddMarkupContent(79, "\r\n<hr>\r\n");
+            __builder.AddMarkupContent(71, "\r\n<hr>\r\n");
+            __builder.OpenElement(72, "div");
+            __builder.AddAttribute(73, "class", "container");
+            __builder.OpenElement(74, "div");
+            __builder.AddAttribute(75, "class", "row");
+            __builder.AddMarkupContent(76, "<div class=\"text-left col-md-12\"><h6><b>Insert Sales Invoice Details:</b></h6></div>\r\n        <hr>\r\n        ");
+            __builder.OpenElement(77, "form");
+            __builder.OpenElement(78, "div");
+            __builder.AddAttribute(79, "class", "row");
             __builder.OpenElement(80, "div");
-            __builder.AddAttribute(81, "class", "container");
-            __builder.AddMarkupContent(82, "\r\n    ");
-            __builder.OpenElement(83, "div");
-            __builder.AddAttribute(84, "class", "row");
-            __builder.AddMarkupContent(85, "\r\n        ");
-            __builder.AddMarkupContent(86, "<div class=\"text-left col-md-12\">\r\n            <h6><b>Insert Sales Invoice Details:</b></h6>\r\n        </div>\r\n        <hr>\r\n        ");
-            __builder.OpenElement(87, "form");
-            __builder.AddMarkupContent(88, "\r\n            ");
-            __builder.OpenElement(89, "div");
-            __builder.AddAttribute(90, "class", "row");
-            __builder.AddMarkupContent(91, "\r\n                ");
-            __builder.OpenElement(92, "div");
-            __builder.AddAttribute(93, "class", "col-md-2");
-            __builder.AddMarkupContent(94, "\r\n                    ");
-            __builder.OpenElement(95, "div");
-            __builder.AddAttribute(96, "class", "form-group");
-            __builder.AddMarkupContent(97, "\r\n                        ");
-            __builder.AddMarkupContent(98, "<label for=\"prodcode\" class=\"control-label\" style=\"font-size: small;\">Product code</label>\r\n                        ");
-            __builder.OpenElement(99, "input");
-            __builder.AddAttribute(100, "form", "prodcode");
-            __builder.AddAttribute(101, "class", "form-control");
-            __builder.AddAttribute(102, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(81, "class", "col-md-2");
+            __builder.OpenElement(82, "div");
+            __builder.AddAttribute(83, "class", "form-group");
+            __builder.AddMarkupContent(84, "<label for=\"prodcode\" class=\"control-label\" style=\"font-size: small;\">Product code</label>\r\n                        ");
+            __builder.OpenElement(85, "input");
+            __builder.AddAttribute(86, "form", "prodcode");
+            __builder.AddAttribute(87, "class", "form-control");
+            __builder.AddAttribute(88, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 66 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                             sid2.Product_Id
@@ -410,25 +392,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(103, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Product_Id = __value, sid2.Product_Id));
+            __builder.AddAttribute(89, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Product_Id = __value, sid2.Product_Id));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(104, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(105, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(106, "\r\n                ");
-            __builder.OpenElement(107, "div");
-            __builder.AddAttribute(108, "class", "col-md-2");
-            __builder.AddMarkupContent(109, "\r\n                    ");
-            __builder.OpenElement(110, "div");
-            __builder.AddAttribute(111, "class", "form-group");
-            __builder.AddMarkupContent(112, "\r\n                        ");
-            __builder.AddMarkupContent(113, "<label for=\"prodname\" class=\"control-label\" style=\"font-size: small;\">Product name</label>\r\n                        ");
-            __builder.OpenElement(114, "input");
-            __builder.AddAttribute(115, "form", "prodname");
-            __builder.AddAttribute(116, "class", "form-control");
-            __builder.AddAttribute(117, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(90, "\r\n                ");
+            __builder.OpenElement(91, "div");
+            __builder.AddAttribute(92, "class", "col-md-2");
+            __builder.OpenElement(93, "div");
+            __builder.AddAttribute(94, "class", "form-group");
+            __builder.AddMarkupContent(95, "<label for=\"prodname\" class=\"control-label\" style=\"font-size: small;\">Product name</label>\r\n                        ");
+            __builder.OpenElement(96, "input");
+            __builder.AddAttribute(97, "form", "prodname");
+            __builder.AddAttribute(98, "class", "form-control");
+            __builder.AddAttribute(99, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 72 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                             sid2.Product_Name
@@ -437,25 +415,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(118, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Product_Name = __value, sid2.Product_Name));
+            __builder.AddAttribute(100, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Product_Name = __value, sid2.Product_Name));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(119, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(120, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(121, "\r\n                ");
-            __builder.OpenElement(122, "div");
-            __builder.AddAttribute(123, "class", "col-md-2");
-            __builder.AddMarkupContent(124, "\r\n                    ");
-            __builder.OpenElement(125, "div");
-            __builder.AddAttribute(126, "class", "form-group");
-            __builder.AddMarkupContent(127, "\r\n                        ");
-            __builder.AddMarkupContent(128, "<label for=\"packsize\" class=\"control-label\" style=\"font-size: small;\">Pack size</label>\r\n                        ");
-            __builder.OpenElement(129, "input");
-            __builder.AddAttribute(130, "form", "packsize");
-            __builder.AddAttribute(131, "class", "form-control");
-            __builder.AddAttribute(132, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(101, "\r\n                ");
+            __builder.OpenElement(102, "div");
+            __builder.AddAttribute(103, "class", "col-md-2");
+            __builder.OpenElement(104, "div");
+            __builder.AddAttribute(105, "class", "form-group");
+            __builder.AddMarkupContent(106, "<label for=\"packsize\" class=\"control-label\" style=\"font-size: small;\">Pack size</label>\r\n                        ");
+            __builder.OpenElement(107, "input");
+            __builder.AddAttribute(108, "form", "packsize");
+            __builder.AddAttribute(109, "class", "form-control");
+            __builder.AddAttribute(110, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 78 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                             sid2.Pack_Size
@@ -464,25 +438,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(133, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Pack_Size = __value, sid2.Pack_Size));
+            __builder.AddAttribute(111, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Pack_Size = __value, sid2.Pack_Size));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(134, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(135, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(136, "\r\n                ");
-            __builder.OpenElement(137, "div");
-            __builder.AddAttribute(138, "class", "col-md-2");
-            __builder.AddMarkupContent(139, "\r\n                    ");
-            __builder.OpenElement(140, "div");
-            __builder.AddAttribute(141, "class", "form-group");
-            __builder.AddMarkupContent(142, "\r\n                        ");
-            __builder.AddMarkupContent(143, "<label for=\"masterbrand\" class=\"control-label\" style=\"font-size: small;\">Master brand</label>\r\n                        ");
-            __builder.OpenElement(144, "input");
-            __builder.AddAttribute(145, "form", "masterbrand");
-            __builder.AddAttribute(146, "class", "form-control");
-            __builder.AddAttribute(147, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(112, "\r\n                ");
+            __builder.OpenElement(113, "div");
+            __builder.AddAttribute(114, "class", "col-md-2");
+            __builder.OpenElement(115, "div");
+            __builder.AddAttribute(116, "class", "form-group");
+            __builder.AddMarkupContent(117, "<label for=\"masterbrand\" class=\"control-label\" style=\"font-size: small;\">Master brand</label>\r\n                        ");
+            __builder.OpenElement(118, "input");
+            __builder.AddAttribute(119, "form", "masterbrand");
+            __builder.AddAttribute(120, "class", "form-control");
+            __builder.AddAttribute(121, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 84 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                                sid2.Master_Brand
@@ -491,25 +461,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(148, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Brand = __value, sid2.Master_Brand));
+            __builder.AddAttribute(122, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Brand = __value, sid2.Master_Brand));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(149, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(150, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(151, "\r\n                ");
-            __builder.OpenElement(152, "div");
-            __builder.AddAttribute(153, "class", "col-md-2");
-            __builder.AddMarkupContent(154, "\r\n                    ");
-            __builder.OpenElement(155, "div");
-            __builder.AddAttribute(156, "class", "form-group");
-            __builder.AddMarkupContent(157, "\r\n                        ");
-            __builder.AddMarkupContent(158, "<label for=\"masterbrandname\" class=\"control-label\" style=\"font-size: small;\">Master brand name</label>\r\n                        ");
-            __builder.OpenElement(159, "input");
-            __builder.AddAttribute(160, "form", "masterbrandname");
-            __builder.AddAttribute(161, "class", "form-control");
-            __builder.AddAttribute(162, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(123, "\r\n                ");
+            __builder.OpenElement(124, "div");
+            __builder.AddAttribute(125, "class", "col-md-2");
+            __builder.OpenElement(126, "div");
+            __builder.AddAttribute(127, "class", "form-group");
+            __builder.AddMarkupContent(128, "<label for=\"masterbrandname\" class=\"control-label\" style=\"font-size: small;\">Master brand name</label>\r\n                        ");
+            __builder.OpenElement(129, "input");
+            __builder.AddAttribute(130, "form", "masterbrandname");
+            __builder.AddAttribute(131, "class", "form-control");
+            __builder.AddAttribute(132, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 90 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                                    sid2.Master_Brand_Name
@@ -518,25 +484,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(163, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Brand_Name = __value, sid2.Master_Brand_Name));
+            __builder.AddAttribute(133, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Brand_Name = __value, sid2.Master_Brand_Name));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(164, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(165, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(166, "\r\n                ");
-            __builder.OpenElement(167, "div");
-            __builder.AddAttribute(168, "class", "col-md-2");
-            __builder.AddMarkupContent(169, "\r\n                    ");
-            __builder.OpenElement(170, "div");
-            __builder.AddAttribute(171, "class", "form-group");
-            __builder.AddMarkupContent(172, "\r\n                        ");
-            __builder.AddMarkupContent(173, "<label for=\"masterbasepack\" class=\"control-label\" style=\"font-size: small;\">Master basepack</label>\r\n                        ");
-            __builder.OpenElement(174, "input");
-            __builder.AddAttribute(175, "form", "masterbasepack");
-            __builder.AddAttribute(176, "class", "form-control");
-            __builder.AddAttribute(177, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(134, "\r\n                ");
+            __builder.OpenElement(135, "div");
+            __builder.AddAttribute(136, "class", "col-md-2");
+            __builder.OpenElement(137, "div");
+            __builder.AddAttribute(138, "class", "form-group");
+            __builder.AddMarkupContent(139, "<label for=\"masterbasepack\" class=\"control-label\" style=\"font-size: small;\">Master basepack</label>\r\n                        ");
+            __builder.OpenElement(140, "input");
+            __builder.AddAttribute(141, "form", "masterbasepack");
+            __builder.AddAttribute(142, "class", "form-control");
+            __builder.AddAttribute(143, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 96 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                                   sid2.Master_Basepack
@@ -545,25 +507,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(178, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Basepack = __value, sid2.Master_Basepack));
+            __builder.AddAttribute(144, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Basepack = __value, sid2.Master_Basepack));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(179, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(180, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(181, "\r\n                ");
-            __builder.OpenElement(182, "div");
-            __builder.AddAttribute(183, "class", "col-md-2");
-            __builder.AddMarkupContent(184, "\r\n                    ");
-            __builder.OpenElement(185, "div");
-            __builder.AddAttribute(186, "class", "form-group");
-            __builder.AddMarkupContent(187, "\r\n                        ");
-            __builder.AddMarkupContent(188, "<label for=\"masterbasepackname\" class=\"control-label\" style=\"font-size: small;\">Master basepack name</label>\r\n                        ");
-            __builder.OpenElement(189, "input");
-            __builder.AddAttribute(190, "form", "masterbasepackname");
-            __builder.AddAttribute(191, "class", "form-control");
-            __builder.AddAttribute(192, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(145, "\r\n                ");
+            __builder.OpenElement(146, "div");
+            __builder.AddAttribute(147, "class", "col-md-2");
+            __builder.OpenElement(148, "div");
+            __builder.AddAttribute(149, "class", "form-group");
+            __builder.AddMarkupContent(150, "<label for=\"masterbasepackname\" class=\"control-label\" style=\"font-size: small;\">Master basepack name</label>\r\n                        ");
+            __builder.OpenElement(151, "input");
+            __builder.AddAttribute(152, "form", "masterbasepackname");
+            __builder.AddAttribute(153, "class", "form-control");
+            __builder.AddAttribute(154, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 102 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                                       sid2.Master_Basepack_Name
@@ -572,25 +530,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(193, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Basepack_Name = __value, sid2.Master_Basepack_Name));
+            __builder.AddAttribute(155, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Master_Basepack_Name = __value, sid2.Master_Basepack_Name));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(194, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(195, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(196, "\r\n                ");
-            __builder.OpenElement(197, "div");
-            __builder.AddAttribute(198, "class", "col-md-2");
-            __builder.AddMarkupContent(199, "\r\n                    ");
-            __builder.OpenElement(200, "div");
-            __builder.AddAttribute(201, "class", "form-group");
-            __builder.AddMarkupContent(202, "\r\n                        ");
-            __builder.AddMarkupContent(203, "<label for=\"leadbasepack\" class=\"control-label\" style=\"font-size: small;\">Lead basepack</label>\r\n                        ");
-            __builder.OpenElement(204, "input");
-            __builder.AddAttribute(205, "form", "leadbasepack");
-            __builder.AddAttribute(206, "class", "form-control");
-            __builder.AddAttribute(207, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(156, "\r\n                ");
+            __builder.OpenElement(157, "div");
+            __builder.AddAttribute(158, "class", "col-md-2");
+            __builder.OpenElement(159, "div");
+            __builder.AddAttribute(160, "class", "form-group");
+            __builder.AddMarkupContent(161, "<label for=\"leadbasepack\" class=\"control-label\" style=\"font-size: small;\">Lead basepack</label>\r\n                        ");
+            __builder.OpenElement(162, "input");
+            __builder.AddAttribute(163, "form", "leadbasepack");
+            __builder.AddAttribute(164, "class", "form-control");
+            __builder.AddAttribute(165, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 108 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                                 sid2.Lead_Basepack
@@ -599,25 +553,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(208, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Lead_Basepack = __value, sid2.Lead_Basepack));
+            __builder.AddAttribute(166, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Lead_Basepack = __value, sid2.Lead_Basepack));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(209, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(210, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(211, "\r\n                ");
-            __builder.OpenElement(212, "div");
-            __builder.AddAttribute(213, "class", "col-md-2");
-            __builder.AddMarkupContent(214, "\r\n                    ");
-            __builder.OpenElement(215, "div");
-            __builder.AddAttribute(216, "class", "form-group");
-            __builder.AddMarkupContent(217, "\r\n                        ");
-            __builder.AddMarkupContent(218, "<label for=\"sqtycs\" class=\"control-label\" style=\"font-size: small;\">Sales qty cs</label>\r\n                        ");
-            __builder.OpenElement(219, "input");
-            __builder.AddAttribute(220, "form", "sqtycs");
-            __builder.AddAttribute(221, "class", "form-control");
-            __builder.AddAttribute(222, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(167, "\r\n                ");
+            __builder.OpenElement(168, "div");
+            __builder.AddAttribute(169, "class", "col-md-2");
+            __builder.OpenElement(170, "div");
+            __builder.AddAttribute(171, "class", "form-group");
+            __builder.AddMarkupContent(172, "<label for=\"sqtycs\" class=\"control-label\" style=\"font-size: small;\">Sales qty cs</label>\r\n                        ");
+            __builder.OpenElement(173, "input");
+            __builder.AddAttribute(174, "form", "sqtycs");
+            __builder.AddAttribute(175, "class", "form-control");
+            __builder.AddAttribute(176, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 114 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                           sid2.Sales_Qty_CS
@@ -626,25 +576,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(223, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_CS = __value, sid2.Sales_Qty_CS));
+            __builder.AddAttribute(177, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_CS = __value, sid2.Sales_Qty_CS));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(224, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(225, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(226, "\r\n                ");
-            __builder.OpenElement(227, "div");
-            __builder.AddAttribute(228, "class", "col-md-2");
-            __builder.AddMarkupContent(229, "\r\n                    ");
-            __builder.OpenElement(230, "div");
-            __builder.AddAttribute(231, "class", "form-group");
-            __builder.AddMarkupContent(232, "\r\n                        ");
-            __builder.AddMarkupContent(233, "<label for=\"sqtypc\" class=\"control-label\" style=\"font-size: small;\">Sales qty pc</label>\r\n                        ");
-            __builder.OpenElement(234, "input");
-            __builder.AddAttribute(235, "form", "sqtypc");
-            __builder.AddAttribute(236, "class", "form-control");
-            __builder.AddAttribute(237, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(178, "\r\n                ");
+            __builder.OpenElement(179, "div");
+            __builder.AddAttribute(180, "class", "col-md-2");
+            __builder.OpenElement(181, "div");
+            __builder.AddAttribute(182, "class", "form-group");
+            __builder.AddMarkupContent(183, "<label for=\"sqtypc\" class=\"control-label\" style=\"font-size: small;\">Sales qty pc</label>\r\n                        ");
+            __builder.OpenElement(184, "input");
+            __builder.AddAttribute(185, "form", "sqtypc");
+            __builder.AddAttribute(186, "class", "form-control");
+            __builder.AddAttribute(187, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 120 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                           sid2.Sales_Qty_PC
@@ -653,25 +599,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(238, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_PC = __value, sid2.Sales_Qty_PC));
+            __builder.AddAttribute(188, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_PC = __value, sid2.Sales_Qty_PC));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(239, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(240, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(241, "\r\n                ");
-            __builder.OpenElement(242, "div");
-            __builder.AddAttribute(243, "class", "col-md-2");
-            __builder.AddMarkupContent(244, "\r\n                    ");
-            __builder.OpenElement(245, "div");
-            __builder.AddAttribute(246, "class", "form-group");
-            __builder.AddMarkupContent(247, "\r\n                        ");
-            __builder.AddMarkupContent(248, "<label for=\"fqtycs\" class=\"control-label\" style=\"font-size: small;\">Free qty cs</label>\r\n                        ");
-            __builder.OpenElement(249, "input");
-            __builder.AddAttribute(250, "form", "fqtycs");
-            __builder.AddAttribute(251, "class", "form-control");
-            __builder.AddAttribute(252, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(189, "\r\n                ");
+            __builder.OpenElement(190, "div");
+            __builder.AddAttribute(191, "class", "col-md-2");
+            __builder.OpenElement(192, "div");
+            __builder.AddAttribute(193, "class", "form-group");
+            __builder.AddMarkupContent(194, "<label for=\"fqtycs\" class=\"control-label\" style=\"font-size: small;\">Free qty cs</label>\r\n                        ");
+            __builder.OpenElement(195, "input");
+            __builder.AddAttribute(196, "form", "fqtycs");
+            __builder.AddAttribute(197, "class", "form-control");
+            __builder.AddAttribute(198, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 126 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                           sid2.Free_Qty_CS
@@ -680,25 +622,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(253, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_CS = __value, sid2.Free_Qty_CS));
+            __builder.AddAttribute(199, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_CS = __value, sid2.Free_Qty_CS));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(254, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(255, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(256, "\r\n                ");
-            __builder.OpenElement(257, "div");
-            __builder.AddAttribute(258, "class", "col-md-2");
-            __builder.AddMarkupContent(259, "\r\n                    ");
-            __builder.OpenElement(260, "div");
-            __builder.AddAttribute(261, "class", "form-group");
-            __builder.AddMarkupContent(262, "\r\n                        ");
-            __builder.AddMarkupContent(263, "<label for=\"fqtypc\" class=\"control-label\" style=\"font-size: small;\">Free qty pc</label>\r\n                        ");
-            __builder.OpenElement(264, "input");
-            __builder.AddAttribute(265, "form", "fqtypc");
-            __builder.AddAttribute(266, "class", "form-control");
-            __builder.AddAttribute(267, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(200, "\r\n                ");
+            __builder.OpenElement(201, "div");
+            __builder.AddAttribute(202, "class", "col-md-2");
+            __builder.OpenElement(203, "div");
+            __builder.AddAttribute(204, "class", "form-group");
+            __builder.AddMarkupContent(205, "<label for=\"fqtypc\" class=\"control-label\" style=\"font-size: small;\">Free qty pc</label>\r\n                        ");
+            __builder.OpenElement(206, "input");
+            __builder.AddAttribute(207, "form", "fqtypc");
+            __builder.AddAttribute(208, "class", "form-control");
+            __builder.AddAttribute(209, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 132 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                           sid2.Free_Qty_PC
@@ -707,25 +645,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(268, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_PC = __value, sid2.Free_Qty_PC));
+            __builder.AddAttribute(210, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_PC = __value, sid2.Free_Qty_PC));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(269, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(270, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(271, "\r\n                ");
-            __builder.OpenElement(272, "div");
-            __builder.AddAttribute(273, "class", "col-md-2");
-            __builder.AddMarkupContent(274, "\r\n                    ");
-            __builder.OpenElement(275, "div");
-            __builder.AddAttribute(276, "class", "form-group");
-            __builder.AddMarkupContent(277, "\r\n                        ");
-            __builder.AddMarkupContent(278, "<label for=\"sqtyl\" class=\"control-label\" style=\"font-size: small;\">Sales qty liter</label>\r\n                        ");
-            __builder.OpenElement(279, "input");
-            __builder.AddAttribute(280, "form", "sqtyl");
-            __builder.AddAttribute(281, "class", "form-control");
-            __builder.AddAttribute(282, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(211, "\r\n                ");
+            __builder.OpenElement(212, "div");
+            __builder.AddAttribute(213, "class", "col-md-2");
+            __builder.OpenElement(214, "div");
+            __builder.AddAttribute(215, "class", "form-group");
+            __builder.AddMarkupContent(216, "<label for=\"sqtyl\" class=\"control-label\" style=\"font-size: small;\">Sales qty liter</label>\r\n                        ");
+            __builder.OpenElement(217, "input");
+            __builder.AddAttribute(218, "form", "sqtyl");
+            __builder.AddAttribute(219, "class", "form-control");
+            __builder.AddAttribute(220, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 138 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                          sid2.Sales_Qty_Liter
@@ -734,25 +668,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(283, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_Liter = __value, sid2.Sales_Qty_Liter));
+            __builder.AddAttribute(221, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_Liter = __value, sid2.Sales_Qty_Liter));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(284, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(285, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(286, "\r\n                ");
-            __builder.OpenElement(287, "div");
-            __builder.AddAttribute(288, "class", "col-md-2");
-            __builder.AddMarkupContent(289, "\r\n                    ");
-            __builder.OpenElement(290, "div");
-            __builder.AddAttribute(291, "class", "form-group");
-            __builder.AddMarkupContent(292, "\r\n                        ");
-            __builder.AddMarkupContent(293, "<label for=\"freeqtyl\" class=\"control-label\" style=\"font-size: small;\">Free qty liter</label>\r\n                        ");
-            __builder.OpenElement(294, "input");
-            __builder.AddAttribute(295, "form", "freeqtyl");
-            __builder.AddAttribute(296, "class", "form-control");
-            __builder.AddAttribute(297, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(222, "\r\n                ");
+            __builder.OpenElement(223, "div");
+            __builder.AddAttribute(224, "class", "col-md-2");
+            __builder.OpenElement(225, "div");
+            __builder.AddAttribute(226, "class", "form-group");
+            __builder.AddMarkupContent(227, "<label for=\"freeqtyl\" class=\"control-label\" style=\"font-size: small;\">Free qty liter</label>\r\n                        ");
+            __builder.OpenElement(228, "input");
+            __builder.AddAttribute(229, "form", "freeqtyl");
+            __builder.AddAttribute(230, "class", "form-control");
+            __builder.AddAttribute(231, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 144 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                             sid2.Free_Qty_Liter
@@ -761,25 +691,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(298, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_Liter = __value, sid2.Free_Qty_Liter));
+            __builder.AddAttribute(232, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_Liter = __value, sid2.Free_Qty_Liter));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(299, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(300, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(301, "\r\n                ");
-            __builder.OpenElement(302, "div");
-            __builder.AddAttribute(303, "class", "col-md-2");
-            __builder.AddMarkupContent(304, "\r\n                    ");
-            __builder.OpenElement(305, "div");
-            __builder.AddAttribute(306, "class", "form-group");
-            __builder.AddMarkupContent(307, "\r\n                        ");
-            __builder.AddMarkupContent(308, "<label for=\"sqacs\" class=\"control-label\" style=\"font-size: small;\">Sales qty aggr cs</label>\r\n                        ");
-            __builder.OpenElement(309, "input");
-            __builder.AddAttribute(310, "form", "sqacs");
-            __builder.AddAttribute(311, "class", "form-control");
-            __builder.AddAttribute(312, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(233, "\r\n                ");
+            __builder.OpenElement(234, "div");
+            __builder.AddAttribute(235, "class", "col-md-2");
+            __builder.OpenElement(236, "div");
+            __builder.AddAttribute(237, "class", "form-group");
+            __builder.AddMarkupContent(238, "<label for=\"sqacs\" class=\"control-label\" style=\"font-size: small;\">Sales qty aggr cs</label>\r\n                        ");
+            __builder.OpenElement(239, "input");
+            __builder.AddAttribute(240, "form", "sqacs");
+            __builder.AddAttribute(241, "class", "form-control");
+            __builder.AddAttribute(242, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 150 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                          sid2.Sales_Qty_Aggr_CS
@@ -788,25 +714,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(313, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_Aggr_CS = __value, sid2.Sales_Qty_Aggr_CS));
+            __builder.AddAttribute(243, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_Aggr_CS = __value, sid2.Sales_Qty_Aggr_CS));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(314, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(315, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(316, "\r\n                ");
-            __builder.OpenElement(317, "div");
-            __builder.AddAttribute(318, "class", "col-md-2");
-            __builder.AddMarkupContent(319, "\r\n                    ");
-            __builder.OpenElement(320, "div");
-            __builder.AddAttribute(321, "class", "form-group");
-            __builder.AddMarkupContent(322, "\r\n                        ");
-            __builder.AddMarkupContent(323, "<label for=\"sqapc\" class=\"control-label\" style=\"font-size: small;\">Sales qty aggr pc</label>\r\n                        ");
-            __builder.OpenElement(324, "input");
-            __builder.AddAttribute(325, "form", "sqapc");
-            __builder.AddAttribute(326, "class", "form-control");
-            __builder.AddAttribute(327, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(244, "\r\n                ");
+            __builder.OpenElement(245, "div");
+            __builder.AddAttribute(246, "class", "col-md-2");
+            __builder.OpenElement(247, "div");
+            __builder.AddAttribute(248, "class", "form-group");
+            __builder.AddMarkupContent(249, "<label for=\"sqapc\" class=\"control-label\" style=\"font-size: small;\">Sales qty aggr pc</label>\r\n                        ");
+            __builder.OpenElement(250, "input");
+            __builder.AddAttribute(251, "form", "sqapc");
+            __builder.AddAttribute(252, "class", "form-control");
+            __builder.AddAttribute(253, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 156 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                          sid2.Sales_Qty_Aggr_PC
@@ -815,25 +737,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(328, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_Aggr_PC = __value, sid2.Sales_Qty_Aggr_PC));
+            __builder.AddAttribute(254, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_Qty_Aggr_PC = __value, sid2.Sales_Qty_Aggr_PC));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(329, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(330, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(331, "\r\n                ");
-            __builder.OpenElement(332, "div");
-            __builder.AddAttribute(333, "class", "col-md-2");
-            __builder.AddMarkupContent(334, "\r\n                    ");
-            __builder.OpenElement(335, "div");
-            __builder.AddAttribute(336, "class", "form-group");
-            __builder.AddMarkupContent(337, "\r\n                        ");
-            __builder.AddMarkupContent(338, "<label for=\"fqacs\" class=\"control-label\" style=\"font-size: small;\">Free qty aggr cs</label>\r\n                        ");
-            __builder.OpenElement(339, "input");
-            __builder.AddAttribute(340, "form", "fqacs");
-            __builder.AddAttribute(341, "class", "form-control");
-            __builder.AddAttribute(342, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(255, "\r\n                ");
+            __builder.OpenElement(256, "div");
+            __builder.AddAttribute(257, "class", "col-md-2");
+            __builder.OpenElement(258, "div");
+            __builder.AddAttribute(259, "class", "form-group");
+            __builder.AddMarkupContent(260, "<label for=\"fqacs\" class=\"control-label\" style=\"font-size: small;\">Free qty aggr cs</label>\r\n                        ");
+            __builder.OpenElement(261, "input");
+            __builder.AddAttribute(262, "form", "fqacs");
+            __builder.AddAttribute(263, "class", "form-control");
+            __builder.AddAttribute(264, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 162 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                          sid2.Free_Qty_Aggr_CS
@@ -842,25 +760,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(343, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_Aggr_CS = __value, sid2.Free_Qty_Aggr_CS));
+            __builder.AddAttribute(265, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_Aggr_CS = __value, sid2.Free_Qty_Aggr_CS));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(344, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(345, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(346, "\r\n                ");
-            __builder.OpenElement(347, "div");
-            __builder.AddAttribute(348, "class", "col-md-2");
-            __builder.AddMarkupContent(349, "\r\n                    ");
-            __builder.OpenElement(350, "div");
-            __builder.AddAttribute(351, "class", "form-group");
-            __builder.AddMarkupContent(352, "\r\n                        ");
-            __builder.AddMarkupContent(353, "<label for=\"fqapc\" class=\"control-label\" style=\"font-size: small;\">Free qty aggr pc</label>\r\n                        ");
-            __builder.OpenElement(354, "input");
-            __builder.AddAttribute(355, "form", "fqapc");
-            __builder.AddAttribute(356, "class", "form-control");
-            __builder.AddAttribute(357, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(266, "\r\n                ");
+            __builder.OpenElement(267, "div");
+            __builder.AddAttribute(268, "class", "col-md-2");
+            __builder.OpenElement(269, "div");
+            __builder.AddAttribute(270, "class", "form-group");
+            __builder.AddMarkupContent(271, "<label for=\"fqapc\" class=\"control-label\" style=\"font-size: small;\">Free qty aggr pc</label>\r\n                        ");
+            __builder.OpenElement(272, "input");
+            __builder.AddAttribute(273, "form", "fqapc");
+            __builder.AddAttribute(274, "class", "form-control");
+            __builder.AddAttribute(275, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 168 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                          sid2.Free_Qty_Aggr_PC
@@ -869,25 +783,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(358, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_Aggr_PC = __value, sid2.Free_Qty_Aggr_PC));
+            __builder.AddAttribute(276, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Free_Qty_Aggr_PC = __value, sid2.Free_Qty_Aggr_PC));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(359, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(360, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(361, "\r\n                ");
-            __builder.OpenElement(362, "div");
-            __builder.AddAttribute(363, "class", "col-md-2");
-            __builder.AddMarkupContent(364, "\r\n                    ");
-            __builder.OpenElement(365, "div");
-            __builder.AddAttribute(366, "class", "form-group");
-            __builder.AddMarkupContent(367, "\r\n                        ");
-            __builder.AddMarkupContent(368, "<label for=\"gsv\" class=\"control-label\" style=\"font-size: small;\">GSV</label>\r\n                        ");
-            __builder.OpenElement(369, "input");
-            __builder.AddAttribute(370, "form", "gsv");
-            __builder.AddAttribute(371, "class", "form-control");
-            __builder.AddAttribute(372, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(277, "\r\n                ");
+            __builder.OpenElement(278, "div");
+            __builder.AddAttribute(279, "class", "col-md-2");
+            __builder.OpenElement(280, "div");
+            __builder.AddAttribute(281, "class", "form-group");
+            __builder.AddMarkupContent(282, "<label for=\"gsv\" class=\"control-label\" style=\"font-size: small;\">GSV</label>\r\n                        ");
+            __builder.OpenElement(283, "input");
+            __builder.AddAttribute(284, "form", "gsv");
+            __builder.AddAttribute(285, "class", "form-control");
+            __builder.AddAttribute(286, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 174 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                        sid2.GSV
@@ -896,25 +806,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(373, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.GSV = __value, sid2.GSV));
+            __builder.AddAttribute(287, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.GSV = __value, sid2.GSV));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(374, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(375, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(376, "\r\n                ");
-            __builder.OpenElement(377, "div");
-            __builder.AddAttribute(378, "class", "col-md-2");
-            __builder.AddMarkupContent(379, "\r\n                    ");
-            __builder.OpenElement(380, "div");
-            __builder.AddAttribute(381, "class", "form-group");
-            __builder.AddMarkupContent(382, "\r\n                        ");
-            __builder.AddMarkupContent(383, "<label for=\"tpr\" class=\"control-label\" style=\"font-size: small;\">TPR</label>\r\n                        ");
-            __builder.OpenElement(384, "input");
-            __builder.AddAttribute(385, "form", "tpr");
-            __builder.AddAttribute(386, "class", "form-control");
-            __builder.AddAttribute(387, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(288, "\r\n                ");
+            __builder.OpenElement(289, "div");
+            __builder.AddAttribute(290, "class", "col-md-2");
+            __builder.OpenElement(291, "div");
+            __builder.AddAttribute(292, "class", "form-group");
+            __builder.AddMarkupContent(293, "<label for=\"tpr\" class=\"control-label\" style=\"font-size: small;\">TPR</label>\r\n                        ");
+            __builder.OpenElement(294, "input");
+            __builder.AddAttribute(295, "form", "tpr");
+            __builder.AddAttribute(296, "class", "form-control");
+            __builder.AddAttribute(297, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 180 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                        sid2.TPR
@@ -923,25 +829,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(388, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.TPR = __value, sid2.TPR));
+            __builder.AddAttribute(298, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.TPR = __value, sid2.TPR));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(389, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(390, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(391, "\r\n                ");
-            __builder.OpenElement(392, "div");
-            __builder.AddAttribute(393, "class", "col-md-2");
-            __builder.AddMarkupContent(394, "\r\n                    ");
-            __builder.OpenElement(395, "div");
-            __builder.AddAttribute(396, "class", "form-group");
-            __builder.AddMarkupContent(397, "\r\n                        ");
-            __builder.AddMarkupContent(398, "<label for=\"uw\" class=\"control-label\" style=\"font-size: small;\">UW</label>\r\n                        ");
-            __builder.OpenElement(399, "input");
-            __builder.AddAttribute(400, "form", "uw");
-            __builder.AddAttribute(401, "class", "form-control");
-            __builder.AddAttribute(402, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(299, "\r\n                ");
+            __builder.OpenElement(300, "div");
+            __builder.AddAttribute(301, "class", "col-md-2");
+            __builder.OpenElement(302, "div");
+            __builder.AddAttribute(303, "class", "form-group");
+            __builder.AddMarkupContent(304, "<label for=\"uw\" class=\"control-label\" style=\"font-size: small;\">UW</label>\r\n                        ");
+            __builder.OpenElement(305, "input");
+            __builder.AddAttribute(306, "form", "uw");
+            __builder.AddAttribute(307, "class", "form-control");
+            __builder.AddAttribute(308, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 186 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                       sid2.UW
@@ -950,25 +852,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(403, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.UW = __value, sid2.UW));
+            __builder.AddAttribute(309, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.UW = __value, sid2.UW));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(404, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(405, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(406, "\r\n                ");
-            __builder.OpenElement(407, "div");
-            __builder.AddAttribute(408, "class", "col-md-2");
-            __builder.AddMarkupContent(409, "\r\n                    ");
-            __builder.OpenElement(410, "div");
-            __builder.AddAttribute(411, "class", "form-group");
-            __builder.AddMarkupContent(412, "\r\n                        ");
-            __builder.AddMarkupContent(413, "<label for=\"dtdisc\" class=\"control-label\" style=\"font-size: small;\">DT discount</label>\r\n                        ");
-            __builder.OpenElement(414, "input");
-            __builder.AddAttribute(415, "form", "dtdisc");
-            __builder.AddAttribute(416, "class", "form-control");
-            __builder.AddAttribute(417, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(310, "\r\n                ");
+            __builder.OpenElement(311, "div");
+            __builder.AddAttribute(312, "class", "col-md-2");
+            __builder.OpenElement(313, "div");
+            __builder.AddAttribute(314, "class", "form-group");
+            __builder.AddMarkupContent(315, "<label for=\"dtdisc\" class=\"control-label\" style=\"font-size: small;\">DT discount</label>\r\n                        ");
+            __builder.OpenElement(316, "input");
+            __builder.AddAttribute(317, "form", "dtdisc");
+            __builder.AddAttribute(318, "class", "form-control");
+            __builder.AddAttribute(319, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 192 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                           sid2.DT_Discount
@@ -977,25 +875,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(418, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.DT_Discount = __value, sid2.DT_Discount));
+            __builder.AddAttribute(320, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.DT_Discount = __value, sid2.DT_Discount));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(419, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(420, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(421, "\r\n                ");
-            __builder.OpenElement(422, "div");
-            __builder.AddAttribute(423, "class", "col-md-2");
-            __builder.AddMarkupContent(424, "\r\n                    ");
-            __builder.OpenElement(425, "div");
-            __builder.AddAttribute(426, "class", "form-group");
-            __builder.AddMarkupContent(427, "\r\n                        ");
-            __builder.AddMarkupContent(428, "<label for=\"salesafter\" class=\"control-label\" style=\"font-size: small;\">Sales after</label>\r\n                        ");
-            __builder.OpenElement(429, "input");
-            __builder.AddAttribute(430, "form", "salesafter");
-            __builder.AddAttribute(431, "class", "form-control");
-            __builder.AddAttribute(432, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(321, "\r\n                ");
+            __builder.OpenElement(322, "div");
+            __builder.AddAttribute(323, "class", "col-md-2");
+            __builder.OpenElement(324, "div");
+            __builder.AddAttribute(325, "class", "form-group");
+            __builder.AddMarkupContent(326, "<label for=\"salesafter\" class=\"control-label\" style=\"font-size: small;\">Sales after</label>\r\n                        ");
+            __builder.OpenElement(327, "input");
+            __builder.AddAttribute(328, "form", "salesafter");
+            __builder.AddAttribute(329, "class", "form-control");
+            __builder.AddAttribute(330, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 198 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                               sid2.Sales_After
@@ -1004,25 +898,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(433, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_After = __value, sid2.Sales_After));
+            __builder.AddAttribute(331, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Sales_After = __value, sid2.Sales_After));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(434, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(435, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(436, "\r\n                ");
-            __builder.OpenElement(437, "div");
-            __builder.AddAttribute(438, "class", "col-md-2");
-            __builder.AddMarkupContent(439, "\r\n                    ");
-            __builder.OpenElement(440, "div");
-            __builder.AddAttribute(441, "class", "form-group");
-            __builder.AddMarkupContent(442, "\r\n                        ");
-            __builder.AddMarkupContent(443, "<label for=\"voldisc\" class=\"control-label\" style=\"font-size: small;\">Volume discount</label>\r\n                        ");
-            __builder.OpenElement(444, "input");
-            __builder.AddAttribute(445, "form", "voldisc");
-            __builder.AddAttribute(446, "class", "form-control");
-            __builder.AddAttribute(447, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(332, "\r\n                ");
+            __builder.OpenElement(333, "div");
+            __builder.AddAttribute(334, "class", "col-md-2");
+            __builder.OpenElement(335, "div");
+            __builder.AddAttribute(336, "class", "form-group");
+            __builder.AddMarkupContent(337, "<label for=\"voldisc\" class=\"control-label\" style=\"font-size: small;\">Volume discount</label>\r\n                        ");
+            __builder.OpenElement(338, "input");
+            __builder.AddAttribute(339, "form", "voldisc");
+            __builder.AddAttribute(340, "class", "form-control");
+            __builder.AddAttribute(341, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 204 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                            sid2.Volume_Discount
@@ -1031,25 +921,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(448, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Volume_Discount = __value, sid2.Volume_Discount));
+            __builder.AddAttribute(342, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Volume_Discount = __value, sid2.Volume_Discount));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(449, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(450, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(451, "\r\n                ");
-            __builder.OpenElement(452, "div");
-            __builder.AddAttribute(453, "class", "col-md-2");
-            __builder.AddMarkupContent(454, "\r\n                    ");
-            __builder.OpenElement(455, "div");
-            __builder.AddAttribute(456, "class", "form-group");
-            __builder.AddMarkupContent(457, "\r\n                        ");
-            __builder.AddMarkupContent(458, "<label for=\"coupdisc\" class=\"control-label\" style=\"font-size: small;\">Coupon discount</label>\r\n                        ");
-            __builder.OpenElement(459, "input");
-            __builder.AddAttribute(460, "form", "coupdisc");
-            __builder.AddAttribute(461, "class", "form-control");
-            __builder.AddAttribute(462, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(343, "\r\n                ");
+            __builder.OpenElement(344, "div");
+            __builder.AddAttribute(345, "class", "col-md-2");
+            __builder.OpenElement(346, "div");
+            __builder.AddAttribute(347, "class", "form-group");
+            __builder.AddMarkupContent(348, "<label for=\"coupdisc\" class=\"control-label\" style=\"font-size: small;\">Coupon discount</label>\r\n                        ");
+            __builder.OpenElement(349, "input");
+            __builder.AddAttribute(350, "form", "coupdisc");
+            __builder.AddAttribute(351, "class", "form-control");
+            __builder.AddAttribute(352, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 210 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                             sid2.Coupon_Discount
@@ -1058,25 +944,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(463, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Coupon_Discount = __value, sid2.Coupon_Discount));
+            __builder.AddAttribute(353, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Coupon_Discount = __value, sid2.Coupon_Discount));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(464, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(465, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(466, "\r\n                ");
-            __builder.OpenElement(467, "div");
-            __builder.AddAttribute(468, "class", "col-md-2");
-            __builder.AddMarkupContent(469, "\r\n                    ");
-            __builder.OpenElement(470, "div");
-            __builder.AddAttribute(471, "class", "form-group");
-            __builder.AddMarkupContent(472, "\r\n                        ");
-            __builder.AddMarkupContent(473, "<label for=\"niv\" class=\"control-label\" style=\"font-size: small;\">NIV</label>\r\n                        ");
-            __builder.OpenElement(474, "input");
-            __builder.AddAttribute(475, "form", "niv");
-            __builder.AddAttribute(476, "class", "form-control");
-            __builder.AddAttribute(477, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(354, "\r\n                ");
+            __builder.OpenElement(355, "div");
+            __builder.AddAttribute(356, "class", "col-md-2");
+            __builder.OpenElement(357, "div");
+            __builder.AddAttribute(358, "class", "form-group");
+            __builder.AddMarkupContent(359, "<label for=\"niv\" class=\"control-label\" style=\"font-size: small;\">NIV</label>\r\n                        ");
+            __builder.OpenElement(360, "input");
+            __builder.AddAttribute(361, "form", "niv");
+            __builder.AddAttribute(362, "class", "form-control");
+            __builder.AddAttribute(363, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 216 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                        sid2.NIV
@@ -1085,25 +967,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(478, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.NIV = __value, sid2.NIV));
+            __builder.AddAttribute(364, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.NIV = __value, sid2.NIV));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(479, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(480, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(481, "\r\n                ");
-            __builder.OpenElement(482, "div");
-            __builder.AddAttribute(483, "class", "col-md-2");
-            __builder.AddMarkupContent(484, "\r\n                    ");
-            __builder.OpenElement(485, "div");
-            __builder.AddAttribute(486, "class", "form-group");
-            __builder.AddMarkupContent(487, "\r\n                        ");
-            __builder.AddMarkupContent(488, "<label for=\"vat\" class=\"control-label\" style=\"font-size: small;\">VAT</label>\r\n                        ");
-            __builder.OpenElement(489, "input");
-            __builder.AddAttribute(490, "form", "vat");
-            __builder.AddAttribute(491, "class", "form-control");
-            __builder.AddAttribute(492, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(365, "\r\n                ");
+            __builder.OpenElement(366, "div");
+            __builder.AddAttribute(367, "class", "col-md-2");
+            __builder.OpenElement(368, "div");
+            __builder.AddAttribute(369, "class", "form-group");
+            __builder.AddMarkupContent(370, "<label for=\"vat\" class=\"control-label\" style=\"font-size: small;\">VAT</label>\r\n                        ");
+            __builder.OpenElement(371, "input");
+            __builder.AddAttribute(372, "form", "vat");
+            __builder.AddAttribute(373, "class", "form-control");
+            __builder.AddAttribute(374, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 222 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                        sid2.VAT
@@ -1112,25 +990,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(493, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.VAT = __value, sid2.VAT));
+            __builder.AddAttribute(375, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.VAT = __value, sid2.VAT));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(494, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(495, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(496, "\r\n                ");
-            __builder.OpenElement(497, "div");
-            __builder.AddAttribute(498, "class", "col-md-2");
-            __builder.AddMarkupContent(499, "\r\n                    ");
-            __builder.OpenElement(500, "div");
-            __builder.AddAttribute(501, "class", "form-group");
-            __builder.AddMarkupContent(502, "\r\n                        ");
-            __builder.AddMarkupContent(503, "<label for=\"tsai\" class=\"control-label\" style=\"font-size: small;\">Total sales amnt inc</label>\r\n                        ");
-            __builder.OpenElement(504, "input");
-            __builder.AddAttribute(505, "form", "tsai");
-            __builder.AddAttribute(506, "class", "form-control");
-            __builder.AddAttribute(507, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(376, "\r\n                ");
+            __builder.OpenElement(377, "div");
+            __builder.AddAttribute(378, "class", "col-md-2");
+            __builder.OpenElement(379, "div");
+            __builder.AddAttribute(380, "class", "form-group");
+            __builder.AddMarkupContent(381, "<label for=\"tsai\" class=\"control-label\" style=\"font-size: small;\">Total sales amnt inc</label>\r\n                        ");
+            __builder.OpenElement(382, "input");
+            __builder.AddAttribute(383, "form", "tsai");
+            __builder.AddAttribute(384, "class", "form-control");
+            __builder.AddAttribute(385, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 228 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                         sid2.Total_Sales_Amnt_Inc
@@ -1139,25 +1013,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(508, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Total_Sales_Amnt_Inc = __value, sid2.Total_Sales_Amnt_Inc));
+            __builder.AddAttribute(386, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Total_Sales_Amnt_Inc = __value, sid2.Total_Sales_Amnt_Inc));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(509, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(510, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(511, "\r\n                ");
-            __builder.OpenElement(512, "div");
-            __builder.AddAttribute(513, "class", "col-md-2");
-            __builder.AddMarkupContent(514, "\r\n                    ");
-            __builder.OpenElement(515, "div");
-            __builder.AddAttribute(516, "class", "form-group");
-            __builder.AddMarkupContent(517, "\r\n                        ");
-            __builder.AddMarkupContent(518, "<label for=\"aggrpcs\" class=\"control-label\" style=\"font-size: small;\">Aggr pieces</label>\r\n                        ");
-            __builder.OpenElement(519, "input");
-            __builder.AddAttribute(520, "form", "aggrpcs");
-            __builder.AddAttribute(521, "class", "form-control");
-            __builder.AddAttribute(522, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(387, "\r\n                ");
+            __builder.OpenElement(388, "div");
+            __builder.AddAttribute(389, "class", "col-md-2");
+            __builder.OpenElement(390, "div");
+            __builder.AddAttribute(391, "class", "form-group");
+            __builder.AddMarkupContent(392, "<label for=\"aggrpcs\" class=\"control-label\" style=\"font-size: small;\">Aggr pieces</label>\r\n                        ");
+            __builder.OpenElement(393, "input");
+            __builder.AddAttribute(394, "form", "aggrpcs");
+            __builder.AddAttribute(395, "class", "form-control");
+            __builder.AddAttribute(396, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 234 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                            sid2.Aggr_Pieces
@@ -1166,25 +1036,21 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(523, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Aggr_Pieces = __value, sid2.Aggr_Pieces));
+            __builder.AddAttribute(397, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Aggr_Pieces = __value, sid2.Aggr_Pieces));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(524, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(525, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(526, "\r\n                ");
-            __builder.OpenElement(527, "div");
-            __builder.AddAttribute(528, "class", "col-md-2");
-            __builder.AddMarkupContent(529, "\r\n                    ");
-            __builder.OpenElement(530, "div");
-            __builder.AddAttribute(531, "class", "form-group");
-            __builder.AddMarkupContent(532, "\r\n                        ");
-            __builder.AddMarkupContent(533, "<label for=\"cabinetcount\" class=\"control-label\" style=\"font-size: small;\">Cabinet count</label>\r\n                        ");
-            __builder.OpenElement(534, "input");
-            __builder.AddAttribute(535, "form", "cabinetcount");
-            __builder.AddAttribute(536, "class", "form-control");
-            __builder.AddAttribute(537, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(398, "\r\n                ");
+            __builder.OpenElement(399, "div");
+            __builder.AddAttribute(400, "class", "col-md-2");
+            __builder.OpenElement(401, "div");
+            __builder.AddAttribute(402, "class", "form-group");
+            __builder.AddMarkupContent(403, "<label for=\"cabinetcount\" class=\"control-label\" style=\"font-size: small;\">Cabinet count</label>\r\n                        ");
+            __builder.OpenElement(404, "input");
+            __builder.AddAttribute(405, "form", "cabinetcount");
+            __builder.AddAttribute(406, "class", "form-control");
+            __builder.AddAttribute(407, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 240 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                                 sid2.Cabinet_Count
@@ -1193,23 +1059,19 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(538, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Cabinet_Count = __value, sid2.Cabinet_Count));
+            __builder.AddAttribute(408, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sid2.Cabinet_Count = __value, sid2.Cabinet_Count));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(539, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(540, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(541, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(542, "\r\n            ");
-            __builder.OpenElement(543, "div");
-            __builder.AddAttribute(544, "class", "text-center");
-            __builder.AddMarkupContent(545, "\r\n                ");
-            __builder.OpenElement(546, "input");
-            __builder.AddAttribute(547, "type", "button");
-            __builder.AddAttribute(548, "class", "btn btn-success");
-            __builder.AddAttribute(549, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(409, "\r\n            ");
+            __builder.OpenElement(410, "div");
+            __builder.AddAttribute(411, "class", "text-center");
+            __builder.OpenElement(412, "input");
+            __builder.AddAttribute(413, "type", "button");
+            __builder.AddAttribute(414, "class", "btn btn-success");
+            __builder.AddAttribute(415, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 245 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesInvoice.razor"
                                                                         insertDetails
@@ -1218,15 +1080,11 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(550, "value", "Save");
+            __builder.AddAttribute(416, "value", "Save");
             __builder.CloseElement();
-            __builder.AddMarkupContent(551, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(552, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(553, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(554, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

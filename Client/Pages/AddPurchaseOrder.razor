@@ -10,11 +10,11 @@
     <div class="row">
         <div class="col-md-8">
             <div class="form-group">
-                <label for="postingdate" class="control-label">Posting date</label>
+                <label for="postingdate" class="control-label">Article Document</label>
                 <input form="postingdate" class="form-control" @bind="@po.Article_Doc" />
             </div>
             <div class="form-group">
-                <label for="docdate" class="control-label">Document date</label>
+                <label for="docdate" class="control-label">Bill Document</label>
                 <input form="docdate" class="form-control" @bind="@po.Bill_Doc" />
             </div>
         </div>
@@ -50,7 +50,7 @@
     {
         await Http.PostJsonAsync("api/PurchaseOrderHeadersIndex", po);
         if (IsConnected) await SendMessage();
-        NavigationManager.NavigateTo("purchaseorderlist");
+        NavigationManager.NavigateTo("editpurchaseorder/" + po.Article_Doc);
     }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");

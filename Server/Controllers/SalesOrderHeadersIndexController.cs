@@ -37,16 +37,16 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/SalesOrderHeadersIndex/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<SalesOrderHeaders>> GetSalesOrderHeaders(int id)
+        public async Task<ActionResult<SalesOrderHeaders>> GetSalesOrderHeaders(string id)
         {
-            var salesOrderHeaders = await _context.SalesOrder_Headers.FindAsync(id);
+            var salesOrderHeaders = _context.SalesOrder_Headers.Where(x => x.Order_Number == id).Distinct().FirstOrDefault();
 
-            if (salesOrderHeaders == null)
+            if(salesOrderHeaders == null)
             {
                 return NotFound();
             }
 
-            return salesOrderHeaders;
+            return  Ok(salesOrderHeaders);
         }
 
         // PUT: api/SalesOrderHeadersIndex/5

@@ -8,196 +8,106 @@
 <hr />
 <form>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="routeno" class="control-label">Route number</label>
                 <input form="routeno" class="form-control" @bind="@solist.Route_No" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="ordertype" class="control-label">Order type</label>
                 <input form="ordertype" class="form-control" @bind="@solist.Order_Type" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="orderno" class="control-label">Order number</label>
                 <input form="orderno" class="form-control" @bind="@solist.Order_Number" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="sodate" class="control-label">Sales order date</label>
-                <input form="sodate" class="form-control" @bind="@solist.SO_Date" />
+                <input form="sodate" class="form-control" @bind="@date" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="outletcode" class="control-label">Outlet code</label>
                 <input form="outletcode" class="form-control" @bind="@solist.Outlet_Code" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="outletname" class="control-label">Outlet name</label>
                 <input form="outletname" class="form-control" @bind="@solist.Outlet_Name" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="status" class="control-label">Status</label>
                 <input form="status" class="form-control" @bind="@solist.Status" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="deliveryno" class="control-label">Delivery number</label>
                 <input form="deliveryno" class="form-control" @bind="@solist.Delivery_N" />
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="materialno" class="control-label">Material number</label>
-                <input form="materialno" class="form-control" @bind="@solist.Material_N" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="articledesc" class="control-label">Article description</label>
-                <input form="articledesc" class="form-control" @bind="@solist.Article_Description" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="packsize" class="control-label">Pack size</label>
-                <input form="packsize" class="form-control" @bind="@solist.Pack_Size" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="cases" class="control-label">Cases</label>
-                <input form="cases" class="form-control" @bind="@solist.Cases" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="pieces" class="control-label">Pieces</label>
-                <input form="pieces" class="form-control" @bind="@solist.Pieces" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="freecs" class="control-label">Free cases</label>
-                <input form="freecs" class="form-control" @bind="@solist.Free_Cases" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="freepc" class="control-label">Free pc</label>
-                <input form="freepc" class="form-control" @bind="@solist.Free_Piece" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="freeqtycs" class="control-label">Delivery qty cs</label>
-                <input form="freeqtycs" class="form-control" @bind="@solist.Delivery_Qty_CS" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="freeqtypc" class="control-label">Delivery qty pc</label>
-                <input form="freeqtypc" class="form-control" @bind="@solist.Delivery_Qty_PC" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="salesval" class="control-label">Sales value</label>
-                <input form="salesval" class="form-control" @bind="@solist.Sales_Value" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="vatval" class="control-label">VAT value</label>
-                <input form="vatval" class="form-control" @bind="@solist.VAT_Value" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="netsales" class="control-label">Net sales</label>
-                <input form="netsales" class="form-control" @bind="@solist.Net_Sales" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="itemno" class="control-label">Item number</label>
-                <input form="itemno" class="form-control" @bind="@solist.Item_Number" />
-            </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="routetype" class="control-label">Route type</label>
                 <input form="routetype" class="form-control" @bind="@solist.Route_Type" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="salesmanname" class="control-label">Salesman name</label>
                 <input form="salesmanname" class="form-control" @bind="@solist.Salesman_Name" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="termsofpayment" class="control-label">Terms of payment</label>
                 <input form="termsofpayment" class="form-control" @bind="@solist.Terms_of_payment" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="dfqcs" class="control-label">Delivery free qty cs</label>
                 <input form="dfqcs" class="form-control" @bind="@solist.Delivery_Free_Qty_CS" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="turnoverval" class="control-label">Turnover value</label>
                 <input form="turnoverval" class="form-control" @bind="@solist.Turnover_Value" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="dfqpc" class="control-label">Delivery free qty pc</label>
                 <input form="dfqpc" class="form-control" @bind="@solist.Delivery_Free_Qty_PC" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="doccat" class="control-label">Document category</label>
                 <input form="doccat" class="form-control" @bind="@solist.Document_Category" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="salesman" class="control-label">Salesman</label>
                 <input form="salesman" class="form-control" @bind="@solist.Salesman" />
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label for="ordertypedesc" class="control-label">Order type description</label>
                 <input form="ordertypedesc" class="form-control" @bind="@solist.Order_Type_Desc" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="casespcs" class="control-label">Cases pieces</label>
-                <input form="casespcs" class="form-control" @bind="@solist.Cases_Pieces" />
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <label for="freecsps" class="control-label">Free cs pcs</label>
-                <input form="freecsps" class="form-control" @bind="@solist.Free_CS_PS" />
             </div>
         </div>
         <div class="col-md-4">
@@ -211,6 +121,8 @@
 
 @code {
     SalesOrder solist = new SalesOrder();
+
+    public string date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
 
     private HubConnection hubCon;
 
@@ -228,16 +140,11 @@
 
     public async Task addsalesorder()
     {
-        await Http.PostJsonAsync("api/SalesOrders", solist);
-
         var addSOHeader = new SalesOrderHeaders { Route_Type = solist.Route_Type, Salesman_Name = solist.Salesman_Name, Terms_of_payment = solist.Terms_of_payment, Delivery_Free_Qty_CS = solist.Delivery_Free_Qty_CS, Turnover_Value = solist.Turnover_Value, Delivery_Free_Qty_PC = solist.Delivery_Free_Qty_PC, Document_Category = solist.Document_Category, Salesman = solist.Salesman, Order_Type = solist.Order_Type, Route_No = solist.Route_No, Order_Type_Desc = solist.Order_Type_Desc, Order_Number = solist.Order_Number, SO_Date = solist.SO_Date, Outlet_Code = solist.Outlet_Code, Outlet_Name = solist.Outlet_Name, Status = solist.Status, Delivery_N = solist.Delivery_N };
         await Http.PostJsonAsync("api/SalesOrderHeadersIndex", addSOHeader);
 
-        var addSODetails = new SalesOrderDetails { Header_ID = Int32.Parse(solist.Order_Number), Material_N = solist.Material_N, Article_Description = solist.Article_Description, Pack_Size = solist.Pack_Size, Cases = solist.Cases, Pieces = solist.Pieces, Free_Cases = solist.Free_Cases, Free_Piece = solist.Free_Piece, Delivery_Qty_CS = solist.Delivery_Qty_CS, Delivery_Qty_PC = solist.Delivery_Qty_PC, Sales_Value = solist.Sales_Value, VAT_Value = solist.VAT_Value, Net_Sales = solist.Net_Sales, Item_Number = solist.Item_Number, Cases_Pieces = solist.Cases_Pieces, Free_CS_PS = solist.Free_CS_PS };
-        await Http.PostJsonAsync("api/SalesOrderDetailsIndex", addSODetails);
-
         if (IsConnected) await SendMessage();
-        NavigationManager.NavigateTo("salesorderlist");
+        NavigationManager.NavigateTo("editsalesorder/" + solist.Order_Number);
     }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");

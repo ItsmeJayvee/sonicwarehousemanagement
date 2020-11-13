@@ -79,11 +79,10 @@ using SonicWarehouseManagement.Client.Shared;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "top-row pl-4 navbar navbar-dark");
-            __builder.AddMarkupContent(2, "\r\n    ");
-            __builder.AddMarkupContent(3, "<a class=\"navbar-brand\" href><img src=\"/logo.png\" height=\"45\" width=\"45\"></a>\r\n    ");
-            __builder.OpenElement(4, "button");
-            __builder.AddAttribute(5, "class", "navbar-toggler");
-            __builder.AddAttribute(6, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(2, "<a class=\"navbar-brand\" href><img src=\"/logo.png\" height=\"45\" width=\"45\"></a>\r\n    ");
+            __builder.OpenElement(3, "button");
+            __builder.AddAttribute(4, "class", "navbar-toggler");
+            __builder.AddAttribute(5, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 3 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\NavMenu.razor"
                                              ToggleNavMenu
@@ -92,13 +91,12 @@ using SonicWarehouseManagement.Client.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(7, "\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    ");
+            __builder.AddMarkupContent(6, "<span class=\"navbar-toggler-icon\"></span>");
             __builder.CloseElement();
-            __builder.AddMarkupContent(8, "\r\n");
             __builder.CloseElement();
-            __builder.AddMarkupContent(9, "\r\n\r\n");
-            __builder.OpenElement(10, "div");
-            __builder.AddAttribute(11, "class", 
+            __builder.AddMarkupContent(7, "\r\n\r\n");
+            __builder.OpenElement(8, "div");
+            __builder.AddAttribute(9, "class", 
 #nullable restore
 #line 8 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\NavMenu.razor"
              NavMenuCssClass
@@ -107,7 +105,7 @@ using SonicWarehouseManagement.Client.Shared;
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(12, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddAttribute(10, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 8 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\NavMenu.razor"
                                         ToggleNavMenu
@@ -116,17 +114,14 @@ using SonicWarehouseManagement.Client.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(13, "\r\n    ");
-            __builder.OpenElement(14, "ul");
-            __builder.AddAttribute(15, "class", "nav flex-column");
-            __builder.AddMarkupContent(16, "\r\n        ");
-            __builder.OpenElement(17, "li");
-            __builder.AddAttribute(18, "class", "nav-item px-3");
-            __builder.AddMarkupContent(19, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(20);
-            __builder.AddAttribute(21, "class", "nav-link");
-            __builder.AddAttribute(22, "href", "");
-            __builder.AddAttribute(23, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.OpenElement(11, "ul");
+            __builder.AddAttribute(12, "class", "nav flex-column");
+            __builder.OpenElement(13, "li");
+            __builder.AddAttribute(14, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(15);
+            __builder.AddAttribute(16, "class", "nav-link");
+            __builder.AddAttribute(17, "href", "");
+            __builder.AddAttribute(18, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 11 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\NavMenu.razor"
                                                      NavLinkMatch.All
@@ -135,128 +130,109 @@ using SonicWarehouseManagement.Client.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(24, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(25, "\r\n                <span class=\"oi oi-home\" aria-hidden=\"true\"></span> Home\r\n            ");
+            __builder.AddAttribute(19, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(20, "<span class=\"oi oi-home\" aria-hidden=\"true\"></span> Home\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(26, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(27, "\r\n        ");
-            __builder.OpenElement(28, "li");
-            __builder.AddAttribute(29, "class", "nav-item px-3");
-            __builder.AddMarkupContent(30, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(31);
-            __builder.AddAttribute(32, "class", "nav-link");
-            __builder.AddAttribute(33, "href", "articlelist");
-            __builder.AddAttribute(34, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(35, "\r\n                <span class=\"oi oi-tags\" aria-hidden=\"true\"></span> Article Master\r\n            ");
+            __builder.AddMarkupContent(21, "\r\n        ");
+            __builder.OpenElement(22, "li");
+            __builder.AddAttribute(23, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(24);
+            __builder.AddAttribute(25, "class", "nav-link");
+            __builder.AddAttribute(26, "href", "articlelist");
+            __builder.AddAttribute(27, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(28, "<span class=\"oi oi-tags\" aria-hidden=\"true\"></span> Article Master\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(36, "\r\n        ");
+            __builder.CloseElement();
+            __builder.AddMarkupContent(29, "\r\n        ");
+            __builder.OpenElement(30, "li");
+            __builder.AddAttribute(31, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(32);
+            __builder.AddAttribute(33, "class", "nav-link");
+            __builder.AddAttribute(34, "href", "businesspartnerlist");
+            __builder.AddAttribute(35, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(36, "<span class=\"oi oi-briefcase\" aria-hidden=\"true\"></span> Business Partner\r\n            ");
+            }
+            ));
+            __builder.CloseComponent();
             __builder.CloseElement();
             __builder.AddMarkupContent(37, "\r\n        ");
             __builder.OpenElement(38, "li");
             __builder.AddAttribute(39, "class", "nav-item px-3");
-            __builder.AddMarkupContent(40, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(41);
-            __builder.AddAttribute(42, "class", "nav-link");
-            __builder.AddAttribute(43, "href", "businesspartnerlist");
-            __builder.AddAttribute(44, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(45, "\r\n                <span class=\"oi oi-briefcase\" aria-hidden=\"true\"></span> Business Partner\r\n            ");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(40);
+            __builder.AddAttribute(41, "class", "nav-link");
+            __builder.AddAttribute(42, "href", "salesinvoicelist");
+            __builder.AddAttribute(43, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(44, "<span class=\"oi oi-document\" aria-hidden=\"true\"></span> Sales Invoice\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(46, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(47, "\r\n        ");
-            __builder.OpenElement(48, "li");
-            __builder.AddAttribute(49, "class", "nav-item px-3");
-            __builder.AddMarkupContent(50, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(51);
-            __builder.AddAttribute(52, "class", "nav-link");
-            __builder.AddAttribute(53, "href", "salesinvoicelist");
-            __builder.AddAttribute(54, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(55, "\r\n                <span class=\"oi oi-document\" aria-hidden=\"true\"></span> Sales Invoice\r\n            ");
+            __builder.AddMarkupContent(45, "\r\n        ");
+            __builder.OpenElement(46, "li");
+            __builder.AddAttribute(47, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(48);
+            __builder.AddAttribute(49, "class", "nav-link");
+            __builder.AddAttribute(50, "href", "salesmanlist");
+            __builder.AddAttribute(51, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(52, "<span class=\"oi oi-people\" aria-hidden=\"true\"></span> Salesman Master\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(56, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(57, "\r\n        ");
-            __builder.OpenElement(58, "li");
-            __builder.AddAttribute(59, "class", "nav-item px-3");
-            __builder.AddMarkupContent(60, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(61);
-            __builder.AddAttribute(62, "class", "nav-link");
-            __builder.AddAttribute(63, "href", "salesmanlist");
-            __builder.AddAttribute(64, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(65, "\r\n                <span class=\"oi oi-people\" aria-hidden=\"true\"></span> Salesman Master\r\n            ");
+            __builder.AddMarkupContent(53, "\r\n        ");
+            __builder.OpenElement(54, "li");
+            __builder.AddAttribute(55, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(56);
+            __builder.AddAttribute(57, "class", "nav-link");
+            __builder.AddAttribute(58, "href", "purchaseorderlist");
+            __builder.AddAttribute(59, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(60, "<span class=\"oi oi-basket\" aria-hidden=\"true\"></span> Purchase Order\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(66, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(67, "\r\n        ");
-            __builder.OpenElement(68, "li");
-            __builder.AddAttribute(69, "class", "nav-item px-3");
-            __builder.AddMarkupContent(70, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(71);
-            __builder.AddAttribute(72, "class", "nav-link");
-            __builder.AddAttribute(73, "href", "purchaseorderlist");
-            __builder.AddAttribute(74, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(75, "\r\n                <span class=\"oi oi-basket\" aria-hidden=\"true\"></span> Purchase Order\r\n            ");
+            __builder.AddMarkupContent(61, "\r\n        ");
+            __builder.OpenElement(62, "li");
+            __builder.AddAttribute(63, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(64);
+            __builder.AddAttribute(65, "class", "nav-link");
+            __builder.AddAttribute(66, "href", "salesorderlist");
+            __builder.AddAttribute(67, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(68, "<span class=\"oi oi-book\" aria-hidden=\"true\"></span> Sales Order\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(76, "\r\n        ");
+            __builder.CloseElement();
+            __builder.AddMarkupContent(69, "\r\n        ");
+            __builder.OpenElement(70, "li");
+            __builder.AddAttribute(71, "class", "nav-item px-3");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(72);
+            __builder.AddAttribute(73, "class", "nav-link");
+            __builder.AddAttribute(74, "href", "deliveryreceiptlist");
+            __builder.AddAttribute(75, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(76, "<span class=\"oi oi-script\" aria-hidden=\"true\"></span> Delivery Receipt\r\n            ");
+            }
+            ));
+            __builder.CloseComponent();
             __builder.CloseElement();
             __builder.AddMarkupContent(77, "\r\n        ");
             __builder.OpenElement(78, "li");
             __builder.AddAttribute(79, "class", "nav-item px-3");
-            __builder.AddMarkupContent(80, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(81);
-            __builder.AddAttribute(82, "class", "nav-link");
-            __builder.AddAttribute(83, "href", "salesorderlist");
-            __builder.AddAttribute(84, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(85, "\r\n                <span class=\"oi oi-book\" aria-hidden=\"true\"></span> Sales Order\r\n            ");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(80);
+            __builder.AddAttribute(81, "class", "nav-link");
+            __builder.AddAttribute(82, "href", "inventorylist");
+            __builder.AddAttribute(83, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(84, "<span class=\"oi oi-clipboard\" aria-hidden=\"true\"></span> Inventory\r\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(86, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(87, "\r\n        ");
-            __builder.OpenElement(88, "li");
-            __builder.AddAttribute(89, "class", "nav-item px-3");
-            __builder.AddMarkupContent(90, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(91);
-            __builder.AddAttribute(92, "class", "nav-link");
-            __builder.AddAttribute(93, "href", "deliveryreceiptlist");
-            __builder.AddAttribute(94, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(95, "\r\n                <span class=\"oi oi-script\" aria-hidden=\"true\"></span> Delivery Receipt\r\n            ");
-            }
-            ));
-            __builder.CloseComponent();
-            __builder.AddMarkupContent(96, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(97, "\r\n        ");
-            __builder.OpenElement(98, "li");
-            __builder.AddAttribute(99, "class", "nav-item px-3");
-            __builder.AddMarkupContent(100, "\r\n            ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(101);
-            __builder.AddAttribute(102, "class", "nav-link");
-            __builder.AddAttribute(103, "href", "inventorylist");
-            __builder.AddAttribute(104, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(105, "\r\n                <span class=\"oi oi-clipboard\" aria-hidden=\"true\"></span> Inventory\r\n            ");
-            }
-            ));
-            __builder.CloseComponent();
-            __builder.AddMarkupContent(106, "\r\n        ");
-            __builder.CloseElement();
-            __builder.AddMarkupContent(107, "\r\n    ");
-            __builder.CloseElement();
-            __builder.AddMarkupContent(108, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

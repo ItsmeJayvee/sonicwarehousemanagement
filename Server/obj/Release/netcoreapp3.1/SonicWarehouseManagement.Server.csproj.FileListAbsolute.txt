@@ -696,7 +696,6 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Release\net
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.dll
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.pdb
 C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.genruntimeconfig.cache
-C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Release\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Release\netcoreapp3.1\appsettings.Development.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Release\netcoreapp3.1\appsettings.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Release\netcoreapp3.1\BlazorDebugProxy\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
@@ -1045,3 +1044,4 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Releas
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.pdb
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.genruntimeconfig.cache
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\scopedcss\bundle\SonicWarehouseManagement.Server.styles.css

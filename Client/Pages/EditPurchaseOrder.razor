@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        @if (pd == null)
+        @*@if (pd == null)
         {
             // do nothing
         }
@@ -40,11 +40,11 @@
                     <td style="font-size: small">@items.Document_Date.ToShortDateString()</td>
                 </tr>
             }
-        }
+        }*@
     </tbody>
 </table>
 <hr />
-<div class="container">
+@*<div class="container">
     <div class="row">
         <div class="text-left col-md-12">
             <h6><b>Insert purchase order Details:</b></h6>
@@ -67,7 +67,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="packsize" class="control-label" style="font-size: small;">Document Date</label>
-                        <input form="packsize" class="form-control" @bind="@date" />
+                        <input form="packsize" class="form-control" @bind="@date1" />
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -104,9 +104,10 @@
             </div>
         </form>
     </div>
-</div>
+</div>*@
 
 @code {
+
     PurchaseHeaders po = new PurchaseHeaders();
     PurchaseDetails pds = new PurchaseDetails();
     PurchaseDetails[] pd;
@@ -114,6 +115,7 @@
     private HubConnection hubCon;
 
     public string date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public string date1 { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
 
     [Parameter]
     public string id { get; set; }
@@ -121,7 +123,7 @@
     protected override async Task OnInitializedAsync()
     {
         po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
-        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/Pur")
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
@@ -133,19 +135,19 @@
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    public async Task insertsalesinvoice()
-    {
-        await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
+    //public async Task insertsalesinvoice()
+    //{
+    //    await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
 
-        var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = pds.Item_Code, Date = pds.Document_Date };
-        await Http.PostJsonAsync("api/InventoryHeaderIndex", addHeaderItems);
+    //    var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = pds.Item_Code, Date = Convert.ToDateTime(date) };
+    //    await Http.PostJsonAsync("api/InventoryHeaderIndex", addHeaderItems);
 
-        var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = pds.Quantity, Uom = pds.Uom, Transaction_Type = "Purchase Order" };
-        await Http.PostJsonAsync("api/InventoryDetailsManual", addDetailItems);
+    //    var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = pds.Quantity, Uom = pds.Uom, Transaction_Type = "Purchase Order" };
+    //    await Http.PostJsonAsync("api/InventoryDetailsManual", addDetailItems);
 
-        if (IsConnected) await SendMessage();
-        NavigationManager.NavigateTo("purchaseorderlist");
-    }
+    //    if (IsConnected) await SendMessage();
+    //    NavigationManager.NavigateTo("purchaseorderlist");
+    //}
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 
@@ -153,4 +155,5 @@
     {
         _ = hubCon.DisposeAsync();
     }
+
 }

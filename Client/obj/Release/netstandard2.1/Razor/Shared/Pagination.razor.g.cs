@@ -79,10 +79,8 @@ using SonicWarehouseManagement.Client.Shared;
         {
             __builder.OpenElement(0, "nav");
             __builder.AddAttribute(1, "aria-label", "Page navigation example");
-            __builder.AddMarkupContent(2, "\r\n    ");
-            __builder.OpenElement(3, "ul");
-            __builder.AddAttribute(4, "class", "pagination justify-content-center");
-            __builder.AddMarkupContent(5, "\r\n");
+            __builder.OpenElement(2, "ul");
+            __builder.AddAttribute(3, "class", "pagination justify-content-center");
 #nullable restore
 #line 3 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\Pagination.razor"
          foreach(var link in links)
@@ -91,9 +89,8 @@ using SonicWarehouseManagement.Client.Shared;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(6, "            ");
-            __builder.OpenElement(7, "li");
-            __builder.AddAttribute(8, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.OpenElement(4, "li");
+            __builder.AddAttribute(5, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 5 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\Pagination.razor"
                             () => SelectedPageInternal(link)
@@ -102,8 +99,8 @@ using SonicWarehouseManagement.Client.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(9, "style", "cursor: pointer;");
-            __builder.AddAttribute(10, "class", "page-item" + " " + (
+            __builder.AddAttribute(6, "style", "cursor: pointer;");
+            __builder.AddAttribute(7, "class", "page-item" + " " + (
 #nullable restore
 #line 7 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\Pagination.razor"
                                    link.Enabled ? null : "disabled"
@@ -120,11 +117,10 @@ using SonicWarehouseManagement.Client.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(11, "\r\n                ");
-            __builder.OpenElement(12, "span");
-            __builder.AddAttribute(13, "class", "page-link");
-            __builder.AddAttribute(14, "href", "#");
-            __builder.AddContent(15, 
+            __builder.OpenElement(8, "span");
+            __builder.AddAttribute(9, "class", "page-link");
+            __builder.AddAttribute(10, "href", "#");
+            __builder.AddContent(11, 
 #nullable restore
 #line 8 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\Pagination.razor"
                                                   link.Text
@@ -134,9 +130,7 @@ using SonicWarehouseManagement.Client.Shared;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(16, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(17, "\r\n");
 #nullable restore
 #line 10 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Shared\Pagination.razor"
         }
@@ -144,9 +138,7 @@ using SonicWarehouseManagement.Client.Shared;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(18, "    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(19, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

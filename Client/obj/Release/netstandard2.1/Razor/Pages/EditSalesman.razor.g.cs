@@ -94,21 +94,17 @@ using SonicWarehouseManagement.Shared;
         {
             __builder.AddMarkupContent(0, "<h2>Edit Salesman</h2>\r\n<hr>\r\n");
             __builder.OpenElement(1, "form");
-            __builder.AddMarkupContent(2, "\r\n    ");
-            __builder.OpenElement(3, "div");
-            __builder.AddAttribute(4, "class", "row");
-            __builder.AddMarkupContent(5, "\r\n        ");
+            __builder.OpenElement(2, "div");
+            __builder.AddAttribute(3, "class", "row");
+            __builder.OpenElement(4, "div");
+            __builder.AddAttribute(5, "class", "col-md-8");
             __builder.OpenElement(6, "div");
-            __builder.AddAttribute(7, "class", "col-md-8");
-            __builder.AddMarkupContent(8, "\r\n            ");
-            __builder.OpenElement(9, "div");
-            __builder.AddAttribute(10, "class", "form-group");
-            __builder.AddMarkupContent(11, "\r\n                ");
-            __builder.AddMarkupContent(12, "<label for=\"salesmancode\" class=\"control-label\">Salesman code</label>\r\n                ");
-            __builder.OpenElement(13, "input");
-            __builder.AddAttribute(14, "form", "salesmancode");
-            __builder.AddAttribute(15, "class", "form-control");
-            __builder.AddAttribute(16, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(7, "class", "form-group");
+            __builder.AddMarkupContent(8, "<label for=\"salesmancode\" class=\"control-label\">Salesman code</label>\r\n                ");
+            __builder.OpenElement(9, "input");
+            __builder.AddAttribute(10, "form", "salesmancode");
+            __builder.AddAttribute(11, "class", "form-control");
+            __builder.AddAttribute(12, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 14 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                         sm.Salesman_Code
@@ -117,20 +113,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(17, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Code = __value, sm.Salesman_Code));
+            __builder.AddAttribute(13, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Code = __value, sm.Salesman_Code));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(18, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(19, "\r\n            ");
-            __builder.OpenElement(20, "div");
-            __builder.AddAttribute(21, "class", "form-group");
-            __builder.AddMarkupContent(22, "\r\n                ");
-            __builder.AddMarkupContent(23, "<label for=\"salesmanname\" class=\"control-label\">Salesman name</label>\r\n                ");
-            __builder.OpenElement(24, "input");
-            __builder.AddAttribute(25, "form", "salesmanname");
-            __builder.AddAttribute(26, "class", "form-control");
-            __builder.AddAttribute(27, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(14, "\r\n            ");
+            __builder.OpenElement(15, "div");
+            __builder.AddAttribute(16, "class", "form-group");
+            __builder.AddMarkupContent(17, "<label for=\"salesmanname\" class=\"control-label\">Salesman name</label>\r\n                ");
+            __builder.OpenElement(18, "input");
+            __builder.AddAttribute(19, "form", "salesmanname");
+            __builder.AddAttribute(20, "class", "form-control");
+            __builder.AddAttribute(21, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 18 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                         sm.Salesman_Name
@@ -139,20 +133,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(28, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Name = __value, sm.Salesman_Name));
+            __builder.AddAttribute(22, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Name = __value, sm.Salesman_Name));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(29, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(30, "\r\n            ");
-            __builder.OpenElement(31, "div");
-            __builder.AddAttribute(32, "class", "form-group");
-            __builder.AddMarkupContent(33, "\r\n                ");
-            __builder.AddMarkupContent(34, "<label for=\"fsscode\" class=\"control-label\">FSS code</label>\r\n                ");
-            __builder.OpenElement(35, "input");
-            __builder.AddAttribute(36, "form", "fsscode");
-            __builder.AddAttribute(37, "class", "form-control");
-            __builder.AddAttribute(38, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(23, "\r\n            ");
+            __builder.OpenElement(24, "div");
+            __builder.AddAttribute(25, "class", "form-group");
+            __builder.AddMarkupContent(26, "<label for=\"fsscode\" class=\"control-label\">FSS code</label>\r\n                ");
+            __builder.OpenElement(27, "input");
+            __builder.AddAttribute(28, "form", "fsscode");
+            __builder.AddAttribute(29, "class", "form-control");
+            __builder.AddAttribute(30, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 22 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                    sm.FSS_Code
@@ -161,20 +153,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(39, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.FSS_Code = __value, sm.FSS_Code));
+            __builder.AddAttribute(31, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.FSS_Code = __value, sm.FSS_Code));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(40, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(41, "\r\n            ");
-            __builder.OpenElement(42, "div");
-            __builder.AddAttribute(43, "class", "form-group");
-            __builder.AddMarkupContent(44, "\r\n                ");
-            __builder.AddMarkupContent(45, "<label for=\"fssname\" class=\"control-label\">FSS name</label>\r\n                ");
-            __builder.OpenElement(46, "input");
-            __builder.AddAttribute(47, "form", "fssname");
-            __builder.AddAttribute(48, "class", "form-control");
-            __builder.AddAttribute(49, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(32, "\r\n            ");
+            __builder.OpenElement(33, "div");
+            __builder.AddAttribute(34, "class", "form-group");
+            __builder.AddMarkupContent(35, "<label for=\"fssname\" class=\"control-label\">FSS name</label>\r\n                ");
+            __builder.OpenElement(36, "input");
+            __builder.AddAttribute(37, "form", "fssname");
+            __builder.AddAttribute(38, "class", "form-control");
+            __builder.AddAttribute(39, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 26 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                    sm.FSS_Name
@@ -183,20 +173,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(50, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.FSS_Name = __value, sm.FSS_Name));
+            __builder.AddAttribute(40, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.FSS_Name = __value, sm.FSS_Name));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(51, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(52, "\r\n            ");
-            __builder.OpenElement(53, "div");
-            __builder.AddAttribute(54, "class", "form-group");
-            __builder.AddMarkupContent(55, "\r\n                ");
-            __builder.AddMarkupContent(56, "<label for=\"prodgroupdesc\" class=\"control-label\">Product group description</label>\r\n                ");
-            __builder.OpenElement(57, "input");
-            __builder.AddAttribute(58, "form", "prodgroupdesc");
-            __builder.AddAttribute(59, "class", "form-control");
-            __builder.AddAttribute(60, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(41, "\r\n            ");
+            __builder.OpenElement(42, "div");
+            __builder.AddAttribute(43, "class", "form-group");
+            __builder.AddMarkupContent(44, "<label for=\"prodgroupdesc\" class=\"control-label\">Product group description</label>\r\n                ");
+            __builder.OpenElement(45, "input");
+            __builder.AddAttribute(46, "form", "prodgroupdesc");
+            __builder.AddAttribute(47, "class", "form-control");
+            __builder.AddAttribute(48, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 30 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                          sm.Product_Grp_desc
@@ -205,20 +193,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(61, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Product_Grp_desc = __value, sm.Product_Grp_desc));
+            __builder.AddAttribute(49, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Product_Grp_desc = __value, sm.Product_Grp_desc));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(62, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(63, "\r\n            ");
-            __builder.OpenElement(64, "div");
-            __builder.AddAttribute(65, "class", "form-group");
-            __builder.AddMarkupContent(66, "\r\n                ");
-            __builder.AddMarkupContent(67, "<label for=\"salesroute\" class=\"control-label\">Sales route</label>\r\n                ");
-            __builder.OpenElement(68, "input");
-            __builder.AddAttribute(69, "form", "salesroute");
-            __builder.AddAttribute(70, "class", "form-control");
-            __builder.AddAttribute(71, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(50, "\r\n            ");
+            __builder.OpenElement(51, "div");
+            __builder.AddAttribute(52, "class", "form-group");
+            __builder.AddMarkupContent(53, "<label for=\"salesroute\" class=\"control-label\">Sales route</label>\r\n                ");
+            __builder.OpenElement(54, "input");
+            __builder.AddAttribute(55, "form", "salesroute");
+            __builder.AddAttribute(56, "class", "form-control");
+            __builder.AddAttribute(57, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 34 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                       sm.Sales_Route
@@ -227,20 +213,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(72, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Sales_Route = __value, sm.Sales_Route));
+            __builder.AddAttribute(58, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Sales_Route = __value, sm.Sales_Route));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(73, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(74, "\r\n            ");
-            __builder.OpenElement(75, "div");
-            __builder.AddAttribute(76, "class", "form-group");
-            __builder.AddMarkupContent(77, "\r\n                ");
-            __builder.AddMarkupContent(78, "<label for=\"salesroutedesc\" class=\"control-label\">Sales route description</label>\r\n                ");
-            __builder.OpenElement(79, "input");
-            __builder.AddAttribute(80, "form", "salesroutedesc");
-            __builder.AddAttribute(81, "class", "form-control");
-            __builder.AddAttribute(82, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(59, "\r\n            ");
+            __builder.OpenElement(60, "div");
+            __builder.AddAttribute(61, "class", "form-group");
+            __builder.AddMarkupContent(62, "<label for=\"salesroutedesc\" class=\"control-label\">Sales route description</label>\r\n                ");
+            __builder.OpenElement(63, "input");
+            __builder.AddAttribute(64, "form", "salesroutedesc");
+            __builder.AddAttribute(65, "class", "form-control");
+            __builder.AddAttribute(66, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 38 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                           sm.Sales_Route_Description
@@ -249,20 +233,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(83, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Sales_Route_Description = __value, sm.Sales_Route_Description));
+            __builder.AddAttribute(67, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Sales_Route_Description = __value, sm.Sales_Route_Description));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(84, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(85, "\r\n            ");
-            __builder.OpenElement(86, "div");
-            __builder.AddAttribute(87, "class", "form-group");
-            __builder.AddMarkupContent(88, "\r\n                ");
-            __builder.AddMarkupContent(89, "<label for=\"salesmanteamtype\" class=\"control-label\">Salesman team type</label>\r\n                ");
-            __builder.OpenElement(90, "input");
-            __builder.AddAttribute(91, "form", "salesmanteamtype");
-            __builder.AddAttribute(92, "class", "form-control");
-            __builder.AddAttribute(93, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(68, "\r\n            ");
+            __builder.OpenElement(69, "div");
+            __builder.AddAttribute(70, "class", "form-group");
+            __builder.AddMarkupContent(71, "<label for=\"salesmanteamtype\" class=\"control-label\">Salesman team type</label>\r\n                ");
+            __builder.OpenElement(72, "input");
+            __builder.AddAttribute(73, "form", "salesmanteamtype");
+            __builder.AddAttribute(74, "class", "form-control");
+            __builder.AddAttribute(75, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 42 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                             sm.Salesman_Team_Type
@@ -271,20 +253,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(94, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Team_Type = __value, sm.Salesman_Team_Type));
+            __builder.AddAttribute(76, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Team_Type = __value, sm.Salesman_Team_Type));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(95, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(96, "\r\n            ");
-            __builder.OpenElement(97, "div");
-            __builder.AddAttribute(98, "class", "form-group");
-            __builder.AddMarkupContent(99, "\r\n                ");
-            __builder.AddMarkupContent(100, "<label for=\"status\" class=\"control-label\">Status</label>\r\n                ");
-            __builder.OpenElement(101, "input");
-            __builder.AddAttribute(102, "form", "status");
-            __builder.AddAttribute(103, "class", "form-control");
-            __builder.AddAttribute(104, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(77, "\r\n            ");
+            __builder.OpenElement(78, "div");
+            __builder.AddAttribute(79, "class", "form-group");
+            __builder.AddMarkupContent(80, "<label for=\"status\" class=\"control-label\">Status</label>\r\n                ");
+            __builder.OpenElement(81, "input");
+            __builder.AddAttribute(82, "form", "status");
+            __builder.AddAttribute(83, "class", "form-control");
+            __builder.AddAttribute(84, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 46 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                   sm.Status
@@ -293,20 +273,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(105, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Status = __value, sm.Status));
+            __builder.AddAttribute(85, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Status = __value, sm.Status));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(106, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(107, "\r\n            ");
-            __builder.OpenElement(108, "div");
-            __builder.AddAttribute(109, "class", "form-group");
-            __builder.AddMarkupContent(110, "\r\n                ");
-            __builder.AddMarkupContent(111, "<label for=\"prodgroup\" class=\"control-label\">Product group</label>\r\n                ");
-            __builder.OpenElement(112, "input");
-            __builder.AddAttribute(113, "form", "prodgroup");
-            __builder.AddAttribute(114, "class", "form-control");
-            __builder.AddAttribute(115, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(86, "\r\n            ");
+            __builder.OpenElement(87, "div");
+            __builder.AddAttribute(88, "class", "form-group");
+            __builder.AddMarkupContent(89, "<label for=\"prodgroup\" class=\"control-label\">Product group</label>\r\n                ");
+            __builder.OpenElement(90, "input");
+            __builder.AddAttribute(91, "form", "prodgroup");
+            __builder.AddAttribute(92, "class", "form-control");
+            __builder.AddAttribute(93, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 50 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                      sm.Product_Group
@@ -315,20 +293,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(116, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Product_Group = __value, sm.Product_Group));
+            __builder.AddAttribute(94, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Product_Group = __value, sm.Product_Group));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(117, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(118, "\r\n            ");
-            __builder.OpenElement(119, "div");
-            __builder.AddAttribute(120, "class", "form-group");
-            __builder.AddMarkupContent(121, "\r\n                ");
-            __builder.AddMarkupContent(122, "<label for=\"warehousedistributor\" class=\"control-label\">Warehouse distributor</label>\r\n                ");
-            __builder.OpenElement(123, "input");
-            __builder.AddAttribute(124, "form", "warehousedistributor");
-            __builder.AddAttribute(125, "class", "form-control");
-            __builder.AddAttribute(126, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(95, "\r\n            ");
+            __builder.OpenElement(96, "div");
+            __builder.AddAttribute(97, "class", "form-group");
+            __builder.AddMarkupContent(98, "<label for=\"warehousedistributor\" class=\"control-label\">Warehouse distributor</label>\r\n                ");
+            __builder.OpenElement(99, "input");
+            __builder.AddAttribute(100, "form", "warehousedistributor");
+            __builder.AddAttribute(101, "class", "form-control");
+            __builder.AddAttribute(102, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 54 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                                 sm.Warehouse_Distributor
@@ -337,20 +313,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(127, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Warehouse_Distributor = __value, sm.Warehouse_Distributor));
+            __builder.AddAttribute(103, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Warehouse_Distributor = __value, sm.Warehouse_Distributor));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(128, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(129, "\r\n            ");
-            __builder.OpenElement(130, "div");
-            __builder.AddAttribute(131, "class", "form-group");
-            __builder.AddMarkupContent(132, "\r\n                ");
-            __builder.AddMarkupContent(133, "<label for=\"statusdesc\" class=\"control-label\">Status description</label>\r\n                ");
-            __builder.OpenElement(134, "input");
-            __builder.AddAttribute(135, "form", "statusdesc");
-            __builder.AddAttribute(136, "class", "form-control");
-            __builder.AddAttribute(137, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(104, "\r\n            ");
+            __builder.OpenElement(105, "div");
+            __builder.AddAttribute(106, "class", "form-group");
+            __builder.AddMarkupContent(107, "<label for=\"statusdesc\" class=\"control-label\">Status description</label>\r\n                ");
+            __builder.OpenElement(108, "input");
+            __builder.AddAttribute(109, "form", "statusdesc");
+            __builder.AddAttribute(110, "class", "form-control");
+            __builder.AddAttribute(111, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 58 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                       sm.Status_Description
@@ -359,20 +333,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(138, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Status_Description = __value, sm.Status_Description));
+            __builder.AddAttribute(112, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Status_Description = __value, sm.Status_Description));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(139, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(140, "\r\n            ");
-            __builder.OpenElement(141, "div");
-            __builder.AddAttribute(142, "class", "form-group");
-            __builder.AddMarkupContent(143, "\r\n                ");
-            __builder.AddMarkupContent(144, "<label for=\"salesmanteamdesc\" class=\"control-label\">Salesman team description</label>\r\n                ");
-            __builder.OpenElement(145, "input");
-            __builder.AddAttribute(146, "form", "salesmanteamdesc");
-            __builder.AddAttribute(147, "class", "form-control");
-            __builder.AddAttribute(148, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(113, "\r\n            ");
+            __builder.OpenElement(114, "div");
+            __builder.AddAttribute(115, "class", "form-group");
+            __builder.AddMarkupContent(116, "<label for=\"salesmanteamdesc\" class=\"control-label\">Salesman team description</label>\r\n                ");
+            __builder.OpenElement(117, "input");
+            __builder.AddAttribute(118, "form", "salesmanteamdesc");
+            __builder.AddAttribute(119, "class", "form-control");
+            __builder.AddAttribute(120, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 62 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                             sm.Salesman_Team_Description
@@ -381,20 +353,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(149, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Team_Description = __value, sm.Salesman_Team_Description));
+            __builder.AddAttribute(121, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Team_Description = __value, sm.Salesman_Team_Description));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(150, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(151, "\r\n            ");
-            __builder.OpenElement(152, "div");
-            __builder.AddAttribute(153, "class", "form-group");
-            __builder.AddMarkupContent(154, "\r\n                ");
-            __builder.AddMarkupContent(155, "<label for=\"salesmantype\" class=\"control-label\">Salesman type</label>\r\n                ");
-            __builder.OpenElement(156, "input");
-            __builder.AddAttribute(157, "form", "salesmantype");
-            __builder.AddAttribute(158, "class", "form-control");
-            __builder.AddAttribute(159, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(122, "\r\n            ");
+            __builder.OpenElement(123, "div");
+            __builder.AddAttribute(124, "class", "form-group");
+            __builder.AddMarkupContent(125, "<label for=\"salesmantype\" class=\"control-label\">Salesman type</label>\r\n                ");
+            __builder.OpenElement(126, "input");
+            __builder.AddAttribute(127, "form", "salesmantype");
+            __builder.AddAttribute(128, "class", "form-control");
+            __builder.AddAttribute(129, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 66 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                         sm.Salesman_Type
@@ -403,20 +373,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(160, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Type = __value, sm.Salesman_Type));
+            __builder.AddAttribute(130, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Type = __value, sm.Salesman_Type));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(161, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(162, "\r\n            ");
-            __builder.OpenElement(163, "div");
-            __builder.AddAttribute(164, "class", "form-group");
-            __builder.AddMarkupContent(165, "\r\n                ");
-            __builder.AddMarkupContent(166, "<label for=\"site\" class=\"control-label\">Site</label>\r\n                ");
-            __builder.OpenElement(167, "input");
-            __builder.AddAttribute(168, "form", "site");
-            __builder.AddAttribute(169, "class", "form-control");
-            __builder.AddAttribute(170, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(131, "\r\n            ");
+            __builder.OpenElement(132, "div");
+            __builder.AddAttribute(133, "class", "form-group");
+            __builder.AddMarkupContent(134, "<label for=\"site\" class=\"control-label\">Site</label>\r\n                ");
+            __builder.OpenElement(135, "input");
+            __builder.AddAttribute(136, "form", "site");
+            __builder.AddAttribute(137, "class", "form-control");
+            __builder.AddAttribute(138, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 70 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                 sm.Site
@@ -425,20 +393,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(171, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Site = __value, sm.Site));
+            __builder.AddAttribute(139, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Site = __value, sm.Site));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(172, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(173, "\r\n            ");
-            __builder.OpenElement(174, "div");
-            __builder.AddAttribute(175, "class", "form-group");
-            __builder.AddMarkupContent(176, "\r\n                ");
-            __builder.AddMarkupContent(177, "<label for=\"salesmantypedesc\" class=\"control-label\">Salesman type description</label>\r\n                ");
-            __builder.OpenElement(178, "input");
-            __builder.AddAttribute(179, "form", "salesmantypedesc");
-            __builder.AddAttribute(180, "class", "form-control");
-            __builder.AddAttribute(181, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(140, "\r\n            ");
+            __builder.OpenElement(141, "div");
+            __builder.AddAttribute(142, "class", "form-group");
+            __builder.AddMarkupContent(143, "<label for=\"salesmantypedesc\" class=\"control-label\">Salesman type description</label>\r\n                ");
+            __builder.OpenElement(144, "input");
+            __builder.AddAttribute(145, "form", "salesmantypedesc");
+            __builder.AddAttribute(146, "class", "form-control");
+            __builder.AddAttribute(147, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 74 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                             sm.Salesman_Type_desc
@@ -447,20 +413,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(182, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Type_desc = __value, sm.Salesman_Type_desc));
+            __builder.AddAttribute(148, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Salesman_Type_desc = __value, sm.Salesman_Type_desc));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(183, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(184, "\r\n            ");
-            __builder.OpenElement(185, "div");
-            __builder.AddAttribute(186, "class", "form-group");
-            __builder.AddMarkupContent(187, "\r\n                ");
-            __builder.AddMarkupContent(188, "<label for=\"dateofbirth\" class=\"control-label\">Date of birth</label>\r\n                ");
-            __builder.OpenElement(189, "input");
-            __builder.AddAttribute(190, "form", "dateofbirth");
-            __builder.AddAttribute(191, "class", "form-control");
-            __builder.AddAttribute(192, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(149, "\r\n            ");
+            __builder.OpenElement(150, "div");
+            __builder.AddAttribute(151, "class", "form-group");
+            __builder.AddMarkupContent(152, "<label for=\"dateofbirth\" class=\"control-label\">Date of birth</label>\r\n                ");
+            __builder.OpenElement(153, "input");
+            __builder.AddAttribute(154, "form", "dateofbirth");
+            __builder.AddAttribute(155, "class", "form-control");
+            __builder.AddAttribute(156, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 78 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                        sm.Date_of_Birth
@@ -469,20 +433,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(193, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Date_of_Birth = __value, sm.Date_of_Birth));
+            __builder.AddAttribute(157, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Date_of_Birth = __value, sm.Date_of_Birth));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(194, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(195, "\r\n            ");
-            __builder.OpenElement(196, "div");
-            __builder.AddAttribute(197, "class", "form-group");
-            __builder.AddMarkupContent(198, "\r\n                ");
-            __builder.AddMarkupContent(199, "<label for=\"education\" class=\"control-label\">Education</label>\r\n                ");
-            __builder.OpenElement(200, "input");
-            __builder.AddAttribute(201, "form", "education");
-            __builder.AddAttribute(202, "class", "form-control");
-            __builder.AddAttribute(203, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(158, "\r\n            ");
+            __builder.OpenElement(159, "div");
+            __builder.AddAttribute(160, "class", "form-group");
+            __builder.AddMarkupContent(161, "<label for=\"education\" class=\"control-label\">Education</label>\r\n                ");
+            __builder.OpenElement(162, "input");
+            __builder.AddAttribute(163, "form", "education");
+            __builder.AddAttribute(164, "class", "form-control");
+            __builder.AddAttribute(165, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 82 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                      sm.Education
@@ -491,20 +453,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(204, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Education = __value, sm.Education));
+            __builder.AddAttribute(166, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Education = __value, sm.Education));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(205, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(206, "\r\n            ");
-            __builder.OpenElement(207, "div");
-            __builder.AddAttribute(208, "class", "form-group");
-            __builder.AddMarkupContent(209, "\r\n                ");
-            __builder.AddMarkupContent(210, "<label for=\"city\" class=\"control-label\">City</label>\r\n                ");
-            __builder.OpenElement(211, "input");
-            __builder.AddAttribute(212, "form", "city");
-            __builder.AddAttribute(213, "class", "form-control");
-            __builder.AddAttribute(214, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(167, "\r\n            ");
+            __builder.OpenElement(168, "div");
+            __builder.AddAttribute(169, "class", "form-group");
+            __builder.AddMarkupContent(170, "<label for=\"city\" class=\"control-label\">City</label>\r\n                ");
+            __builder.OpenElement(171, "input");
+            __builder.AddAttribute(172, "form", "city");
+            __builder.AddAttribute(173, "class", "form-control");
+            __builder.AddAttribute(174, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 86 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                 sm.City
@@ -513,20 +473,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(215, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.City = __value, sm.City));
+            __builder.AddAttribute(175, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.City = __value, sm.City));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(216, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(217, "\r\n            ");
-            __builder.OpenElement(218, "div");
-            __builder.AddAttribute(219, "class", "form-group");
-            __builder.AddMarkupContent(220, "\r\n                ");
-            __builder.AddMarkupContent(221, "<label for=\"address2\" class=\"control-label\">Address 2</label>\r\n                ");
-            __builder.OpenElement(222, "input");
-            __builder.AddAttribute(223, "form", "address2");
-            __builder.AddAttribute(224, "class", "form-control");
-            __builder.AddAttribute(225, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(176, "\r\n            ");
+            __builder.OpenElement(177, "div");
+            __builder.AddAttribute(178, "class", "form-group");
+            __builder.AddMarkupContent(179, "<label for=\"address2\" class=\"control-label\">Address 2</label>\r\n                ");
+            __builder.OpenElement(180, "input");
+            __builder.AddAttribute(181, "form", "address2");
+            __builder.AddAttribute(182, "class", "form-control");
+            __builder.AddAttribute(183, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 90 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                     sm.Address_2
@@ -535,20 +493,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(226, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Address_2 = __value, sm.Address_2));
+            __builder.AddAttribute(184, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Address_2 = __value, sm.Address_2));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(227, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(228, "\r\n            ");
-            __builder.OpenElement(229, "div");
-            __builder.AddAttribute(230, "class", "form-group");
-            __builder.AddMarkupContent(231, "\r\n                ");
-            __builder.AddMarkupContent(232, "<label for=\"address1\" class=\"control-label\">Address 1</label>\r\n                ");
-            __builder.OpenElement(233, "input");
-            __builder.AddAttribute(234, "form", "address1");
-            __builder.AddAttribute(235, "class", "form-control");
-            __builder.AddAttribute(236, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(185, "\r\n            ");
+            __builder.OpenElement(186, "div");
+            __builder.AddAttribute(187, "class", "form-group");
+            __builder.AddMarkupContent(188, "<label for=\"address1\" class=\"control-label\">Address 1</label>\r\n                ");
+            __builder.OpenElement(189, "input");
+            __builder.AddAttribute(190, "form", "address1");
+            __builder.AddAttribute(191, "class", "form-control");
+            __builder.AddAttribute(192, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 94 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                     sm.Address_1
@@ -557,20 +513,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(237, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Address_1 = __value, sm.Address_1));
+            __builder.AddAttribute(193, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Address_1 = __value, sm.Address_1));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(238, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(239, "\r\n            ");
-            __builder.OpenElement(240, "div");
-            __builder.AddAttribute(241, "class", "form-group");
-            __builder.AddMarkupContent(242, "\r\n                ");
-            __builder.AddMarkupContent(243, "<label for=\"pdaflagdesc\" class=\"control-label\">PDA flag description</label>\r\n                ");
-            __builder.OpenElement(244, "input");
-            __builder.AddAttribute(245, "form", "pdaflagdesc");
-            __builder.AddAttribute(246, "class", "form-control");
-            __builder.AddAttribute(247, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(194, "\r\n            ");
+            __builder.OpenElement(195, "div");
+            __builder.AddAttribute(196, "class", "form-group");
+            __builder.AddMarkupContent(197, "<label for=\"pdaflagdesc\" class=\"control-label\">PDA flag description</label>\r\n                ");
+            __builder.OpenElement(198, "input");
+            __builder.AddAttribute(199, "form", "pdaflagdesc");
+            __builder.AddAttribute(200, "class", "form-control");
+            __builder.AddAttribute(201, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 98 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                        sm.PDA_Flag_Description
@@ -579,20 +533,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(248, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.PDA_Flag_Description = __value, sm.PDA_Flag_Description));
+            __builder.AddAttribute(202, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.PDA_Flag_Description = __value, sm.PDA_Flag_Description));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(249, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(250, "\r\n            ");
-            __builder.OpenElement(251, "div");
-            __builder.AddAttribute(252, "class", "form-group");
-            __builder.AddMarkupContent(253, "\r\n                ");
-            __builder.AddMarkupContent(254, "<label for=\"pdaflag\" class=\"control-label\">PDA flag</label>\r\n                ");
-            __builder.OpenElement(255, "input");
-            __builder.AddAttribute(256, "form", "pdaflag");
-            __builder.AddAttribute(257, "class", "form-control");
-            __builder.AddAttribute(258, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(203, "\r\n            ");
+            __builder.OpenElement(204, "div");
+            __builder.AddAttribute(205, "class", "form-group");
+            __builder.AddMarkupContent(206, "<label for=\"pdaflag\" class=\"control-label\">PDA flag</label>\r\n                ");
+            __builder.OpenElement(207, "input");
+            __builder.AddAttribute(208, "form", "pdaflag");
+            __builder.AddAttribute(209, "class", "form-control");
+            __builder.AddAttribute(210, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 102 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                    sm.PDA_Flag
@@ -601,20 +553,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(259, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.PDA_Flag = __value, sm.PDA_Flag));
+            __builder.AddAttribute(211, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.PDA_Flag = __value, sm.PDA_Flag));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(260, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(261, "\r\n            ");
-            __builder.OpenElement(262, "div");
-            __builder.AddAttribute(263, "class", "form-group");
-            __builder.AddMarkupContent(264, "\r\n                ");
-            __builder.AddMarkupContent(265, "<label for=\"startdate\" class=\"control-label\">Start date</label>\r\n                ");
-            __builder.OpenElement(266, "input");
-            __builder.AddAttribute(267, "form", "startdate");
-            __builder.AddAttribute(268, "class", "form-control");
-            __builder.AddAttribute(269, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(212, "\r\n            ");
+            __builder.OpenElement(213, "div");
+            __builder.AddAttribute(214, "class", "form-group");
+            __builder.AddMarkupContent(215, "<label for=\"startdate\" class=\"control-label\">Start date</label>\r\n                ");
+            __builder.OpenElement(216, "input");
+            __builder.AddAttribute(217, "form", "startdate");
+            __builder.AddAttribute(218, "class", "form-control");
+            __builder.AddAttribute(219, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 106 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                      sm.Start_Date
@@ -623,20 +573,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(270, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Start_Date = __value, sm.Start_Date));
+            __builder.AddAttribute(220, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Start_Date = __value, sm.Start_Date));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(271, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(272, "\r\n            ");
-            __builder.OpenElement(273, "div");
-            __builder.AddAttribute(274, "class", "form-group");
-            __builder.AddMarkupContent(275, "\r\n                ");
-            __builder.AddMarkupContent(276, "<label for=\"enddate\" class=\"control-label\">End date</label>\r\n                ");
-            __builder.OpenElement(277, "input");
-            __builder.AddAttribute(278, "form", "enddate");
-            __builder.AddAttribute(279, "class", "form-control");
-            __builder.AddAttribute(280, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(221, "\r\n            ");
+            __builder.OpenElement(222, "div");
+            __builder.AddAttribute(223, "class", "form-group");
+            __builder.AddMarkupContent(224, "<label for=\"enddate\" class=\"control-label\">End date</label>\r\n                ");
+            __builder.OpenElement(225, "input");
+            __builder.AddAttribute(226, "form", "enddate");
+            __builder.AddAttribute(227, "class", "form-control");
+            __builder.AddAttribute(228, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 110 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                    sm.End_Date
@@ -645,20 +593,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(281, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.End_Date = __value, sm.End_Date));
+            __builder.AddAttribute(229, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.End_Date = __value, sm.End_Date));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(282, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(283, "\r\n            ");
-            __builder.OpenElement(284, "div");
-            __builder.AddAttribute(285, "class", "form-group");
-            __builder.AddMarkupContent(286, "\r\n                ");
-            __builder.AddMarkupContent(287, "<label for=\"sitedesc\" class=\"control-label\">Site description</label>\r\n                ");
-            __builder.OpenElement(288, "input");
-            __builder.AddAttribute(289, "form", "sitedesc");
-            __builder.AddAttribute(290, "class", "form-control");
-            __builder.AddAttribute(291, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(230, "\r\n            ");
+            __builder.OpenElement(231, "div");
+            __builder.AddAttribute(232, "class", "form-group");
+            __builder.AddMarkupContent(233, "<label for=\"sitedesc\" class=\"control-label\">Site description</label>\r\n                ");
+            __builder.OpenElement(234, "input");
+            __builder.AddAttribute(235, "form", "sitedesc");
+            __builder.AddAttribute(236, "class", "form-control");
+            __builder.AddAttribute(237, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 114 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                     sm.Site_desc
@@ -667,20 +613,18 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(292, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Site_desc = __value, sm.Site_desc));
+            __builder.AddAttribute(238, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Site_desc = __value, sm.Site_desc));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(293, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(294, "\r\n            ");
-            __builder.OpenElement(295, "div");
-            __builder.AddAttribute(296, "class", "form-group");
-            __builder.AddMarkupContent(297, "\r\n                ");
-            __builder.AddMarkupContent(298, "<label for=\"legacysalesmancode\" class=\"control-label\">Legacy salesman code</label>\r\n                ");
-            __builder.OpenElement(299, "input");
-            __builder.AddAttribute(300, "form", "legacysalesmancode");
-            __builder.AddAttribute(301, "class", "form-control");
-            __builder.AddAttribute(302, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(239, "\r\n            ");
+            __builder.OpenElement(240, "div");
+            __builder.AddAttribute(241, "class", "form-group");
+            __builder.AddMarkupContent(242, "<label for=\"legacysalesmancode\" class=\"control-label\">Legacy salesman code</label>\r\n                ");
+            __builder.OpenElement(243, "input");
+            __builder.AddAttribute(244, "form", "legacysalesmancode");
+            __builder.AddAttribute(245, "class", "form-control");
+            __builder.AddAttribute(246, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 118 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                               sm.Legacy_Salesman_Code
@@ -689,29 +633,23 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(303, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Legacy_Salesman_Code = __value, sm.Legacy_Salesman_Code));
+            __builder.AddAttribute(247, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => sm.Legacy_Salesman_Code = __value, sm.Legacy_Salesman_Code));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(304, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(305, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(306, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(307, "\r\n    ");
-            __builder.OpenElement(308, "div");
-            __builder.AddAttribute(309, "class", "row");
-            __builder.AddMarkupContent(310, "\r\n        ");
-            __builder.OpenElement(311, "div");
-            __builder.AddAttribute(312, "class", "col-md-4");
-            __builder.AddMarkupContent(313, "\r\n            ");
-            __builder.OpenElement(314, "div");
-            __builder.AddAttribute(315, "class", "form-group");
-            __builder.AddMarkupContent(316, "\r\n                ");
-            __builder.OpenElement(317, "input");
-            __builder.AddAttribute(318, "type", "button");
-            __builder.AddAttribute(319, "class", "btn btn-success");
-            __builder.AddAttribute(320, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(248, "\r\n    ");
+            __builder.OpenElement(249, "div");
+            __builder.AddAttribute(250, "class", "row");
+            __builder.OpenElement(251, "div");
+            __builder.AddAttribute(252, "class", "col-md-4");
+            __builder.OpenElement(253, "div");
+            __builder.AddAttribute(254, "class", "form-group");
+            __builder.OpenElement(255, "input");
+            __builder.AddAttribute(256, "type", "button");
+            __builder.AddAttribute(257, "class", "btn btn-success");
+            __builder.AddAttribute(258, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 125 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                         updatesalesman
@@ -720,13 +658,13 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(321, "value", "Update");
+            __builder.AddAttribute(259, "value", "Update");
             __builder.CloseElement();
-            __builder.AddMarkupContent(322, "\r\n                ");
-            __builder.OpenElement(323, "input");
-            __builder.AddAttribute(324, "type", "button");
-            __builder.AddAttribute(325, "class", "btn btn-danger");
-            __builder.AddAttribute(326, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(260, "\r\n                ");
+            __builder.OpenElement(261, "input");
+            __builder.AddAttribute(262, "type", "button");
+            __builder.AddAttribute(263, "class", "btn btn-danger");
+            __builder.AddAttribute(264, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 126 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
                                                                        cancel
@@ -735,15 +673,11 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(327, "value", "Cancel");
+            __builder.AddAttribute(265, "value", "Cancel");
             __builder.CloseElement();
-            __builder.AddMarkupContent(328, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(329, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(330, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(331, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

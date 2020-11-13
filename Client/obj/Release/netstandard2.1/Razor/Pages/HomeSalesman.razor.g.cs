@@ -103,13 +103,12 @@ using System.Text.Json;
             __builder.AddMarkupContent(1, "<a href=\"/addsalesman\" class=\"btn btn-primary\">Create new salesman</a>\r\n<hr>\r\n");
             __builder.OpenElement(2, "div");
             __builder.AddAttribute(3, "class", "form-inline");
-            __builder.AddMarkupContent(4, "\r\n    ");
-            __builder.AddMarkupContent(5, "<label class=\"sr-only\" for=\"search-ordernumber\">Search</label>\r\n    ");
-            __builder.OpenElement(6, "input");
-            __builder.AddAttribute(7, "type", "text");
-            __builder.AddAttribute(8, "class", "form-control mb-2 mr-sm-2");
-            __builder.AddAttribute(9, "placeholder", "Search salesman code");
-            __builder.AddAttribute(10, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(4, "<label class=\"sr-only\" for=\"search-ordernumber\">Search</label>\r\n    ");
+            __builder.OpenElement(5, "input");
+            __builder.AddAttribute(6, "type", "text");
+            __builder.AddAttribute(7, "class", "form-control mb-2 mr-sm-2");
+            __builder.AddAttribute(8, "placeholder", "Search salesman code");
+            __builder.AddAttribute(9, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 14 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                 searchsalesmancode
@@ -118,14 +117,14 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(11, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => searchsalesmancode = __value, searchsalesmancode));
+            __builder.AddAttribute(10, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => searchsalesmancode = __value, searchsalesmancode));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(12, "\r\n    ");
-            __builder.OpenElement(13, "button");
-            __builder.AddAttribute(14, "type", "button");
-            __builder.AddAttribute(15, "class", "btn btn-primary mr-sm-2 mb-2");
-            __builder.AddAttribute(16, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(11, "\r\n    ");
+            __builder.OpenElement(12, "button");
+            __builder.AddAttribute(13, "type", "button");
+            __builder.AddAttribute(14, "class", "btn btn-primary mr-sm-2 mb-2");
+            __builder.AddAttribute(15, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 15 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                          Search
@@ -134,11 +133,10 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddContent(17, "Search");
+            __builder.AddContent(16, "Search");
             __builder.CloseElement();
-            __builder.AddMarkupContent(18, "\r\n");
             __builder.CloseElement();
-            __builder.AddMarkupContent(19, "\r\n<hr>\r\n");
+            __builder.AddMarkupContent(17, "\r\n<hr>");
 #nullable restore
 #line 18 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
  if (smlist == null)
@@ -147,8 +145,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(20, "    ");
-            __builder.AddMarkupContent(21, "<p><em>Loading...</em></p>\r\n");
+            __builder.AddMarkupContent(18, "<p><em>Loading...</em></p>");
 #nullable restore
 #line 21 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
 }
@@ -158,20 +155,10 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(22, "    ");
-            __builder.OpenElement(23, "table");
-            __builder.AddAttribute(24, "class", "table");
-            __builder.AddMarkupContent(25, "\r\n        ");
-            __builder.AddMarkupContent(26, @"<thead>
-            <tr>
-                <th style=""font-size: small;"">ID</th>
-                <th style=""font-size: small;"">Salesman code</th>
-                <th style=""font-size: small;"">Salesman name</th>
-            </tr>
-        </thead>
-        ");
-            __builder.OpenElement(27, "tbody");
-            __builder.AddMarkupContent(28, "\r\n");
+            __builder.OpenElement(19, "table");
+            __builder.AddAttribute(20, "class", "table");
+            __builder.AddMarkupContent(21, "<thead><tr><th style=\"font-size: small;\">ID</th>\r\n                <th style=\"font-size: small;\">Salesman code</th>\r\n                <th style=\"font-size: small;\">Salesman name</th></tr></thead>\r\n        ");
+            __builder.OpenElement(22, "tbody");
 #nullable restore
 #line 33 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
              foreach (var sales in smlist)
@@ -180,12 +167,10 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(29, "                ");
-            __builder.OpenElement(30, "tr");
-            __builder.AddMarkupContent(31, "\r\n                    ");
-            __builder.OpenElement(32, "td");
-            __builder.AddAttribute(33, "style", "font-size: small;");
-            __builder.AddContent(34, 
+            __builder.OpenElement(23, "tr");
+            __builder.OpenElement(24, "td");
+            __builder.AddAttribute(25, "style", "font-size: small;");
+            __builder.AddContent(26, 
 #nullable restore
 #line 36 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                    sales.Id
@@ -195,10 +180,10 @@ else
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(35, "\r\n                    ");
-            __builder.OpenElement(36, "td");
-            __builder.AddAttribute(37, "style", "font-size: small;");
-            __builder.AddContent(38, 
+            __builder.AddMarkupContent(27, "\r\n                    ");
+            __builder.OpenElement(28, "td");
+            __builder.AddAttribute(29, "style", "font-size: small;");
+            __builder.AddContent(30, 
 #nullable restore
 #line 37 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                    sales.Salesman_Code
@@ -208,10 +193,10 @@ else
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(39, "\r\n                    ");
-            __builder.OpenElement(40, "td");
-            __builder.AddAttribute(41, "style", "font-size: small;");
-            __builder.AddContent(42, 
+            __builder.AddMarkupContent(31, "\r\n                    ");
+            __builder.OpenElement(32, "td");
+            __builder.AddAttribute(33, "style", "font-size: small;");
+            __builder.AddContent(34, 
 #nullable restore
 #line 38 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                    sales.Salesman_Name
@@ -221,12 +206,11 @@ else
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(43, "\r\n                    ");
-            __builder.OpenElement(44, "td");
-            __builder.AddMarkupContent(45, "\r\n                        ");
-            __builder.OpenElement(46, "a");
-            __builder.AddAttribute(47, "style", "font-size: small;");
-            __builder.AddAttribute(48, "href", "/editsalesman/" + (
+            __builder.AddMarkupContent(35, "\r\n                    ");
+            __builder.OpenElement(36, "td");
+            __builder.OpenElement(37, "a");
+            __builder.AddAttribute(38, "style", "font-size: small;");
+            __builder.AddAttribute(39, "href", "/editsalesman/" + (
 #nullable restore
 #line 40 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                           sales.Id
@@ -235,13 +219,13 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(49, "class", "btn-sm btn-primary");
-            __builder.AddContent(50, "Edit");
+            __builder.AddAttribute(40, "class", "btn-sm btn-primary");
+            __builder.AddContent(41, "Edit");
             __builder.CloseElement();
-            __builder.AddMarkupContent(51, "\r\n                        ");
-            __builder.OpenElement(52, "a");
-            __builder.AddAttribute(53, "style", "font-size: small;");
-            __builder.AddAttribute(54, "href", "/deletesalesman/" + (
+            __builder.AddMarkupContent(42, "\r\n                        ");
+            __builder.OpenElement(43, "a");
+            __builder.AddAttribute(44, "style", "font-size: small;");
+            __builder.AddAttribute(45, "href", "/deletesalesman/" + (
 #nullable restore
 #line 41 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                             sales.Id
@@ -250,14 +234,11 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(55, "class", "btn-sm btn-danger");
-            __builder.AddContent(56, "Delete");
+            __builder.AddAttribute(46, "class", "btn-sm btn-danger");
+            __builder.AddContent(47, "Delete");
             __builder.CloseElement();
-            __builder.AddMarkupContent(57, "\r\n                    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(58, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(59, "\r\n");
 #nullable restore
 #line 44 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
             }
@@ -265,13 +246,11 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(60, "        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(61, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(62, "\r\n    ");
-            __builder.OpenComponent<SonicWarehouseManagement.Client.Shared.Pagination>(63);
-            __builder.AddAttribute(64, "TotalPagesQuantity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddMarkupContent(48, "\r\n    ");
+            __builder.OpenComponent<SonicWarehouseManagement.Client.Shared.Pagination>(49);
+            __builder.AddAttribute(50, "TotalPagesQuantity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                     totalPageQuantity
@@ -280,7 +259,7 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(65, "CurrentPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddAttribute(51, "CurrentPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                     currentPage
@@ -289,7 +268,7 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(66, "Radius", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddAttribute(52, "Radius", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                                          2
@@ -298,7 +277,7 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(67, "SelectedPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Int32>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Int32>(this, 
+            __builder.AddAttribute(53, "SelectedPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Int32>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Int32>(this, 
 #nullable restore
 #line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
                                                                                                           SelectedPage
@@ -308,7 +287,6 @@ else
 #nullable disable
             )));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(68, "\r\n");
 #nullable restore
 #line 48 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
 }

@@ -36,17 +36,17 @@ namespace SonicWarehouseManagement.Server.Controllers
         }
 
         // GET: api/ArticleMasters/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ArticleMaster>> GetArticleMaster(int id)
+        [HttpGet("{searchitemnum}")]
+        public async Task<ActionResult<ArticleMaster>> GetArticleMaster(string searchitemnum)
         {
-            var articleMaster = await _context.Article_Masters.FindAsync(id);
+            var articleMaster = _context.Article_Masters.Where(x => x.Article_Code == searchitemnum).Distinct().FirstOrDefault();
 
             if (articleMaster == null)
             {
                 return NotFound();
             }
 
-            return articleMaster;
+            return Ok(articleMaster);
         }
 
         // PUT: api/ArticleMasters/5

@@ -132,10 +132,8 @@ using System.Text.Json;
             __builder.AddMarkupContent(10, "\r\n");
             __builder.OpenElement(11, "table");
             __builder.AddAttribute(12, "class", "table");
-            __builder.AddMarkupContent(13, "\r\n    ");
-            __builder.AddMarkupContent(14, "<thead>\r\n        <tr>\r\n            <th>Quantity</th>\r\n            <th>Uom</th>\r\n        </tr>\r\n    </thead>\r\n    ");
-            __builder.OpenElement(15, "tbody");
-            __builder.AddMarkupContent(16, "\r\n");
+            __builder.AddMarkupContent(13, "<thead><tr><th>Quantity</th>\r\n            <th>Uom</th></tr></thead>\r\n    ");
+            __builder.OpenElement(14, "tbody");
 #nullable restore
 #line 20 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
          if (pd == null)
@@ -157,12 +155,10 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(17, "                ");
-            __builder.OpenElement(18, "tr");
-            __builder.AddMarkupContent(19, "\r\n                    ");
-            __builder.OpenElement(20, "td");
-            __builder.AddAttribute(21, "style", "font-size: small");
-            __builder.AddContent(22, 
+            __builder.OpenElement(15, "tr");
+            __builder.OpenElement(16, "td");
+            __builder.AddAttribute(17, "style", "font-size: small");
+            __builder.AddContent(18, 
 #nullable restore
 #line 29 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
                                                   items.Quantity
@@ -172,10 +168,10 @@ using System.Text.Json;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(23, "\r\n                    ");
-            __builder.OpenElement(24, "td");
-            __builder.AddAttribute(25, "style", "font-size: small");
-            __builder.AddContent(26, 
+            __builder.AddMarkupContent(19, "\r\n                    ");
+            __builder.OpenElement(20, "td");
+            __builder.AddAttribute(21, "style", "font-size: small");
+            __builder.AddContent(22, 
 #nullable restore
 #line 30 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
                                                   items.Uom
@@ -185,9 +181,7 @@ using System.Text.Json;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(27, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(28, "\r\n");
 #nullable restore
 #line 32 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
             }
@@ -203,9 +197,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(29, "    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(30, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

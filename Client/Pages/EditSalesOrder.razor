@@ -23,24 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        @if (sod == null)
-        {
-            <p><em>Loading...</em></p>
-        }
-        else
-        {
-            @foreach (var items in sod)
-            {
-                <tr>
-                    <td style="font-size: small;">@items.Material_N</td>
-                    <td style="font-size: small;">@items.Article_Description</td>
-                    <td style="font-size: small;">@items.Cases</td>
-                    <td style="font-size: small;">@items.Pieces</td>
-                    <td style="font-size: small;">@items.Free_Cases</td>
-                    <td style="font-size: small;">@items.Free_Piece</td>
-                </tr>
-            }
-        }
+
     </tbody>
 </table>
 <hr />
@@ -48,26 +31,74 @@
     <div class="row">
         <div class="text-left col-md-12">
             <h6><b>Insert sales order Details:</b></h6>
-
         </div>
-        <hr />
-        <form>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="materialn" class="control-label" style="font-size: small;">Material Number</label>
-                        <input form="materialn" class="form-control" />
+        <div class="form-inline">
+            <label class="sr-only" for="search-ordernumber">Search</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchitemnum" placeholder="Search item number" />
+            <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+        </div>
+        <div class="col-md-12">
+            <hr />
+            <form>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="materialn" class="control-label" style="font-size: small;">Material Number</label>
+                            <input form="materialn" class="form-control" @bind="artmas.Article_Code" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="artdesc" class="control-label" style="font-size: small;">Article Description</label>
+                            <input form="artdesc" class="form-control" @bind="artmas.Article_Description"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="packsize" class="control-label" style="font-size: small;">Pack Size</label>
+                            <input form="packsize" class="form-control" @bind="artmas.Unit_Conversion2"/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="cs" class="control-label" style="font-size: small;">Cases</label>
+                            <input form="cs" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="pcs" class="control-label" style="font-size: small;">Pieces</label>
+                            <input form="pcs" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fcs" class="control-label" style="font-size: small;">Free Cases</label>
+                            <input form="fcs" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fpcs" class="control-label" style="font-size: small;">Free Pieces</label>
+                            <input form="fpcs" class="form-control"  />
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-primary mr-sm-2 mb-2">Save</button>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 @code {
+    ArticleMaster artmas = new ArticleMaster();
     SalesOrderHeaders solist = new SalesOrderHeaders();
     SalesOrderDetails[] sod;
 
     private HubConnection hubCon;
+
+    public string searchitemnum { get; set ;}
 
     [Parameter]
     public string id { get; set; }
@@ -75,12 +106,16 @@
     protected override async Task OnInitializedAsync()
     {
         solist = await Http.GetJsonAsync<SalesOrderHeaders>("api/SalesOrderHeadersIndex/" + id);
-        sod = await Http.GetJsonAsync<SalesOrderDetails[]>("api/SalesOrderDetailsIndex/" + id);
         hubCon = new HubConnectionBuilder()
         .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
         .Build();
 
         await hubCon.StartAsync();
+    }
+
+    private async Task Search()
+    {
+        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + searchitemnum);
     }
 
     public bool IsConnected =>

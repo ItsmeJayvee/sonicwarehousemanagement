@@ -102,13 +102,12 @@ using System.Text.Json;
             __builder.AddMarkupContent(0, "<h2>Inventory list</h2>\r\n");
             __builder.OpenElement(1, "div");
             __builder.AddAttribute(2, "class", "form-inline");
-            __builder.AddMarkupContent(3, "\r\n    ");
-            __builder.AddMarkupContent(4, "<label class=\"sr-only\" for=\"search-ordernumber\">Search</label>\r\n    ");
-            __builder.OpenElement(5, "input");
-            __builder.AddAttribute(6, "type", "text");
-            __builder.AddAttribute(7, "class", "form-control mb-2 mr-sm-2");
-            __builder.AddAttribute(8, "placeholder", "Search item number");
-            __builder.AddAttribute(9, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(3, "<label class=\"sr-only\" for=\"search-ordernumber\">Search</label>\r\n    ");
+            __builder.OpenElement(4, "input");
+            __builder.AddAttribute(5, "type", "text");
+            __builder.AddAttribute(6, "class", "form-control mb-2 mr-sm-2");
+            __builder.AddAttribute(7, "placeholder", "Search item number");
+            __builder.AddAttribute(8, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 11 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                                 searchitemnumber
@@ -117,14 +116,14 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(10, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => searchitemnumber = __value, searchitemnumber));
+            __builder.AddAttribute(9, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => searchitemnumber = __value, searchitemnumber));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(11, "\r\n    ");
-            __builder.OpenElement(12, "button");
-            __builder.AddAttribute(13, "type", "button");
-            __builder.AddAttribute(14, "class", "btn btn-primary mr-sm-2 mb-2");
-            __builder.AddAttribute(15, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(10, "\r\n    ");
+            __builder.OpenElement(11, "button");
+            __builder.AddAttribute(12, "type", "button");
+            __builder.AddAttribute(13, "class", "btn btn-primary mr-sm-2 mb-2");
+            __builder.AddAttribute(14, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 12 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                                          Search
@@ -133,17 +132,14 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddContent(16, "Search");
+            __builder.AddContent(15, "Search");
             __builder.CloseElement();
-            __builder.AddMarkupContent(17, "\r\n");
             __builder.CloseElement();
-            __builder.AddMarkupContent(18, "\r\n<hr>\r\n");
-            __builder.OpenElement(19, "table");
-            __builder.AddAttribute(20, "class", "table");
-            __builder.AddMarkupContent(21, "\r\n    ");
-            __builder.AddMarkupContent(22, "<thead>\r\n        <tr>\r\n            <th style=\"font-size: small;\">ID</th>\r\n            <th style=\"font-size: small;\">Item number</th>\r\n            <th style=\"font-size: small;\">Date</th>\r\n        </tr>\r\n    </thead>\r\n    ");
-            __builder.OpenElement(23, "tbody");
-            __builder.AddMarkupContent(24, "\r\n");
+            __builder.AddMarkupContent(16, "\r\n<hr>\r\n");
+            __builder.OpenElement(17, "table");
+            __builder.AddAttribute(18, "class", "table");
+            __builder.AddMarkupContent(19, "<thead><tr><th style=\"font-size: small;\">ID</th>\r\n            <th style=\"font-size: small;\">Item number</th>\r\n            <th style=\"font-size: small;\">Date</th></tr></thead>\r\n    ");
+            __builder.OpenElement(20, "tbody");
 #nullable restore
 #line 24 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
          if (ilist == null)
@@ -165,12 +161,10 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(25, "            ");
-            __builder.OpenElement(26, "tr");
-            __builder.AddMarkupContent(27, "\r\n                ");
-            __builder.OpenElement(28, "td");
-            __builder.AddAttribute(29, "style", "font-size: small;");
-            __builder.AddContent(30, 
+            __builder.OpenElement(21, "tr");
+            __builder.OpenElement(22, "td");
+            __builder.AddAttribute(23, "style", "font-size: small;");
+            __builder.AddContent(24, 
 #nullable restore
 #line 33 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                i.ID
@@ -180,10 +174,10 @@ using System.Text.Json;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(31, "\r\n                ");
-            __builder.OpenElement(32, "td");
-            __builder.AddAttribute(33, "style", "font-size: small;");
-            __builder.AddContent(34, 
+            __builder.AddMarkupContent(25, "\r\n                ");
+            __builder.OpenElement(26, "td");
+            __builder.AddAttribute(27, "style", "font-size: small;");
+            __builder.AddContent(28, 
 #nullable restore
 #line 34 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                i.Item_Code
@@ -193,12 +187,11 @@ using System.Text.Json;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(35, "\r\n                ");
-            __builder.OpenElement(36, "td");
-            __builder.AddMarkupContent(37, "\r\n                    ");
-            __builder.OpenElement(38, "a");
-            __builder.AddAttribute(39, "style", "font-size: small;");
-            __builder.AddAttribute(40, "href", "/viewinventory/" + (
+            __builder.AddMarkupContent(29, "\r\n                ");
+            __builder.OpenElement(30, "td");
+            __builder.OpenElement(31, "a");
+            __builder.AddAttribute(32, "style", "font-size: small;");
+            __builder.AddAttribute(33, "href", "/viewinventory/" + (
 #nullable restore
 #line 36 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                                        i.ID
@@ -207,14 +200,11 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(41, "class", "btn-sm btn-primary");
-            __builder.AddContent(42, "View");
+            __builder.AddAttribute(34, "class", "btn-sm btn-primary");
+            __builder.AddContent(35, "View");
             __builder.CloseElement();
-            __builder.AddMarkupContent(43, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(44, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(45, "\r\n");
 #nullable restore
 #line 39 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
             }
@@ -230,13 +220,11 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(46, "    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(47, "\r\n");
             __builder.CloseElement();
-            __builder.AddMarkupContent(48, "\r\n");
-            __builder.OpenComponent<SonicWarehouseManagement.Client.Shared.Pagination>(49);
-            __builder.AddAttribute(50, "TotalPagesQuantity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddMarkupContent(36, "\r\n");
+            __builder.OpenComponent<SonicWarehouseManagement.Client.Shared.Pagination>(37);
+            __builder.AddAttribute(38, "TotalPagesQuantity", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                 totalPageQuantity
@@ -245,7 +233,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(51, "CurrentPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddAttribute(39, "CurrentPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                                 currentPage
@@ -254,7 +242,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(52, "Radius", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddAttribute(40, "Radius", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                                                      2
@@ -263,7 +251,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(53, "SelectedPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Int32>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Int32>(this, 
+            __builder.AddAttribute(41, "SelectedPage", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Int32>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Int32>(this, 
 #nullable restore
 #line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
                                                                                                       SelectedPage

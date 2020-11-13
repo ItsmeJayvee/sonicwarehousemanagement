@@ -96,18 +96,14 @@ using SonicWarehouseManagement.Shared;
             __builder.AddMarkupContent(1, "<p>Are you sure you want to delete this salesman?</p>\r\n<br>\r\n\r\n");
             __builder.OpenElement(2, "div");
             __builder.AddAttribute(3, "class", "col-md-4");
-            __builder.AddMarkupContent(4, "\r\n    ");
-            __builder.OpenElement(5, "table");
-            __builder.AddAttribute(6, "class", "table");
-            __builder.AddMarkupContent(7, "\r\n        ");
-            __builder.AddMarkupContent(8, "<thead>\r\n            <tr>\r\n                <th style=\"font-size: small;\">Salesman code</th>\r\n                <th style=\"font-size: small;\">Salesman name</th>\r\n            </tr>\r\n        </thead>\r\n        ");
-            __builder.OpenElement(9, "tbody");
-            __builder.AddMarkupContent(10, "\r\n            ");
-            __builder.OpenElement(11, "tr");
-            __builder.AddMarkupContent(12, "\r\n                ");
-            __builder.OpenElement(13, "td");
-            __builder.AddAttribute(14, "style", "font-size: small;");
-            __builder.AddContent(15, 
+            __builder.OpenElement(4, "table");
+            __builder.AddAttribute(5, "class", "table");
+            __builder.AddMarkupContent(6, "<thead><tr><th style=\"font-size: small;\">Salesman code</th>\r\n                <th style=\"font-size: small;\">Salesman name</th></tr></thead>\r\n        ");
+            __builder.OpenElement(7, "tbody");
+            __builder.OpenElement(8, "tr");
+            __builder.OpenElement(9, "td");
+            __builder.AddAttribute(10, "style", "font-size: small;");
+            __builder.AddContent(11, 
 #nullable restore
 #line 22 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\DeleteSalesman.razor"
                                                sm.Salesman_Code
@@ -117,10 +113,10 @@ using SonicWarehouseManagement.Shared;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(16, "\r\n                ");
-            __builder.OpenElement(17, "td");
-            __builder.AddAttribute(18, "style", "font-size: small;");
-            __builder.AddContent(19, 
+            __builder.AddMarkupContent(12, "\r\n                ");
+            __builder.OpenElement(13, "td");
+            __builder.AddAttribute(14, "style", "font-size: small;");
+            __builder.AddContent(15, 
 #nullable restore
 #line 23 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\DeleteSalesman.razor"
                                                sm.Salesman_Name
@@ -130,20 +126,16 @@ using SonicWarehouseManagement.Shared;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(20, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(21, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(22, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(23, "\r\n    ");
-            __builder.OpenElement(24, "div");
-            __builder.AddAttribute(25, "class", "form-group");
-            __builder.AddMarkupContent(26, "\r\n        ");
-            __builder.OpenElement(27, "input");
-            __builder.AddAttribute(28, "type", "button");
-            __builder.AddAttribute(29, "class", "btn btn-danger");
-            __builder.AddAttribute(30, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(16, "\r\n    ");
+            __builder.OpenElement(17, "div");
+            __builder.AddAttribute(18, "class", "form-group");
+            __builder.OpenElement(19, "input");
+            __builder.AddAttribute(20, "type", "button");
+            __builder.AddAttribute(21, "class", "btn btn-danger");
+            __builder.AddAttribute(22, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 28 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\DeleteSalesman.razor"
                                                                deletesalesman
@@ -152,13 +144,13 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(31, "value", "Delete");
+            __builder.AddAttribute(23, "value", "Delete");
             __builder.CloseElement();
-            __builder.AddMarkupContent(32, "\r\n        ");
-            __builder.OpenElement(33, "input");
-            __builder.AddAttribute(34, "type", "button");
-            __builder.AddAttribute(35, "class", "btn btn-primary");
-            __builder.AddAttribute(36, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(24, "\r\n        ");
+            __builder.OpenElement(25, "input");
+            __builder.AddAttribute(26, "type", "button");
+            __builder.AddAttribute(27, "class", "btn btn-primary");
+            __builder.AddAttribute(28, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 29 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\DeleteSalesman.razor"
                                                                 cancel
@@ -167,11 +159,9 @@ using SonicWarehouseManagement.Shared;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(37, "value", "Cancel");
+            __builder.AddAttribute(29, "value", "Cancel");
             __builder.CloseElement();
-            __builder.AddMarkupContent(38, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(39, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998
