@@ -114,8 +114,8 @@ using System.Text.Json;
 
     private HubConnection hubCon;
 
-    public string date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
-    public string date1 { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public string pdate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public string ddate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
 
     [Parameter]
     public string id { get; set; }

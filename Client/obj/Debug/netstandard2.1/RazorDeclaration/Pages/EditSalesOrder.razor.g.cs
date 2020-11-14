@@ -115,6 +115,16 @@ using System.Text.Json;
 
     public string searchitemnum { get; set ;}
 
+    public string cs { get; set; } = "0";
+    public string pcs { get; set; } = "0";
+    public string fcs { get; set; } = "0";
+    public string fpcs { get; set; } = "0";
+    public string csprice { get; set; }
+    public string pcsprice { get; set; }
+    public decimal sales { get; set; }
+    public decimal vat { get; set; }
+    public decimal net { get; set; }
+
     [Parameter]
     public string id { get; set; }
 
@@ -137,6 +147,14 @@ using System.Text.Json;
         hubCon.State == HubConnectionState.Connected;
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    private async Task SaveDetails()
+    {
+        csprice = "" + Int32.Parse(cs) * Int32.Parse(artmas.Secondary_Price_CS);
+        pcsprice = "" + ((Int32.Parse(artmas.Secondary_Price_CS) / Int32.Parse(artmas.Unit_Conversion2)) * Int32.Parse(pcs));
+        net = Int32.Parse(csprice) + Int32.Parse(pcsprice);
+        var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = cs, Pieces = pcs,  Net_Sales = net};
+    }
 
     void cancel()
     {

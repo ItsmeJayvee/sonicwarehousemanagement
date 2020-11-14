@@ -49,6 +49,20 @@ namespace SonicWarehouseManagement.Server.Controllers
             return Ok(articleMaster);
         }
 
+        // GET: api/ArticleMasters/5
+        [HttpGet("item/{id}")]
+        public async Task<ActionResult<ArticleMaster>> GetArticleMasterItem(int id)
+        {
+            var articleMaster = await _context.Article_Masters.FindAsync(id);
+
+            if (articleMaster == null)
+            {
+                return NotFound();
+            }
+
+            return articleMaster;
+        }
+
         // PUT: api/ArticleMasters/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

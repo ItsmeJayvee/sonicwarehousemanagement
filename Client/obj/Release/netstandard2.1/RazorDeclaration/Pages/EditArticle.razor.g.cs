@@ -109,7 +109,7 @@ using SonicWarehouseManagement.Shared;
 
     protected override async Task OnInitializedAsync()
     {
-        art = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + id);
+        art = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/item/" + id);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/ArticleHub"))

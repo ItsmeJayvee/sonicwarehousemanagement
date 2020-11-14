@@ -62,25 +62,25 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="cs" class="control-label" style="font-size: small;">Cases</label>
-                            <input form="cs" class="form-control" />
+                            <input form="cs" class="form-control" @bind="cs" />
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="pcs" class="control-label" style="font-size: small;">Pieces</label>
-                            <input form="pcs" class="form-control" />
+                            <input form="pcs" class="form-control" @bind="pcs" />
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="fcs" class="control-label" style="font-size: small;">Free Cases</label>
-                            <input form="fcs" class="form-control" />
+                            <input form="fcs" class="form-control" @bind="fcs" />
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="fpcs" class="control-label" style="font-size: small;">Free Pieces</label>
-                            <input form="fpcs" class="form-control"  />
+                            <input form="fpcs" class="form-control" @bind="fpcs" />
                         </div>
                     </div>
                     <div class="col-md-12 text-center">
@@ -99,6 +99,16 @@
     private HubConnection hubCon;
 
     public string searchitemnum { get; set ;}
+
+    public string cs { get; set; } = "0";
+    public string pcs { get; set; } = "0";
+    public string fcs { get; set; } = "0";
+    public string fpcs { get; set; } = "0";
+    public string csprice { get; set; }
+    public string pcsprice { get; set; }
+    public decimal sales { get; set; }
+    public decimal vat { get; set; }
+    public decimal net { get; set; }
 
     [Parameter]
     public string id { get; set; }
@@ -122,6 +132,14 @@
         hubCon.State == HubConnectionState.Connected;
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    private async Task SaveDetails()
+    {
+        csprice = "" + Int32.Parse(cs) * Int32.Parse(artmas.Secondary_Price_CS);
+        pcsprice = "" + ((Int32.Parse(artmas.Secondary_Price_CS) / Int32.Parse(artmas.Unit_Conversion2)) * Int32.Parse(pcs));
+        net = Int32.Parse(csprice) + Int32.Parse(pcsprice);
+        var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = cs, Pieces = pcs,  Net_Sales = net};
+    }
 
     void cancel()
     {

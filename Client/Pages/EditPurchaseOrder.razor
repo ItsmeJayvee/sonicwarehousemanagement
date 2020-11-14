@@ -61,13 +61,13 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="prodname" class="control-label" style="font-size: small;">Posting Date</label>
-                        <input form="prodname" class="form-control" @bind="@date" />
+                        <input form="prodname" class="form-control" @bind="@pdate" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="packsize" class="control-label" style="font-size: small;">Document Date</label>
-                        <input form="packsize" class="form-control" @bind="@date1" />
+                        <input form="packsize" class="form-control" @bind="@ddate" />
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -114,8 +114,8 @@
 
     private HubConnection hubCon;
 
-    public string date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
-    public string date1 { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public string pdate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public string ddate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
 
     [Parameter]
     public string id { get; set; }
@@ -123,7 +123,6 @@
     protected override async Task OnInitializedAsync()
     {
         po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
-        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/Pur")
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))

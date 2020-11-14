@@ -35,7 +35,7 @@ else
                 <tr>
                     <td style="font-size: small;">@si.ID</td>
                     <td style="font-size: small;">@si.Invoice_No</td>
-                    <td style="font-size: small;">@si.Calendar_Day</td>
+                    <td style="font-size: small;">@si.Calendar_Day.ToShortDateString()</td>
                     <td>
                         <a style="font-size: small;" href="/editsalesinvoice/@si.ID" class="btn-sm btn-primary">Edit</a>
                     </td>

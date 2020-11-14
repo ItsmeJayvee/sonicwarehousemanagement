@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\vZeTCiTyWWMza0OlD3zkuUMVIihr36CSvdQz4E0s1Z8=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\jG8If0_vkjdypz0NicnK_8XgSVZP8P8bE99-_nl0_n0=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\SonicWarehouseManagement.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Client.dll.br"
     },
@@ -316,7 +316,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\GoxM7WB2eWzRUsiEMXrzGLPGHFNzeP83ngTbDWmHbN4=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\VTQ7pCoIAmb2hSdwOJDpmmCdze7BonwBeB6uEkEMl9M=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\SonicWarehouseManagement.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/SonicWarehouseManagement.Client.pdb.br"
     },
@@ -346,12 +346,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\bgvm88Vu-HiTmJ9xiabxi7coYfsHK96XAAyMdznWpWA=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\zorKBRr9JjFhWugGUmVuC1QmYKJYOB3__xBfuN3Z8Xw=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\QbK4I90tGcjJjHrV8q9q8sXxJawdXOCWVM-vJJytOHs=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\wN3X7sXtUKIZKYKIt2Vcj_aBp03nQAfDEXMC69Churw=.hash",
       "Source": "C:\\Users\\jv.limbaroc\\Desktop\\SonicWMS\\sonicwarehousemanagement\\Client\\obj\\Debug\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\service-worker-assets.js.br"
     }
