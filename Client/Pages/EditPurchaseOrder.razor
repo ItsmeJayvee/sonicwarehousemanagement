@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        @*@if (pd == null)
+        @if (pd == null)
         {
             // do nothing
         }
@@ -40,11 +40,11 @@
                     <td style="font-size: small">@items.Document_Date.ToShortDateString()</td>
                 </tr>
             }
-        }*@
+        }
     </tbody>
 </table>
 <hr />
-@*<div class="container">
+<div class="container">
     <div class="row">
         <div class="text-left col-md-12">
             <h6><b>Insert purchase order Details:</b></h6>
@@ -54,20 +54,28 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="prodcode" class="control-label" style="font-size: small;">Site</label>
-                        <input form="prodcode" class="form-control" @bind="@pds.Site" />
+                        <label for="site" class="control-label" style="font-size: small;">Site</label>
+                        <select form="site" class="form-control" @bind="@pds.Site">
+                            <option value="" disabled selected>Select Site</option>
+                            <option value="4048">4048</option>
+                            <option value="4049">4049</option>
+                            <option value="4A48">4A48</option>
+                            <option value="4B48">4B48</option>
+                            <option value="4C48">4C48</option>
+                            <option value="4D48">4D48</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="prodname" class="control-label" style="font-size: small;">Posting Date</label>
-                        <input form="prodname" class="form-control" @bind="@pdate" />
+                        <input form="prodname" type="date" class="form-control" @bind="@pdate" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="packsize" class="control-label" style="font-size: small;">Document Date</label>
-                        <input form="packsize" class="form-control" @bind="@ddate" />
+                        <input form="packsize" type="date" class="form-control" @bind="@ddate" />
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -104,7 +112,7 @@
             </div>
         </form>
     </div>
-</div>*@
+</div>
 
 @code {
 
@@ -114,8 +122,8 @@
 
     private HubConnection hubCon;
 
-    public string pdate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
-    public string ddate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public DateTime pdate { get; set; }
+    public DateTime ddate { get; set; }
 
     [Parameter]
     public string id { get; set; }
@@ -123,6 +131,7 @@
     protected override async Task OnInitializedAsync()
     {
         po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + po.ID);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
@@ -134,19 +143,13 @@
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    //public async Task insertsalesinvoice()
-    //{
-    //    await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
-
-    //    var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = pds.Item_Code, Date = Convert.ToDateTime(date) };
-    //    await Http.PostJsonAsync("api/InventoryHeaderIndex", addHeaderItems);
-
-    //    var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = pds.Quantity, Uom = pds.Uom, Transaction_Type = "Purchase Order" };
-    //    await Http.PostJsonAsync("api/InventoryDetailsManual", addDetailItems);
-
-    //    if (IsConnected) await SendMessage();
-    //    NavigationManager.NavigateTo("purchaseorderlist");
-    //}
+    public async Task insertsalesinvoice()
+    {
+        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = pds.Item_Code, Item_Desc = pds.Item_Desc, Quantity = pds.Quantity, Uom = pds.Uom };
+        await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex", purchaseOrderDetails);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("refresh2/" + po.Article_Doc);
+    }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 

@@ -46,7 +46,20 @@ namespace SonicWarehouseManagement.Server.Controllers
                 return NotFound();
             }
 
-            return  Ok(salesOrderHeaders);
+            return Ok(salesOrderHeaders);
+        }
+
+        [HttpGet("getId/{id}")]
+        public async Task<ActionResult<SalesOrderHeaders>> GetSalesOrderHeadersID(string id)
+        {
+            var salesOrderHeaders = _context.SalesOrder_Headers.Where(x => x.Order_Number == id).Distinct().FirstOrDefault();
+
+            if (salesOrderHeaders == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(salesOrderHeaders);
         }
 
         // PUT: api/SalesOrderHeadersIndex/5

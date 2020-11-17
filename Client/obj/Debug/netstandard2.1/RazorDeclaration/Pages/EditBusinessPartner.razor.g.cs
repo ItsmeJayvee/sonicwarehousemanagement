@@ -100,6 +100,7 @@ using SonicWarehouseManagement.Shared;
 #nullable restore
 #line 224 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditBusinessPartner.razor"
        
+
     BusinessPartner bp = new BusinessPartner();
 
     private HubConnection hubCon;

@@ -105,22 +105,20 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 94 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesOrder.razor"
+#line 111 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesOrder.razor"
        
     ArticleMaster artmas = new ArticleMaster();
     SalesOrderHeaders solist = new SalesOrderHeaders();
+    SalesOrderDetails sodlist = new SalesOrderDetails();
     SalesOrderDetails[] sod;
 
     private HubConnection hubCon;
 
-    public string searchitemnum { get; set ;}
-
-    public string cs { get; set; } = "0";
-    public string pcs { get; set; } = "0";
-    public string fcs { get; set; } = "0";
-    public string fpcs { get; set; } = "0";
-    public string csprice { get; set; }
-    public string pcsprice { get; set; }
+    public string searchitemnum { get; set; }
+    public decimal cs { get; set; }
+    public decimal pc { get; set; }
+    public decimal size { get; set; }
+    public decimal amount { get; set; }
     public decimal sales { get; set; }
     public decimal vat { get; set; }
     public decimal net { get; set; }
@@ -131,30 +129,42 @@ using System.Text.Json;
     protected override async Task OnInitializedAsync()
     {
         solist = await Http.GetJsonAsync<SalesOrderHeaders>("api/SalesOrderHeadersIndex/" + id);
+        sod = await Http.GetJsonAsync<SalesOrderDetails[]>("api/SalesOrderDetailsIndex/" + solist.ID);
+
         hubCon = new HubConnectionBuilder()
-        .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderHub"))
-        .Build();
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderDetailsHub"))
+            .Build();
 
         await hubCon.StartAsync();
-    }
-
-    private async Task Search()
-    {
-        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + searchitemnum);
     }
 
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    Task SendMessage() => hubCon.SendAsync("SendMessage");
+    private async Task Search()
+    {
+        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + searchitemnum);
+        this.StateHasChanged();
+    }
 
     private async Task SaveDetails()
     {
-        csprice = "" + Int32.Parse(cs) * Int32.Parse(artmas.Secondary_Price_CS);
-        pcsprice = "" + ((Int32.Parse(artmas.Secondary_Price_CS) / Int32.Parse(artmas.Unit_Conversion2)) * Int32.Parse(pcs));
-        net = Int32.Parse(csprice) + Int32.Parse(pcsprice);
-        var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = cs, Pieces = pcs,  Net_Sales = net};
+        cs = Convert.ToDecimal(sodlist.Cases);
+        pc = Convert.ToDecimal(sodlist.Pieces);
+        size = Convert.ToDecimal(artmas.Unit_Conversion2);
+        amount = Convert.ToDecimal(artmas.Secondary_Price_CS);
+        sales = (cs * amount) + ((amount / size) * pc);
+        vat = ((cs * amount) * Convert.ToDecimal(0.12)) + (((amount / size) * pc) * Convert.ToDecimal(0.12));
+        net = sales + vat;
+
+        var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = sodlist.Cases, Pieces = sodlist.Pieces, Free_Cases = sodlist.Free_Cases, Free_Piece = sodlist.Free_Piece, Delivery_Qty_CS = sodlist.Cases, Delivery_Qty_PC = sodlist.Pieces, Sales_Value = sales, VAT_Value = vat, Net_Sales = net, Cases_Pieces = sodlist.Cases+"/"+sodlist.Pieces, Free_CS_PS = sodlist.Free_Cases+"/"+sodlist.Free_Piece };
+        await Http.PostJsonAsync("api/SalesOrderDetailsIndex", salesOrderDetails);
+        if (IsConnected) await SendMessage();
+        this.StateHasChanged();
+        NavigationManager.NavigateTo("refresh/" + solist.Order_Number);
     }
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
 
     void cancel()
     {

@@ -77,10 +77,9 @@ namespace SonicWarehouseManagement.Server.Controllers
         // POST: api/SalesOrderDetailsIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost("{id}")]
-        public async Task<ActionResult<SalesOrderDetails>> PostSalesOrderDetails(int id, SalesOrderDetails salesOrderDetails)
+        [HttpPost]
+        public async Task<ActionResult<SalesOrderDetails>> PostSalesOrderDetails(SalesOrderDetails salesOrderDetails)
         {
-            salesOrderDetails.Header_ID = id;
             _context.SalesOrder_Details.Add(salesOrderDetails);
             await _context.SaveChangesAsync();
 

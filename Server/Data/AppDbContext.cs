@@ -35,5 +35,6 @@ namespace SonicWarehouseManagement.Server.Data
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<InventoryHeader> Inventory_Headers { get; set; }
         public DbSet<InventoryDetails> Inventory_Details { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
     }
 }

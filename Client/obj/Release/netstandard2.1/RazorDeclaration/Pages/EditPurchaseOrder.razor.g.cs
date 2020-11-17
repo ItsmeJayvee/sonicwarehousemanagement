@@ -105,7 +105,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 109 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
+#line 117 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
        
 
     PurchaseHeaders po = new PurchaseHeaders();
@@ -114,8 +114,8 @@ using System.Text.Json;
 
     private HubConnection hubCon;
 
-    public string pdate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
-    public string ddate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public DateTime pdate { get; set; }
+    public DateTime ddate { get; set; }
 
     [Parameter]
     public string id { get; set; }
@@ -123,6 +123,7 @@ using System.Text.Json;
     protected override async Task OnInitializedAsync()
     {
         po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + po.ID);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
@@ -134,19 +135,13 @@ using System.Text.Json;
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    //public async Task insertsalesinvoice()
-    //{
-    //    await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
-
-    //    var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = pds.Item_Code, Date = Convert.ToDateTime(date) };
-    //    await Http.PostJsonAsync("api/InventoryHeaderIndex", addHeaderItems);
-
-    //    var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = pds.Quantity, Uom = pds.Uom, Transaction_Type = "Purchase Order" };
-    //    await Http.PostJsonAsync("api/InventoryDetailsManual", addDetailItems);
-
-    //    if (IsConnected) await SendMessage();
-    //    NavigationManager.NavigateTo("purchaseorderlist");
-    //}
+    public async Task insertsalesinvoice()
+    {
+        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = pds.Item_Code, Item_Desc = pds.Item_Desc, Quantity = pds.Quantity, Uom = pds.Uom };
+        await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex", purchaseOrderDetails);
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("refresh2/" + po.Article_Doc);
+    }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 

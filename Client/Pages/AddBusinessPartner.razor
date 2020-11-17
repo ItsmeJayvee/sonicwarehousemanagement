@@ -23,7 +23,11 @@
             </div>
             <div class="form-group">
                 <label for="status" class="control-label">Status</label>
-                <input form="status" class="form-control" @bind="@bp.Status" />
+                <select form="status" class="form-control" @bind="@bp.Status">
+                    <option value="" disabled selected>Select</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="pjp" class="control-label">PJP</label>
@@ -107,7 +111,15 @@
             </div>
             <div class="form-group">
                 <label for="deliveringsite" class="control-label">Delivering site</label>
-                <input form="deliveringsite" class="form-control" @bind="@bp.Delivering_Site" />
+                <select form="deliveringsite" class="form-control" @bind="@bp.Delivering_Site">
+                    <option value="" disabled selected>Select Site</option>
+                    <option value="4048">4048</option>
+                    <option value="4049">4049</option>
+                    <option value="4A48">4A48</option>
+                    <option value="4B48">4B48</option>
+                    <option value="4C48">4C48</option>
+                    <option value="4D48">4D48</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="deliveringsitedesc" class="control-label">Delivering site description</label>
@@ -139,11 +151,11 @@
             </div>
             <div class="form-group">
                 <label for="deactdate" class="control-label">Deactivation date</label>
-                <input form="deactdate" class="form-control" @bind="@bp.Deactivation_date" />
+                <input form="deactdate" type="date" class="form-control" @bind="@bp.Deactivation_date" />
             </div>
             <div class="form-group">
                 <label for="changeddate" class="control-label">Changed date</label>
-                <input form="changeddate" class="form-control" @bind="@bp.Changed_date" />
+                <input form="changeddate" type="date" class="form-control" @bind="@bp.Changed_date" />
             </div>
             <div class="form-group">
                 <label for="paymenttype" class="control-label">Payment type</label>
@@ -199,7 +211,7 @@
             </div>
             <div class="form-group">
                 <label for="createdon" class="control-label">Created on</label>
-                <input form="createdon" class="form-control" @bind="@bp.Created_On" />
+                <input form="createdon" type="date" class="form-control" @bind="@bp.Created_On" />
             </div>
             <div class="form-group">
                 <label for="perfstoreaudttype" class="control-label">Perfect store audit type</label>

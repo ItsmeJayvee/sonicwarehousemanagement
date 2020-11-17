@@ -114,8 +114,8 @@ using System.Text.Json;
 
     private HubConnection hubCon;
 
-    public string pdate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
-    public string ddate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public string pdate { get; set; }
+    public string ddate { get; set; }
 
     [Parameter]
     public string id { get; set; }
@@ -134,19 +134,11 @@ using System.Text.Json;
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
-    //public async Task insertsalesinvoice()
-    //{
-    //    await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex/" + id, pds);
-
-    //    var addHeaderItems = new InventoryHeader { Ref_ID = id, Item_Code = pds.Item_Code, Date = Convert.ToDateTime(date) };
-    //    await Http.PostJsonAsync("api/InventoryHeaderIndex", addHeaderItems);
-
-    //    var addDetailItems = new InventoryDetails { Header_Ref = id, Quantity = pds.Quantity, Uom = pds.Uom, Transaction_Type = "Purchase Order" };
-    //    await Http.PostJsonAsync("api/InventoryDetailsManual", addDetailItems);
-
-    //    if (IsConnected) await SendMessage();
-    //    NavigationManager.NavigateTo("purchaseorderlist");
-    //}
+    public async Task insertsalesinvoice()
+    {
+        if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("purchaseorderlist");
+    }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 

@@ -102,7 +102,7 @@ using SonicWarehouseManagement.Shared;
        
     SalesOrder solist = new SalesOrder();
 
-    public string date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    public DateTime date { get; set; }
 
     private HubConnection hubCon;
 
@@ -120,7 +120,9 @@ using SonicWarehouseManagement.Shared;
 
     public async Task addsalesorder()
     {
-        var addSOHeader = new SalesOrderHeaders { Route_Type = solist.Route_Type, Salesman_Name = solist.Salesman_Name, Terms_of_payment = solist.Terms_of_payment, Delivery_Free_Qty_CS = solist.Delivery_Free_Qty_CS, Turnover_Value = solist.Turnover_Value, Delivery_Free_Qty_PC = solist.Delivery_Free_Qty_PC, Document_Category = solist.Document_Category, Salesman = solist.Salesman, Order_Type = solist.Order_Type, Route_No = solist.Route_No, Order_Type_Desc = solist.Order_Type_Desc, Order_Number = solist.Order_Number, SO_Date = solist.SO_Date, Outlet_Code = solist.Outlet_Code, Outlet_Name = solist.Outlet_Name, Status = solist.Status, Delivery_N = solist.Delivery_N };
+        date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+
+        var addSOHeader = new SalesOrderHeaders { Route_Type = solist.Route_Type, Salesman_Name = solist.Salesman_Name, Terms_of_payment = solist.Terms_of_payment, Delivery_Free_Qty_CS = solist.Delivery_Free_Qty_CS, Turnover_Value = solist.Turnover_Value, Delivery_Free_Qty_PC = solist.Delivery_Free_Qty_PC, Document_Category = solist.Document_Category, Salesman = solist.Salesman, Order_Type = solist.Order_Type, Route_No = solist.Route_No, Order_Type_Desc = solist.Order_Type_Desc, Order_Number = solist.Order_Number, SO_Date = date, Outlet_Code = solist.Outlet_Code, Outlet_Name = solist.Outlet_Name, Status = solist.Status, Delivery_N = solist.Delivery_N };
         await Http.PostJsonAsync("api/SalesOrderHeadersIndex", addSOHeader);
 
         if (IsConnected) await SendMessage();

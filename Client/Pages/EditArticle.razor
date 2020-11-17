@@ -35,11 +35,23 @@
             </div>
             <div class="form-group">
                 <label for="status" class="control-label">Status</label>
-                <input form="status" class="form-control" @bind="@art.Status" />
+                <select form="status" class="form-control" @bind="@art.Status">
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="site" class="control-label">Site</label>
-                <input form="site" class="form-control" @bind="@art.Site" />
+                <select form="site" class="form-control" @bind="@art.Site">
+                    <option value="" disabled selected>Select Site</option>
+                    <option value="4048">4048</option>
+                    <option value="4049">4049</option>
+                    <option value="4A48">4A48</option>
+                    <option value="4B48">4B48</option>
+                    <option value="4C48">4C48</option>
+                    <option value="4D48">4D48</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="uom2" class="control-label">Uom 2</label>

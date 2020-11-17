@@ -1,0 +1,13 @@
+﻿@page "/refresh/{id}"
+@inject NavigationManager NavigationManager
+
+@code {
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.NavigateTo("editsalesorder/" + id);
+    }
+}

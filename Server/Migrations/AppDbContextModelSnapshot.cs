@@ -537,6 +537,27 @@ namespace SonicWarehouseManagement.Server.Migrations
                     b.ToTable("Delivery_Receipts");
                 });
 
+            modelBuilder.Entity("SonicWarehouseManagement.Shared.Discount", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Business_Unit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Customer_Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Discount_Amount")
+                        .HasColumnType("decimal(1, 2)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Discounts");
+                });
+
             modelBuilder.Entity("SonicWarehouseManagement.Shared.Inventory", b =>
                 {
                     b.Property<int>("ID")
