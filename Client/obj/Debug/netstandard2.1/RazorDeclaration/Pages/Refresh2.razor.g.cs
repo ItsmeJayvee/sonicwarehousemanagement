@@ -75,6 +75,7 @@ using SonicWarehouseManagement.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/refresh2/{id}")]
     public partial class Refresh2 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -82,6 +83,22 @@ using SonicWarehouseManagement.Client.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 4 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\Refresh2.razor"
+       
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.NavigateTo("editpurchaseorder/" + id);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

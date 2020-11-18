@@ -544,14 +544,14 @@ namespace SonicWarehouseManagement.Server.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Business_Unit")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Customer_Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Discount_Amount")
-                        .HasColumnType("decimal(1, 2)");
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Site")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

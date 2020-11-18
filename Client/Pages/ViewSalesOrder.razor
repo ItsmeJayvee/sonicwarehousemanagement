@@ -1,0 +1,77 @@
+﻿@page "/viewsalesorder/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@using System.Text.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Sales order</h2>
+<hr />
+<p>Order number: <b>@solist.Order_Number</b></p>
+<p>Order type: @solist.Order_Type_Desc</p>
+<p>Date: @solist.SO_Date.ToShortDateString()</p>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item number</th>
+            <th>Item description</th>
+            <th>Cases</th>
+            <th>Pieces</th>
+            <th>Free CS</th>
+            <th>Free PC</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (sod == null)
+        {
+            <p><em>Loading</em></p>
+        }
+        else
+        {
+            @foreach (var items in sod)
+            {
+                <tr>
+                    <td style="font-size: small;">@items.Material_N</td>
+                    <td style="font-size: small;">@items.Article_Description</td>
+                    <td style="font-size: small;">@items.Cases</td>
+                    <td style="font-size: small;">@items.Pieces</td>
+                    <td style="font-size: small;">@items.Free_Cases</td>
+                    <td style="font-size: small;">@items.Free_Piece</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<hr />
+@code {
+    SalesOrderHeaders solist = new SalesOrderHeaders();
+    SalesOrderDetails[] sod;
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        solist = await Http.GetJsonAsync<SalesOrderHeaders>("api/SalesOrderHeadersIndex/" + id);
+        sod = await Http.GetJsonAsync<SalesOrderDetails[]>("api/SalesOrderDetailsIndex/" + solist.ID);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderDetailsHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public bool IsConnected =>
+        hubCon.State == HubConnectionState.Connected;
+
+    Task SendMessage() => hubCon.SendAsync("SendMessage");
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

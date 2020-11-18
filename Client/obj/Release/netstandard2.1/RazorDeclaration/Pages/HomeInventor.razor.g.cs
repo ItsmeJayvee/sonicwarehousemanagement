@@ -105,7 +105,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
+#line 47 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeInventor.razor"
        
     InventoryHeader[] ilist;
 

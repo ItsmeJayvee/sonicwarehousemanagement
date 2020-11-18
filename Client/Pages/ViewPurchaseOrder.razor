@@ -1,0 +1,76 @@
+﻿@page "/viewpurchaseorder/{id}"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@using System.Text.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Purchase order</h2>
+<hr />
+<p>Order number: <b>@po.Article_Doc</b></p>
+<p>Bill Document: <b>@po.Bill_Doc</b></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Site</th>
+            <th>Item Code</th>
+            <th>Item Description</th>
+            <th>Quantity</th>
+            <th>Uom</th>
+            <th>Posting Date</th>
+            <th>Document Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (pd == null)
+        {
+            // do nothing
+        }
+        else
+        {
+            @foreach (var items in pd)
+            {
+                <tr>
+                    <td style="font-size: small">@items.Site</td>
+                    <td style="font-size: small">@items.Item_Code</td>
+                    <td style="font-size: small">@items.Item_Desc</td>
+                    <td style="font-size: small">@items.Quantity</td>
+                    <td style="font-size: small">@items.Uom</td>
+                    <td style="font-size: small">@items.Posting_Date.ToShortDateString()</td>
+                    <td style="font-size: small">@items.Document_Date.ToShortDateString()</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<hr />
+
+@code {
+    ArticleMaster artmas = new ArticleMaster();
+    PurchaseHeaders po = new PurchaseHeaders();
+    PurchaseDetails pds = new PurchaseDetails();
+    PurchaseDetails[] pd;
+
+    private HubConnection hubCon;
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + po.ID);
+
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
+            .Build();
+
+        await hubCon.StartAsync();
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+
+}

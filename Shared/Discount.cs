@@ -12,8 +12,8 @@ namespace SonicWarehouseManagement.Shared
         [Key]
         public int ID { get; set; }
         public string Customer_Code { get; set; }
-        public string Business_Unit { get; set; }
-        [Column(TypeName = "decimal(2, 2)")]
+        public string Site { get; set; }
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Discount_Amount { get; set; }
     }
 }

@@ -105,11 +105,12 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 111 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesOrder.razor"
+#line 118 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesOrder.razor"
        
     ArticleMaster artmas = new ArticleMaster();
     SalesOrderHeaders solist = new SalesOrderHeaders();
     SalesOrderDetails sodlist = new SalesOrderDetails();
+    Discount disc = new Discount();
     SalesOrderDetails[] sod;
 
     private HubConnection hubCon;
@@ -122,6 +123,8 @@ using System.Text.Json;
     public decimal sales { get; set; }
     public decimal vat { get; set; }
     public decimal net { get; set; }
+    public decimal discount { get; set; }
+    public decimal discountAmount { get; set; }
 
     [Parameter]
     public string id { get; set; }
@@ -130,6 +133,7 @@ using System.Text.Json;
     {
         solist = await Http.GetJsonAsync<SalesOrderHeaders>("api/SalesOrderHeadersIndex/" + id);
         sod = await Http.GetJsonAsync<SalesOrderDetails[]>("api/SalesOrderDetailsIndex/" + solist.ID);
+        disc = await Http.GetJsonAsync<Discount>("api/Discounts/" + solist.Outlet_Code);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderDetailsHub"))
@@ -147,15 +151,22 @@ using System.Text.Json;
         this.StateHasChanged();
     }
 
+    void cancel()
+    {
+        NavigationManager.NavigateTo("salesorderlist");
+    }
+
     private async Task SaveDetails()
     {
+        discountAmount = disc.Discount_Amount / 100;
         cs = Convert.ToDecimal(sodlist.Cases);
         pc = Convert.ToDecimal(sodlist.Pieces);
         size = Convert.ToDecimal(artmas.Unit_Conversion2);
         amount = Convert.ToDecimal(artmas.Secondary_Price_CS);
         sales = (cs * amount) + ((amount / size) * pc);
+        discount = ((cs * amount) * discountAmount) + (((amount / size) * pc) * discountAmount);
         vat = ((cs * amount) * Convert.ToDecimal(0.12)) + (((amount / size) * pc) * Convert.ToDecimal(0.12));
-        net = sales + vat;
+        net = (sales + vat) - discount;
 
         var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = sodlist.Cases, Pieces = sodlist.Pieces, Free_Cases = sodlist.Free_Cases, Free_Piece = sodlist.Free_Piece, Delivery_Qty_CS = sodlist.Cases, Delivery_Qty_PC = sodlist.Pieces, Sales_Value = sales, VAT_Value = vat, Net_Sales = net, Cases_Pieces = sodlist.Cases+"/"+sodlist.Pieces, Free_CS_PS = sodlist.Free_Cases+"/"+sodlist.Free_Piece };
         await Http.PostJsonAsync("api/SalesOrderDetailsIndex", salesOrderDetails);
@@ -166,10 +177,7 @@ using System.Text.Json;
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
 
-    void cancel()
-    {
-        NavigationManager.NavigateTo("salesorderlist");
-    }
+
 
     public void Dispose()
     {

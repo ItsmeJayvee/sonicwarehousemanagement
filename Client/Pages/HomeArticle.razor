@@ -14,7 +14,6 @@
     <input type="text" class="form-control mb-2 mr-sm-2" @bind="searcharticle" placeholder="Search article code" />
     <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
 </div>
-<hr />
 @if (amlist == null)
 {
     <p><em>Loading...</em></p>
@@ -27,6 +26,7 @@ else
                 <th style="font-size: small;">ID</th>
                 <th style="font-size: small;">Article Code</th>
                 <th style="font-size: small;">Article Description</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>

@@ -98,7 +98,7 @@ using SonicWarehouseManagement.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 224 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\AddBusinessPartner.razor"
+#line 236 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\AddBusinessPartner.razor"
        
     BusinessPartner bp = new BusinessPartner();
 

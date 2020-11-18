@@ -98,7 +98,7 @@ using SonicWarehouseManagement.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 164 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditArticle.razor"
+#line 176 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditArticle.razor"
        
     ArticleMaster art = new ArticleMaster();
 

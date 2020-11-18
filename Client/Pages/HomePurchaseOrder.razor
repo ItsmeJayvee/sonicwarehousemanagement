@@ -27,6 +27,7 @@ else
                 <th>ID</th>
                 <th>Article document</th>
                 <th>Bill document</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@ else
                     <td style="font-size: small;">@po.Article_Doc</td>
                     <td style="font-size: small;">@po.Bill_Doc</td>
                     <td>
+                        <a href="/viewpurchaseorder/@po.Article_Doc" class="btn-sm btn-info">View</a>
                         <a href="/editpurchaseorder/@po.Article_Doc" class="btn-sm btn-primary">Edit</a>
                     </td>
                 </tr>

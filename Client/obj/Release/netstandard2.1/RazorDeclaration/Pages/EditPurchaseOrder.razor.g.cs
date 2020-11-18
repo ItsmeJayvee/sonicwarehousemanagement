@@ -105,17 +105,19 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 117 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
+#line 121 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
        
-
+    ArticleMaster artmas = new ArticleMaster();
     PurchaseHeaders po = new PurchaseHeaders();
     PurchaseDetails pds = new PurchaseDetails();
     PurchaseDetails[] pd;
 
     private HubConnection hubCon;
 
+    public string searchitemnum { get; set; }
     public DateTime pdate { get; set; }
     public DateTime ddate { get; set; }
+    public string Uoms { get; set; } = "CS";
 
     [Parameter]
     public string id { get; set; }
@@ -135,12 +137,23 @@ using System.Text.Json;
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
+    private async Task Search()
+    {
+        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + searchitemnum);
+        this.StateHasChanged();
+    }
+
     public async Task insertsalesinvoice()
     {
-        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = pds.Item_Code, Item_Desc = pds.Item_Desc, Quantity = pds.Quantity, Uom = pds.Uom };
+        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = artmas.Article_Code, Item_Desc = artmas.Article_Description, Quantity = Convert.ToInt32(artmas.Unit_Conversion2), Uom = Uoms };
         await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex", purchaseOrderDetails);
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("refresh2/" + po.Article_Doc);
+    }
+
+    void cancel()
+    {
+        NavigationManager.NavigateTo("purchaseorderlist");
     }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");

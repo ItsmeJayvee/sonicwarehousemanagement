@@ -27,6 +27,7 @@ else
                 <th style="font-size: small;">ID</th>
                 <th style="font-size: small;">Order number</th>
                 <th style="font-size: small;">Sales order Date</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@ else
                     <td style="font-size: small;">@so.Order_Number</td>
                     <td style="font-size: small;">@so.SO_Date.ToShortDateString()</td>
                     <td>
+                        <a style="font-size: small;" href="/viewsalesorder/@so.Order_Number" class="btn-sm btn-info">View</a>
                         <a style="font-size: small;" href="/editsalesorder/@so.Order_Number" class="btn-sm btn-primary">Edit</a>
                     </td>
                 </tr>

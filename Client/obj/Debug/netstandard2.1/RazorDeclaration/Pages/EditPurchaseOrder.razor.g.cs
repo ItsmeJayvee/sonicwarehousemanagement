@@ -105,17 +105,19 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 109 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
+#line 121 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
        
-
+    ArticleMaster artmas = new ArticleMaster();
     PurchaseHeaders po = new PurchaseHeaders();
     PurchaseDetails pds = new PurchaseDetails();
     PurchaseDetails[] pd;
 
     private HubConnection hubCon;
 
-    public string pdate { get; set; }
-    public string ddate { get; set; }
+    public string searchitemnum { get; set; }
+    public DateTime pdate { get; set; }
+    public DateTime ddate { get; set; }
+    public string Uoms { get; set; } = "CS";
 
     [Parameter]
     public string id { get; set; }
@@ -123,6 +125,7 @@ using System.Text.Json;
     protected override async Task OnInitializedAsync()
     {
         po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
+        pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + po.ID);
 
         hubCon = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
@@ -134,9 +137,22 @@ using System.Text.Json;
     public bool IsConnected =>
         hubCon.State == HubConnectionState.Connected;
 
+    private async Task Search()
+    {
+        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + searchitemnum);
+        this.StateHasChanged();
+    }
+
     public async Task insertsalesinvoice()
     {
+        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = artmas.Article_Code, Item_Desc = artmas.Article_Description, Quantity = Convert.ToInt32(artmas.Unit_Conversion2), Uom = Uoms };
+        await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex", purchaseOrderDetails);
         if (IsConnected) await SendMessage();
+        NavigationManager.NavigateTo("refresh2/" + po.Article_Doc);
+    }
+
+    void cancel()
+    {
         NavigationManager.NavigateTo("purchaseorderlist");
     }
 
