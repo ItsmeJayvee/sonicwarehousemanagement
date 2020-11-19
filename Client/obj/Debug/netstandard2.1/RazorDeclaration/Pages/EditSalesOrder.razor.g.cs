@@ -105,16 +105,21 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 118 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesOrder.razor"
+#line 119 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesOrder.razor"
        
+
     ArticleMaster artmas = new ArticleMaster();
     SalesOrderHeaders solist = new SalesOrderHeaders();
-    SalesOrderDetails sodlist = new SalesOrderDetails();
     Discount disc = new Discount();
+    BusinessPartner bp = new BusinessPartner();
     SalesOrderDetails[] sod;
 
     private HubConnection hubCon;
 
+    public int cases { get; set; } = 0;
+    public int pieces { get; set; } = 0;
+    public int free_cases { get; set; } = 0;
+    public int free_pieces { get; set; } = 0;
     public string searchitemnum { get; set; }
     public decimal cs { get; set; }
     public decimal pc { get; set; }
@@ -134,10 +139,11 @@ using System.Text.Json;
         solist = await Http.GetJsonAsync<SalesOrderHeaders>("api/SalesOrderHeadersIndex/" + id);
         sod = await Http.GetJsonAsync<SalesOrderDetails[]>("api/SalesOrderDetailsIndex/" + solist.ID);
         disc = await Http.GetJsonAsync<Discount>("api/Discounts/" + solist.Outlet_Code);
+        bp = await Http.GetJsonAsync<BusinessPartner>("api/BusinessPartners/getbp/" + solist.Outlet_Code);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderDetailsHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/SalesOrderDetailsHub"))
+        .Build();
 
         await hubCon.StartAsync();
     }
@@ -159,8 +165,8 @@ using System.Text.Json;
     private async Task SaveDetails()
     {
         discountAmount = disc.Discount_Amount / 100;
-        cs = Convert.ToDecimal(sodlist.Cases);
-        pc = Convert.ToDecimal(sodlist.Pieces);
+        cs = Convert.ToDecimal(cases);
+        pc = Convert.ToDecimal(pieces);
         size = Convert.ToDecimal(artmas.Unit_Conversion2);
         amount = Convert.ToDecimal(artmas.Secondary_Price_CS);
         sales = (cs * amount) + ((amount / size) * pc);
@@ -168,16 +174,36 @@ using System.Text.Json;
         vat = ((cs * amount) * Convert.ToDecimal(0.12)) + (((amount / size) * pc) * Convert.ToDecimal(0.12));
         net = (sales + vat) - discount;
 
-        var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = sodlist.Cases, Pieces = sodlist.Pieces, Free_Cases = sodlist.Free_Cases, Free_Piece = sodlist.Free_Piece, Delivery_Qty_CS = sodlist.Cases, Delivery_Qty_PC = sodlist.Pieces, Sales_Value = sales, VAT_Value = vat, Net_Sales = net, Cases_Pieces = sodlist.Cases+"/"+sodlist.Pieces, Free_CS_PS = sodlist.Free_Cases+"/"+sodlist.Free_Piece };
+        var salesOrderDetails = new SalesOrderDetails { Header_ID = solist.ID, Material_N = artmas.Article_Code, Article_Description = artmas.Article_Description, Pack_Size = artmas.Unit_Conversion2, Cases = Convert.ToString(cases), Pieces = Convert.ToString(pieces), Free_Cases = Convert.ToString(free_cases), Free_Piece = Convert.ToString(free_pieces), Delivery_Qty_CS = Convert.ToString(cases), Delivery_Qty_PC = Convert.ToString(pieces), Sales_Value = sales, VAT_Value = vat, Net_Sales = net, Cases_Pieces = cases+"/"+ pieces, Free_CS_PS = free_cases+"/"+free_pieces };
         await Http.PostJsonAsync("api/SalesOrderDetailsIndex", salesOrderDetails);
+
+        var InsertInventoryHeaders = new InventoryHeader { Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()), Item_Code = artmas.Article_Code, Ref_ID = "Sales Order" };
+        await Http.PostJsonAsync("api/InventoryHeaderIndex/" + artmas.Article_Code, InsertInventoryHeaders);
+
+        if(cases == 0)
+        {
+            var InsertInventory = new Inventory { Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()), Item_Code = artmas.Article_Code, Quantity = -pieces, Transaction_Type = "Sales Order", Uom = "PC", Warehouse = bp.Delivering_Site, Location = bp.Delivering_Site_Description };
+            await Http.PostJsonAsync("api/Inventory", InsertInventory);
+
+            var InsertInventoryDetails = new InventoryDetails { Header_Ref = artmas.Article_Code, Quantity = -pieces, Transaction_Type = "Sales Order", Uom = "PC", Warehouse = bp.Delivering_Site, Location = bp.Delivering_Site_Description };
+            await Http.PostJsonAsync("api/InventoryDetailsManual", InsertInventoryDetails);
+        }
+        else
+        {
+            var InsertInventory = new Inventory { Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()), Item_Code = artmas.Article_Code, Quantity = -cases, Transaction_Type = "Sales Order", Uom = "CS", Warehouse = bp.Delivering_Site, Location = bp.Delivering_Site_Description };
+            await Http.PostJsonAsync("api/Inventory", InsertInventory);
+
+            var InsertInventoryDetails = new InventoryDetails { Header_Ref = artmas.Article_Code, Quantity = -cases, Transaction_Type = "Sales Order", Uom = "CS", Warehouse = bp.Delivering_Site, Location = bp.Delivering_Site_Description };
+            await Http.PostJsonAsync("api/InventoryDetailsManual", InsertInventoryDetails);
+        }
+
+
         if (IsConnected) await SendMessage();
         this.StateHasChanged();
         NavigationManager.NavigateTo("refresh/" + solist.Order_Number);
     }
 
     Task SendMessage() => hubCon.SendAsync("SendMessage");
-
-
 
     public void Dispose()
     {

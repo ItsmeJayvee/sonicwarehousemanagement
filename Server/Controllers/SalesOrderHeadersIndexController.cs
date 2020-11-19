@@ -49,19 +49,6 @@ namespace SonicWarehouseManagement.Server.Controllers
             return Ok(salesOrderHeaders);
         }
 
-        [HttpGet("getId/{id}")]
-        public async Task<ActionResult<SalesOrderHeaders>> GetSalesOrderHeadersID(string id)
-        {
-            var salesOrderHeaders = _context.SalesOrder_Headers.Where(x => x.Order_Number == id).Distinct().FirstOrDefault();
-
-            if (salesOrderHeaders == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(salesOrderHeaders);
-        }
-
         // PUT: api/SalesOrderHeadersIndex/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

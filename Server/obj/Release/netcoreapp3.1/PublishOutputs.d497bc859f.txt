@@ -1,6 +1,7 @@
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\SonicWarehouseManagement.Server.exe
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\libman.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\BlazorDebugProxy\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\BlazorDebugProxy\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\PubTmp\Out\BlazorDebugProxy\de\Microsoft.CodeAnalysis.CSharp.resources.dll

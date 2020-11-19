@@ -42,6 +42,20 @@ namespace SonicWarehouseManagement.Server.Controllers
             return inventoryDetails;
         }
 
+        // GET: api/InventoryDetailsManual/getDetails/5
+        [HttpGet("getDetails/{id}")]
+        public async Task<ActionResult<InventoryDetails>> GetInventoryDetailsNew(string id)
+        {
+            var inventoryDetails = _context.Inventory_Details.Where(x => x.Header_Ref == id).ToList();
+
+            if (inventoryDetails == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(inventoryDetails);
+        }
+
         // PUT: api/InventoryDetailsManual/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

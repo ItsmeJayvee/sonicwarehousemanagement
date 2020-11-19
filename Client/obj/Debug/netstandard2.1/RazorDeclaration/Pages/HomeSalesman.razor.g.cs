@@ -105,7 +105,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
+#line 51 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesman.razor"
        
     SalesmanMaster[] smlist;
 

@@ -1045,3 +1045,4 @@ C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Releas
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.pdb
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\SonicWarehouseManagement.Server.genruntimeconfig.cache
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\obj\Release\netcoreapp3.1\scopedcss\bundle\SonicWarehouseManagement.Server.styles.css
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Release\netcoreapp3.1\libman.json

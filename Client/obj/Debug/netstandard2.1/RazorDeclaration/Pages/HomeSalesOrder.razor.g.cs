@@ -105,7 +105,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesOrder.razor"
+#line 51 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\HomeSalesOrder.razor"
        
     SalesOrderHeaders[] solist;
 

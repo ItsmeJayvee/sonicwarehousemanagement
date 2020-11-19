@@ -89,13 +89,6 @@ using SonicWarehouseManagement.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
-using System.Text.Json;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/viewinventory/{id}")]
     public partial class ViewInventory : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,10 +98,10 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
+#line 43 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\ViewInventory.razor"
        
-    Inventory po = new Inventory();
-    Inventory[] pd;
+    ArticleMaster artmas = new ArticleMaster();
+    InventoryDetails[] invd;
 
     private HubConnection hubCon;
 
@@ -117,12 +110,12 @@ using System.Text.Json;
 
     protected override async Task OnInitializedAsync()
     {
-        po = await Http.GetJsonAsync<Inventory>("api/Inventories/" + id);
-        pd = await Http.GetJsonAsync<Inventory[]>("api/Inventories/" + id);
+        invd = await Http.GetJsonAsync<InventoryDetails[]>("api/InventoryDetailsManual/getDetails/" + id);
+        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryDetailsHub"))
+        .Build();
 
         await hubCon.StartAsync();
     }

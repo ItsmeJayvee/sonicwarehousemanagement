@@ -37,16 +37,16 @@ namespace SonicWarehouseManagement.Server.Controllers
 
         // GET: api/InventoryHeaderIndex/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<InventoryHeader>> GetInventoryHeader(int id)
+        public async Task<ActionResult<InventoryHeader>> GetInventoryHeader(string id)
         {
-            var inventoryHeader = await _context.Inventory_Headers.FindAsync(id);
+            var inventoryHeader = _context.Inventory_Headers.Where(x => x.Item_Code == id).Distinct().FirstOrDefault();
 
             if (inventoryHeader == null)
             {
                 return NotFound();
             }
 
-            return inventoryHeader;
+            return Ok(inventoryHeader);
         }
 
         // PUT: api/InventoryHeaderIndex/5
@@ -84,13 +84,20 @@ namespace SonicWarehouseManagement.Server.Controllers
         // POST: api/InventoryHeaderIndex
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<InventoryHeader>> PostInventoryHeader(InventoryHeader inventoryHeader)
+        [HttpPost("{itemcode}")]
+        public async Task<ActionResult<InventoryHeader>> PostInventoryHeader(string itemcode, InventoryHeader inventoryHeader)
         {
-            _context.Inventory_Headers.Add(inventoryHeader);
-            await _context.SaveChangesAsync();
+            var items = _context.Inventory_Headers.Where(x => x.Item_Code == itemcode).Distinct().Count();
 
-            return CreatedAtAction("GetInventoryHeader", new { id = inventoryHeader.ID }, inventoryHeader);
+            if(items == 0)
+            {
+                _context.Inventory_Headers.Add(inventoryHeader);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetInventoryHeader", new { id = inventoryHeader.ID }, inventoryHeader);
+            }
+
+            return Ok("Item exist");
         }
 
         // DELETE: api/InventoryHeaderIndex/5

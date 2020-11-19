@@ -105,11 +105,13 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 121 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
+#line 130 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditPurchaseOrder.razor"
        
     ArticleMaster artmas = new ArticleMaster();
     PurchaseHeaders po = new PurchaseHeaders();
     PurchaseDetails pds = new PurchaseDetails();
+    Warehouse loc = new Warehouse();
+    Warehouse[] wh;
     PurchaseDetails[] pd;
 
     private HubConnection hubCon;
@@ -117,7 +119,6 @@ using System.Text.Json;
     public string searchitemnum { get; set; }
     public DateTime pdate { get; set; }
     public DateTime ddate { get; set; }
-    public string Uoms { get; set; } = "CS";
 
     [Parameter]
     public string id { get; set; }
@@ -126,10 +127,11 @@ using System.Text.Json;
     {
         po = await Http.GetJsonAsync<PurchaseHeaders>("api/PurchaseOrderHeadersIndex/" + id);
         pd = await Http.GetJsonAsync<PurchaseDetails[]>("api/PurchaseOrderDetailsIndex/" + po.ID);
+        wh = await Http.GetJsonAsync<Warehouse[]>("api/Warehouse");
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/PurchaseDetailsHub"))
+        .Build();
 
         await hubCon.StartAsync();
     }
@@ -145,8 +147,20 @@ using System.Text.Json;
 
     public async Task insertsalesinvoice()
     {
-        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = artmas.Article_Code, Item_Desc = artmas.Article_Description, Quantity = Convert.ToInt32(artmas.Unit_Conversion2), Uom = Uoms };
+        loc = await Http.GetJsonAsync<Warehouse>("api/Warehouse/" + pds.Site);
+
+        var InsertInventory = new Inventory { Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()), Item_Code = artmas.Article_Code, Quantity = Convert.ToInt32(artmas.Unit_Conversion2), Transaction_Type = "Purchase Order", Uom = pds.Uom, Warehouse = pds.Site, Location = loc.SiteName };
+        await Http.PostJsonAsync("api/Inventory", InsertInventory);
+
+        var InsertInventoryHeader = new InventoryHeader { Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()), Item_Code = artmas.Article_Code, Ref_ID = "Purchase Order" };
+        await Http.PostJsonAsync("api/InventoryHeaderIndex/" + artmas.Article_Code, InsertInventoryHeader);
+
+        var InsertInventoryDetails = new InventoryDetails { Header_Ref = artmas.Article_Code, Quantity = Convert.ToInt32(artmas.Unit_Conversion2), Transaction_Type = "Purchase Order", Uom = pds.Uom, Warehouse = pds.Site, Location = loc.SiteName };
+        await Http.PostJsonAsync("api/InventoryDetailsManual", InsertInventoryDetails);
+
+        var purchaseOrderDetails = new PurchaseDetails { Header_ID = po.ID, Site = pds.Site, Posting_Date = Convert.ToDateTime(pdate.ToShortDateString()), Document_Date = Convert.ToDateTime(ddate.ToShortDateString()), Item_Code = artmas.Article_Code, Item_Desc = artmas.Article_Description, Quantity = Convert.ToInt32(artmas.Unit_Conversion2), Uom = pds.Uom };
         await Http.PostJsonAsync("api/PurchaseOrderDetailsIndex", purchaseOrderDetails);
+
         if (IsConnected) await SendMessage();
         NavigationManager.NavigateTo("refresh2/" + po.Article_Doc);
     }

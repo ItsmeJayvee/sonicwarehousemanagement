@@ -1,0 +1,114 @@
+﻿@page "/inventorylist"
+@using Microsoft.AspNetCore.SignalR.Client
+@using SonicWarehouseManagement.Shared
+@using System.Text.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Inventory list</h2>
+<div class="form-inline">
+    <label class="sr-only" for="search-ordernumber">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" @bind="searchitemnumber" placeholder="Search item number" />
+    <button type="button" class="btn btn-primary mr-sm-2 mb-2" @onclick="Search">Search</button>
+</div>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th style="font-size: small;">ID</th>
+            <th style="font-size: small;">Item number</th>
+            <th style="font-size: small;">Date</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ilist == null)
+        {
+            // do nothing
+        }
+        else
+        {
+            @foreach (var i in ilist)
+            {
+                <tr>
+                    <td style="font-size: small;">@i.ID</td>
+                    <td style="font-size: small;">@i.Item_Code</td>
+                    <td>
+                        <a style="font-size: small;" href="/viewinventory/@i.Item_Code" class="btn-sm btn-primary">View</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<Pagination TotalPagesQuantity="totalPageQuantity" CurrentPage="currentPage" Radius="2" SelectedPage="SelectedPage"></Pagination>
+
+
+@code {
+    InventoryHeader[] ilist;
+
+    private int totalPageQuantity;
+    private int currentPage = 1;
+    private string searchitemnumber = string.Empty;
+
+    private HubConnection hubCon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubCon = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHeaderHub"))
+            .Build();
+
+        hubCon.On("ReceiveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubCon.StartAsync();
+        await LoadData();
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    private async Task SelectedPage(int page)
+    {
+        currentPage = page;
+        await LoadData(page);
+    }
+
+    private async Task Search()
+    {
+        currentPage = 1;
+        await LoadData();
+    }
+
+    protected async Task LoadData(int page = 1, int quantityPerPage = 10)
+    {
+        var httpResponse = await Http.GetAsync($"api/InventoryHeaderIndex?page={page}&quantityPerPage={quantityPerPage}&item={searchitemnumber}");
+
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            totalPageQuantity = int.Parse(httpResponse.Headers.GetValues("pagesQuantity").FirstOrDefault());
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ilist = JsonSerializer.Deserialize<InventoryHeader[]>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            StateHasChanged();
+        }
+        else
+        {
+            //Error handler
+        }
+    }
+
+    public void Dispose()
+    {
+        _ = hubCon.DisposeAsync();
+    }
+}

@@ -49,6 +49,20 @@ namespace SonicWarehouseManagement.Server.Controllers
             return businessPartner;
         }
 
+        // GET: api/BusinessPartners/5
+        [HttpGet("getbp/{id}")]
+        public async Task<ActionResult<BusinessPartner>> GetBusinessPartner2(string id)
+        {
+            var businessPartner = _context.Business_Partners.Where(x => x.Card_Code ==id).Distinct().FirstOrDefault();
+
+            if (businessPartner == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(businessPartner);
+        }
+
         // PUT: api/BusinessPartners/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -91,6 +105,22 @@ namespace SonicWarehouseManagement.Server.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBusinessPartner", new { id = businessPartner.Id }, businessPartner);
+        }
+
+        [HttpPost("checkDup/{outletcode}")]
+        public async Task<ActionResult<BusinessPartner>> PostBusinessPartner(string outletcode, BusinessPartner businessPartner)
+        {
+            var bp = _context.Business_Partners.Where(x => x.Card_Code == outletcode).Distinct().Count();
+
+            if(bp == 0)
+            {
+                _context.Business_Partners.Add(businessPartner);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetBusinessPartner", new { id = businessPartner.Id }, businessPartner);
+            }
+
+            return Ok("Duplicate");
         }
 
         // DELETE: api/BusinessPartners/5

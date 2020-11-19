@@ -1048,6 +1048,7 @@ C:\Users\jv.limbaroc\Desktop\git\sonicwarehousemanagement\Server\obj\Debug\netco
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\SonicWarehouseManagement.Client.StaticWebAssets.xml
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Server\bin\Debug\netcoreapp3.1\BlazorDebugProxy\de\Microsoft.CodeAnalysis.CSharp.resources.dll

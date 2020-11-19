@@ -1,33 +1,39 @@
 ﻿@page "/viewinventory/{id}"
 @using Microsoft.AspNetCore.SignalR.Client
 @using SonicWarehouseManagement.Shared
-@using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
 <h2>Inventory</h2>
+<p>Article code: <b>@artmas.Article_Code</b></p>
+<p>Article Description: <b>@artmas.Article_Description</b></p>
 <hr />
-<p>Order number: <b>@po.Item_Code</b></p>
-<p>Bill Document: <b>@po.Transaction_Type</b></p>
+@*<p>Item number: <b>@invh.Item_Code</b></p>*@
 <table class="table">
     <thead>
         <tr>
             <th>Quantity</th>
+            <th>Transaction Type</th>
             <th>Uom</th>
+            <th>Warehouse</th>
+            <th>Location</th>
         </tr>
     </thead>
     <tbody>
-        @if (pd == null)
+        @if (invd == null)
         {
             // do nothing
         }
         else
         {
-            @foreach (var items in pd)
+            @foreach (var items in invd)
             {
                 <tr>
                     <td style="font-size: small">@items.Quantity</td>
+                    <td style="font-size: small">@items.Transaction_Type</td>
                     <td style="font-size: small">@items.Uom</td>
+                    <td style="font-size: small">@items.Warehouse</td>
+                    <td style="font-size: small">@items.Location</td>
                 </tr>
             }
         }
@@ -35,8 +41,8 @@
 </table>
 
 @code {
-    Inventory po = new Inventory();
-    Inventory[] pd;
+    ArticleMaster artmas = new ArticleMaster();
+    InventoryDetails[] invd;
 
     private HubConnection hubCon;
 
@@ -45,12 +51,12 @@
 
     protected override async Task OnInitializedAsync()
     {
-        po = await Http.GetJsonAsync<Inventory>("api/Inventories/" + id);
-        pd = await Http.GetJsonAsync<Inventory[]>("api/Inventories/" + id);
+        invd = await Http.GetJsonAsync<InventoryDetails[]>("api/InventoryDetailsManual/getDetails/" + id);
+        artmas = await Http.GetJsonAsync<ArticleMaster>("api/ArticleMasters/" + id);
 
         hubCon = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryHub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("/InventoryDetailsHub"))
+        .Build();
 
         await hubCon.StartAsync();
     }
