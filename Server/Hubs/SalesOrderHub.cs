@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Hubs
 {
-    public class SalesOrderHub:Hub
+    public class SalesOrderHub : Hub
     {
         public async Task SendMessage()
         {

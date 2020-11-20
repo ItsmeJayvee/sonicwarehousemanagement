@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SonicWarehouseManagement.Shared
+﻿namespace SonicWarehouseManagement.Shared
 {
     public class SalesInvoicePagination
     {

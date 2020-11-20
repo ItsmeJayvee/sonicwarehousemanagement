@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -27,7 +26,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         public async Task<ActionResult<IEnumerable<BusinessPartner>>> GetBusiness_Partners([FromQuery] SalesInvoicePagination pagination, [FromQuery] string card)
         {
             var queryable = _context.Business_Partners.AsQueryable();
-            if(!string.IsNullOrEmpty(card))
+            if (!string.IsNullOrEmpty(card))
             {
                 queryable = queryable.Where(x => x.Card_Code.Contains(card));
             }
@@ -53,7 +52,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         [HttpGet("getbp/{id}")]
         public async Task<ActionResult<BusinessPartner>> GetBusinessPartner2(string id)
         {
-            var businessPartner = _context.Business_Partners.Where(x => x.Card_Code ==id).Distinct().FirstOrDefault();
+            var businessPartner = _context.Business_Partners.Where(x => x.Card_Code == id).Distinct().FirstOrDefault();
 
             if (businessPartner == null)
             {
@@ -112,7 +111,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         {
             var bp = _context.Business_Partners.Where(x => x.Card_Code == outletcode).Distinct().Count();
 
-            if(bp == 0)
+            if (bp == 0)
             {
                 _context.Business_Partners.Add(businessPartner);
                 await _context.SaveChangesAsync();

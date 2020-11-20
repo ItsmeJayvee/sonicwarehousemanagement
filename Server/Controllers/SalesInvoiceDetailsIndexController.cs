@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Shared;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -83,7 +80,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         {
             var check = _context.SalesInvoice_Details.Where(x => x.Header_ID == id).ToList();
 
-            if(check == null)
+            if (check == null)
             {
                 return NotFound();
             }

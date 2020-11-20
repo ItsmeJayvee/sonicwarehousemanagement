@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Shared;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -51,9 +50,9 @@ namespace SonicWarehouseManagement.Server.Controllers
               .Where(b => b.Material_N == mat_n)
               .Where(b => b.Pack_Size == pack_size)
               .Where(b => b.Turnover_Value == turn_over).FirstOrDefault();
-         
 
-            if(sales_order == null)
+
+            if (sales_order == null)
             {
                 return Ok("No Data");
             }

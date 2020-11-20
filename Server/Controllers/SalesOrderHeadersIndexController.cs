@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -41,7 +40,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         {
             var salesOrderHeaders = _context.SalesOrder_Headers.Where(x => x.Order_Number == id).Distinct().FirstOrDefault();
 
-            if(salesOrderHeaders == null)
+            if (salesOrderHeaders == null)
             {
                 return NotFound();
             }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Shared;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -53,7 +51,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         [HttpGet("SalesCheckDuplicate/{order_num}")]
         public async Task<ActionResult<SalesOrder>> SalesCheckDuplicate(string order_num)
         {
-            var sales_orders = _context.Sales_Orders.Where(g => g.Order_Number == order_num).Select(p => new SalesOrderDetails { Material_N = p.Material_N, Article_Description = p.Article_Description, Pack_Size = p.Pack_Size, Cases = p.Cases, Pieces = p.Pieces, Free_Cases = p.Free_Cases, Free_Piece = p.Free_Piece, Delivery_Qty_CS = p.Delivery_Qty_CS, Delivery_Qty_PC = p.Delivery_Qty_PC, Sales_Value = p.Sales_Value, VAT_Value = p.VAT_Value, Net_Sales = p.Net_Sales, Item_Number = p.Item_Number, Cases_Pieces = p.Cases_Pieces, Free_CS_PS = p.Free_CS_PS}).ToList();
+            var sales_orders = _context.Sales_Orders.Where(g => g.Order_Number == order_num).Select(p => new SalesOrderDetails { Material_N = p.Material_N, Article_Description = p.Article_Description, Pack_Size = p.Pack_Size, Cases = p.Cases, Pieces = p.Pieces, Free_Cases = p.Free_Cases, Free_Piece = p.Free_Piece, Delivery_Qty_CS = p.Delivery_Qty_CS, Delivery_Qty_PC = p.Delivery_Qty_PC, Sales_Value = p.Sales_Value, VAT_Value = p.VAT_Value, Net_Sales = p.Net_Sales, Item_Number = p.Item_Number, Cases_Pieces = p.Cases_Pieces, Free_CS_PS = p.Free_CS_PS }).ToList();
             if (sales_orders == null)
             {
                 return NotFound();

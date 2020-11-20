@@ -98,7 +98,7 @@ using SonicWarehouseManagement.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 132 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
+#line 131 "C:\Users\jv.limbaroc\Desktop\SonicWMS\sonicwarehousemanagement\Client\Pages\EditSalesman.razor"
        
     SalesmanMaster sm = new SalesmanMaster();
 

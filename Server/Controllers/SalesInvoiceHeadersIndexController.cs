@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -27,7 +26,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         public async Task<ActionResult<IEnumerable<SalesInvoice_Headers>>> GetSalesInvoice_Headers([FromQuery] SalesInvoicePagination pagination, [FromQuery] string invoice)
         {
             var queryable = _context.SalesInvoice_Headers.AsQueryable();
-            if(!string.IsNullOrEmpty(invoice))
+            if (!string.IsNullOrEmpty(invoice))
             {
                 queryable = queryable.Where(x => x.Invoice_No.Contains(invoice));
             }

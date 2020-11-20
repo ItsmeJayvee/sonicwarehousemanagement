@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonicWarehouseManagement.Server.Data;
 using SonicWarehouseManagement.Server.Helpers;
 using SonicWarehouseManagement.Shared;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SonicWarehouseManagement.Server.Controllers
 {
@@ -27,7 +26,7 @@ namespace SonicWarehouseManagement.Server.Controllers
         public async Task<ActionResult<IEnumerable<ArticleMaster>>> GetArticle_Masters([FromQuery] SalesInvoicePagination pagination, [FromQuery] string article)
         {
             var queryable = _context.Article_Masters.AsQueryable();
-            if(!string.IsNullOrEmpty(article))
+            if (!string.IsNullOrEmpty(article))
             {
                 queryable = queryable.Where(x => x.Article_Code.Contains(article));
             }

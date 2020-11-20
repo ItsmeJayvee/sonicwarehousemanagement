@@ -1,14 +1,13 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
-using SonicWarehouseManagement.Server.Hubs;
 using SonicWarehouseManagement.Server.Data;
-using Microsoft.EntityFrameworkCore;
+using SonicWarehouseManagement.Server.Hubs;
+using System.Linq;
 
 namespace SonicWarehouseManagement.Server
 {
@@ -75,7 +74,7 @@ namespace SonicWarehouseManagement.Server
                 endpoints.MapHub<WarehouseHub>("/WarehouseHub");
                 endpoints.MapHub<LocationHub>("/LocationHub");
                 endpoints.MapHub<DeliveryReceiptHub>("/DeliveryReceiptHub");
-                endpoints.MapHub<BusinessUnitHub>("/BusinessUnitHub"); 
+                endpoints.MapHub<BusinessUnitHub>("/BusinessUnitHub");
                 endpoints.MapHub<SAPSalesmanMasterHub>("/SAPSalesmanMasterHub");
                 endpoints.MapHub<SalesOrderHeadersHub>("/SalesOrderHeadersHub");
                 endpoints.MapHub<SalesOrderDetailsHub>("/SalesOrderDetailsHub");
